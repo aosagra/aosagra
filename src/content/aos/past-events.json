@@ -1,0 +1,24 @@
+[
+  {
+    "date": "02",
+    "month": "Jul",
+    "year": "2026",
+    "datetime": "2026-07-02",
+    "title": "AOS General Body Meeting",
+    "description": "General Body Meeting of the Agra Orthopaedic Society.",
+    "meta": "Completed",
+    "href": "/past-events/#general-body-meeting-2026",
+    "id": "general-body-meeting-2026"
+  },
+  {
+    "date": "20–22",
+    "month": "Feb",
+    "year": "2026",
+    "datetime": "2026-02-20",
+    "title": "50th UP Golden Jubilee ORTHOCON",
+    "description": "Experience, Energize, Evolve — Navigating into the Future.",
+    "meta": "Hotel Clarks Shiraz, Agra",
+    "href": "/orthocon-2026/",
+    "id": "orthocon-2026"
+  }
+]

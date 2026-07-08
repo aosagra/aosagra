@@ -1,0 +1,47 @@
+---
+import BrandLockup from "./BrandLockup.astro";
+import Icon from "./Icon.astro";
+import TajMotif from "./TajMotif.astro";
+import { organization } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <TajMotif tone="white" class="site-footer__taj" />
+  <div class="shell site-footer__grid">
+    <div class="site-footer__brand">
+      <BrandLockup inverse />
+      <p>
+        A professional community advancing orthopaedic learning, ethical care, fellowship, and public service in Agra.
+      </p>
+    </div>
+
+    <div>
+      <h2>Explore</h2>
+      <a href="/academics/">Academics</a>
+      <a href="/upcoming-events/">Events & CME</a>
+      <a href="/membership/">Membership</a>
+      <a href="/public-awareness/">Public awareness</a>
+    </div>
+
+    <div>
+      <h2>Society</h2>
+      <a href="/about-aos/">About AOS</a>
+      <a href="/office-bearers/">Office bearers</a>
+      <a href="/aos-legacy/">Legacy & milestones</a>
+      <a href="/downloads-notices/">Downloads</a>
+    </div>
+
+    <address>
+      <h2>Contact</h2>
+      <a href={`mailto:${organization.email}`}><Icon name="mail" size={18} /> {organization.email}</a>
+      <a href={`tel:${organization.phoneHref}`}><Icon name="phone" size={18} /> {organization.phone}</a>
+      <p><Icon name="map-pin" size={18} /> <span>{organization.address}</span></p>
+    </address>
+  </div>
+  <div class="shell site-footer__base">
+    <p>© {year} Agra Orthopaedic Society. All rights reserved.</p>
+    <p>Education · Ethics · Excellence in Orthopaedic Care</p>
+  </div>
+</footer>

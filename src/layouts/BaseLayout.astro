@@ -1,0 +1,77 @@
+---
+import "@fontsource-variable/overpass/index.css";
+import "@fontsource-variable/source-serif-4/index.css";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { organization } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "The official digital home of the Agra Orthopaedic Society.",
+  canonicalPath = Astro.url.pathname,
+  image = "/assets/installation.jpg"
+} = Astro.props;
+
+const pageTitle = title ? `${title} · AOS Agra` : "Agra Orthopaedic Society · Education, Ethics, Excellence";
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  name: organization.name,
+  alternateName: organization.shortName,
+  url: "https://aosagra.com",
+  email: organization.email,
+  telephone: organization.phone,
+  foundingDate: organization.founded,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Prof. C. R. Chaturvedi Medical Complex, 1/188 Delhi Gate",
+    addressLocality: "Agra",
+    postalCode: "282002",
+    addressCountry: "IN"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#083c50" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical} />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Agra Orthopaedic Society" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Agra Orthopaedic Society members at a society programme" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{pageTitle}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

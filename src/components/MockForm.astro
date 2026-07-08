@@ -1,0 +1,67 @@
+---
+interface Props {
+  type?: "event" | "membership" | "enquiry" | "contact";
+}
+
+const { type = "contact" } = Astro.props;
+const isEvent = type === "event";
+const isMembership = type === "membership";
+const submitLabel = isEvent ? "Send registration interest" : isMembership ? "Start application" : "Send enquiry";
+---
+
+<form class="form-panel" data-mock-form>
+  <div class="form-grid">
+    <label>
+      <span>Full name</span>
+      <input type="text" name="name" autocomplete="name" required />
+    </label>
+    <label>
+      <span>Email address</span>
+      <input type="email" name="email" autocomplete="email" required />
+    </label>
+    <label>
+      <span>Phone number</span>
+      <input type="tel" name="phone" autocomplete="tel" />
+    </label>
+    <label>
+      <span>{isMembership ? "Medical registration number" : "Institution or organisation"}</span>
+      <input type="text" name="organisation" />
+    </label>
+    {
+      isEvent && (
+        <label class="form-grid__full">
+          <span>Event</span>
+          <select name="event" required>
+            <option value="">Choose an event</option>
+            <option>11 July — Osteoporosis & Sarcopenia Symposium</option>
+            <option>16 July — Inter-College PG Paper Presentation</option>
+            <option>18 July — Extended Executive Meeting</option>
+          </select>
+        </label>
+      )
+    }
+    <label class="form-grid__full">
+      <span>{isMembership ? "Membership interest and qualifications" : "Message"}</span>
+      <textarea name="message" rows="5"></textarea>
+    </label>
+  </div>
+  <div class="form-panel__actions">
+    <button class="button button--primary" type="submit">{submitLabel}</button>
+    <p>Preview form — no information is transmitted yet.</p>
+  </div>
+  <p class="form-response" data-form-response tabindex="-1" hidden>
+    This preview is not connected yet. Please email <a href="mailto:aosagra@gmail.com">aosagra@gmail.com</a> and the AOS team will assist you.
+  </p>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>("[data-mock-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const response = form.querySelector<HTMLElement>("[data-form-response]");
+      if (!response) return;
+      response.hidden = false;
+      response.focus();
+    });
+  });
+</script>

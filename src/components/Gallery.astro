@@ -1,0 +1,59 @@
+---
+import Icon from "./Icon.astro";
+import { galleryImages } from "../data/site";
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const images = typeof limit === "number" ? galleryImages.slice(0, limit) : galleryImages;
+---
+
+<div class="gallery-grid" data-gallery>
+  {
+    images.map((image, index) => (
+      <button
+        class:list={["gallery-item", { "gallery-item--wide": index === 0 || index === 5 }]}
+        type="button"
+        data-gallery-item
+        data-src={image.src}
+        data-alt={image.alt}
+        aria-label={`Open image ${index + 1}: ${image.alt}`}
+      >
+        <img src={image.src} alt={image.alt} width="897" height="598" loading={index > 2 ? "lazy" : "eager"} />
+        <span><Icon name="image" size={17} /> View photograph</span>
+      </button>
+    ))
+  }
+</div>
+
+<dialog class="lightbox" data-lightbox aria-label="Photograph preview">
+  <button class="lightbox__close" type="button" data-lightbox-close>
+    <span class="sr-only">Close image preview</span>
+    <Icon name="close" size={23} />
+  </button>
+  <img data-lightbox-image src="/assets/gallery/aos-activity-01.jpg" alt="" />
+  <p data-lightbox-caption></p>
+</dialog>
+
+<script>
+  const lightbox = document.querySelector<HTMLDialogElement>("[data-lightbox]");
+  const lightboxImage = lightbox?.querySelector<HTMLImageElement>("[data-lightbox-image]");
+  const lightboxCaption = lightbox?.querySelector<HTMLElement>("[data-lightbox-caption]");
+
+  document.querySelectorAll<HTMLButtonElement>("[data-gallery-item]").forEach((item) => {
+    item.addEventListener("click", () => {
+      if (!lightbox || !lightboxImage || !lightboxCaption) return;
+      lightboxImage.src = item.dataset.src ?? "";
+      lightboxImage.alt = item.dataset.alt ?? "";
+      lightboxCaption.textContent = item.dataset.alt ?? "";
+      lightbox.showModal();
+    });
+  });
+
+  lightbox?.querySelector("[data-lightbox-close]")?.addEventListener("click", () => lightbox.close());
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+</script>

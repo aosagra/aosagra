@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "kicker": "Agra Orthopaedic Society · Since 1979",
+    "title": "A city of learning. A society of care.",
+    "lead": "AOS Agra brings orthopaedic surgeons, teachers, trainees, and the community together through education, ethics, and service.",
+    "primaryCta": { "label": "See what is next", "href": "/upcoming-events/" },
+    "secondaryCta": { "label": "Know the society", "href": "/about-aos/" },
+    "image": "/assets/installation.jpg",
+    "imageAlt": "Agra Orthopaedic Society leadership and members at the installation ceremony"
+  },
+  "pathways": [
+    { "icon": "calendar", "title": "Academic calendar", "href": "/academic-calendar/", "copy": "Dates, CMEs, meetings, and teaching activity." },
+    { "icon": "book", "title": "PG teaching", "href": "/pg-teaching/", "copy": "Structured opportunities for residents and trainees." },
+    { "icon": "users", "title": "Membership", "href": "/membership/", "copy": "Join Agra’s professional orthopaedic community." },
+    { "icon": "heart", "title": "Public awareness", "href": "/public-awareness/", "copy": "Responsible bone, joint, injury, and mobility guidance." }
+  ],
+  "photoStory": {
+    "title": "The society is carried by people in rooms together.",
+    "copy": "Meetings, teaching sessions, and shared responsibility give AOS its real texture — collegial, academic, and local.",
+    "href": "/gallery/"
+  }
+}

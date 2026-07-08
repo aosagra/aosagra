@@ -1,0 +1,76 @@
+[
+  {
+    "slug": "about-aos",
+    "title": "About Agra Orthopaedic Society",
+    "group": "About AOS",
+    "summary": "A professional home for orthopaedic learning, ethical practice, fellowship, and public service in Agra since 1979.",
+    "status": "ready",
+    "sections": [
+      {
+        "title": "A society built around shared learning",
+        "paragraphs": [
+          "Agra Orthopaedic Society brings orthopaedic surgeons and trainees together through academic meetings, continuing medical education, skills development, research, professional fellowship, and community awareness.",
+          "The society connects local clinical experience with wider academic collaboration while preserving the professional legacy built by generations of orthopaedic surgeons in Agra."
+        ]
+      },
+      {
+        "title": "What guides the society",
+        "bullets": [
+          "Advance orthopaedic knowledge through regular academic activity.",
+          "Encourage ethical, evidence-informed, and compassionate patient care.",
+          "Support postgraduate education, presentation, research, and mentorship.",
+          "Contribute to public understanding of bone, joint, injury, and mobility health.",
+          "Strengthen fellowship and collaboration across the orthopaedic community."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "membership",
+    "title": "Membership",
+    "group": "Membership",
+    "summary": "Join a professional community centred on learning, fellowship, ethics, and service.",
+    "status": "ready",
+    "sections": [
+      {
+        "title": "For orthopaedic professionals in and around Agra",
+        "paragraphs": [
+          "AOS membership is intended for orthopaedic surgeons, postgraduate trainees, and professionals connected with the society’s academic and ethical objectives.",
+          "The membership workflow is currently shown as a design preview. Final eligibility checks, fee details, and document submission can be connected after the society approves the process."
+        ]
+      },
+      {
+        "title": "What membership supports",
+        "bullets": [
+          "Academic meetings, CME programmes, and workshops.",
+          "Postgraduate presentation and mentorship opportunities.",
+          "Professional fellowship across institutions and generations.",
+          "Public-awareness and community-facing orthopaedic initiatives."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "public-awareness",
+    "title": "Public Awareness",
+    "group": "Public Awareness",
+    "summary": "Clear, responsible starting points for bone, joint, injury, and mobility health.",
+    "status": "ready",
+    "sections": [
+      {
+        "title": "Health information, not a diagnosis",
+        "paragraphs": [
+          "This section is being developed as a public service. It will explain common orthopaedic concerns, prevention, first-aid principles, and signs that should prompt timely professional assessment.",
+          "General information cannot replace examination or individual medical advice. For urgent injury, severe pain, weakness, numbness, deformity, or loss of function, seek qualified medical care promptly."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "president-message",
+    "title": "President Message",
+    "group": "About AOS",
+    "summary": "A current note from the President of Agra Orthopaedic Society.",
+    "status": "ready"
+  }
+]

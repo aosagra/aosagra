@@ -1,0 +1,12 @@
+[
+  { "id": "aos-activity-01", "src": "/assets/gallery/aos-activity-01.jpg", "alt": "Agra Orthopaedic Society members at an academic gathering", "caption": "Learning in company", "featured": true, "order": 1 },
+  { "id": "aos-activity-02", "src": "/assets/gallery/aos-activity-02.jpg", "alt": "AOS Agra members during a society programme", "caption": "Society programme", "featured": false, "order": 2 },
+  { "id": "aos-activity-03", "src": "/assets/gallery/aos-activity-03.jpg", "alt": "Members participating in an AOS academic event", "caption": "A platform for trainees", "featured": true, "order": 3 },
+  { "id": "aos-activity-04", "src": "/assets/gallery/aos-activity-04.jpg", "alt": "AOS Agra professional gathering", "caption": "Professional fellowship", "featured": false, "order": 4 },
+  { "id": "aos-activity-05", "src": "/assets/gallery/aos-activity-05.jpg", "alt": "Society members at an AOS programme", "caption": "Fellowship with purpose", "featured": true, "order": 5 },
+  { "id": "aos-activity-06", "src": "/assets/gallery/aos-activity-06.jpg", "alt": "AOS Agra event photograph", "caption": "AOS event", "featured": false, "order": 6 },
+  { "id": "aos-activity-07", "src": "/assets/gallery/aos-activity-07.jpg", "alt": "AOS members sharing an academic moment", "caption": "Academic moment", "featured": false, "order": 7 },
+  { "id": "aos-activity-08", "src": "/assets/gallery/aos-activity-08.jpg", "alt": "Agra Orthopaedic Society activity photograph", "caption": "Society activity", "featured": false, "order": 8 },
+  { "id": "aos-activity-09", "src": "/assets/gallery/aos-activity-09.jpg", "alt": "Members at an Agra Orthopaedic Society gathering", "caption": "AOS gathering", "featured": false, "order": 9 },
+  { "id": "aos-activity-10", "src": "/assets/gallery/aos-activity-10.jpg", "alt": "AOS Agra community and academic activity", "caption": "Community and academic activity", "featured": false, "order": 10 }
+]

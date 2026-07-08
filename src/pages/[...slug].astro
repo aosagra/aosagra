@@ -1,0 +1,453 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EventList from "../components/EventList.astro";
+import Gallery from "../components/Gallery.astro";
+import Icon from "../components/Icon.astro";
+import MockForm from "../components/MockForm.astro";
+import PageIntro from "../components/PageIntro.astro";
+import {
+  allPages,
+  archivedPresidentMessage,
+  executiveBody2025,
+  leaders,
+  mainNavigation,
+  organization,
+  pastPresidents,
+  pastEvents,
+  type ContentPage
+} from "../data/site";
+
+export function getStaticPaths() {
+  return allPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page }
+  }));
+}
+
+interface Props {
+  page: ContentPage;
+}
+
+const { page } = Astro.props;
+const canonicalPath = `/${page.canonicalSlug ?? page.slug}/`;
+const groupNavigation = mainNavigation.find((group) => group.label === page.group);
+const showComingSoon = page.status === "coming-soon";
+const formType =
+  page.slug === "register-for-event"
+    ? "event"
+    : page.slug === "apply-for-membership"
+      ? "membership"
+      : page.slug === "membership-enquiry"
+        ? "enquiry"
+        : "contact";
+---
+
+<BaseLayout title={page.title} description={page.summary} canonicalPath={canonicalPath} image={page.image}>
+  <PageIntro title={page.title} summary={page.summary} group={page.group} />
+
+  <div class="shell interior">
+    <article class="interior__content">
+      {
+        page.image && (
+          <figure class="content-image">
+            <img src={page.image} width="1280" height="853" alt="" />
+          </figure>
+        )
+      }
+
+      {
+        showComingSoon && (
+          <section class="coming-soon">
+            <span class="coming-soon__icon"><Icon name="clock" size={24} /></span>
+            <div>
+              <h2>Being prepared with care</h2>
+              <p>
+                This destination is part of the new AOS structure, but the source material is still being verified and organised. It will be published here when ready.
+              </p>
+              <a class="text-link" href="/contact/">Share material or ask AOS <Icon name="arrow-right" size={17} /></a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "leadership" && (
+          <section aria-labelledby="current-office-bearers">
+            <div class="content-heading">
+              <h2 id="current-office-bearers">Current office bearers</h2>
+              <p>Leadership information reflects the latest society update available in June 2026.</p>
+            </div>
+            <div class="leadership__grid leadership__grid--interior">
+              {leaders.map((leader) => (
+                <article class="leader">
+                  <img src={leader.image} width="375" height="496" alt={leader.name} />
+                  <div>
+                    <p>{leader.role}</p>
+                    <h3>{leader.name}</h3>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "past-leadership" && (
+          <section aria-labelledby="past-presidents-heading">
+            <div class="content-heading">
+              <h2 id="past-presidents-heading">Presidents recorded in the legacy archive</h2>
+              <p>
+                The entries below are transcribed from the previous AOS website. The source contains overlapping early terms and two entries for Dr Anuj Kumar; those details are preserved visibly rather than silently changed.
+              </p>
+            </div>
+            <div class="archive-note">
+              <Icon name="file" size={20} />
+              <p>Historical register · Source dates require final society verification</p>
+            </div>
+            <div class="archive-table-wrap">
+              <table class="archive-table">
+                <caption>Past Presidents of the Agra Orthopaedic Society</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">President</th>
+                    <th scope="col">Term recorded</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pastPresidents.map((president) => (
+                    <tr>
+                      <th scope="row">{president.name}</th>
+                      <td>{president.term}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div class="archive-pending">
+              <div>
+                <h3>Past Secretaries</h3>
+                <p>The corresponding secretaries register was empty on the legacy website and remains under verification.</p>
+              </div>
+              <a class="text-link" href="/contact/">Help complete the record <Icon name="arrow-right" size={17} /></a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "archive-roster" && (
+          <section aria-labelledby="archived-roster-heading">
+            <div class="content-heading">
+              <h2 id="archived-roster-heading">Archived executive roster</h2>
+              <p>
+                This is the 2025–2026 body shown on the previous website. It is retained for institutional continuity and is not the current leadership list.
+              </p>
+            </div>
+            <div class="archive-note">
+              <Icon name="clock" size={20} />
+              <p>Previous term · For the latest office bearers, see <a href="/office-bearers/">current leadership</a>.</p>
+            </div>
+            <div class="roster-list">
+              {executiveBody2025.map((member) => (
+                <div>
+                  <strong>{member.name}</strong>
+                  <span>{member.role}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "archived-message" && (
+          <section class="archived-message" aria-labelledby="archived-message-heading">
+            <div class="archived-message__portrait">
+              <img
+                src={archivedPresidentMessage.image}
+                width="375"
+                height="496"
+                alt={archivedPresidentMessage.author}
+              />
+              <p><strong>{archivedPresidentMessage.author}</strong><span>{archivedPresidentMessage.role}</span></p>
+            </div>
+            <div class="archived-message__copy">
+              <div class="archive-note">
+                <Icon name="clock" size={20} />
+                <p>Archived message · Preserved from the previous AOS website</p>
+              </div>
+              <h2 id="archived-message-heading">From the President’s desk</h2>
+              {archivedPresidentMessage.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              <p class="archived-message__signoff">Warm regards,<br /><strong>{archivedPresidentMessage.author}</strong></p>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "events" && (
+          <section aria-labelledby="current-events">
+            <div class="content-heading">
+              <h2 id="current-events">July 2026 programme</h2>
+              <p>Current dates published by the Agra Orthopaedic Society.</p>
+            </div>
+            <EventList />
+          </section>
+        )
+      }
+
+      {
+        page.kind === "past-events" && (
+          <section aria-labelledby="completed-events">
+            <div class="content-heading">
+              <h2 id="completed-events">Completed events</h2>
+              <p>This archive will grow as older society records are verified.</p>
+            </div>
+            <div class="event-list">
+              {pastEvents.map((event) => (
+                <article class="event-row" id={event.id}>
+                  <time datetime={event.datetime} class="event-date event-date--past">
+                    <strong>{event.date}</strong>
+                    <span>{event.month} {event.year}</span>
+                  </time>
+                  <div class="event-row__content">
+                    <h3>{event.title}</h3>
+                    <p>{event.description}</p>
+                    <span class="event-row__meta"><Icon name="check" size={16} /> {event.meta}</span>
+                  </div>
+                  <a class="text-link" href={event.href}>
+                    Event record <Icon name="arrow-right" size={17} />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "gallery" && (
+          <section aria-labelledby="gallery-heading">
+            <div class="content-heading">
+              <h2 id="gallery-heading">Society photographs</h2>
+              <p>Select a photograph to view it at a larger size.</p>
+            </div>
+            <Gallery />
+          </section>
+        )
+      }
+
+      {
+        page.kind === "form" && (
+          <section aria-labelledby="form-heading">
+            <div class="content-heading">
+              <h2 id="form-heading">
+                {formType === "event" ? "Registration interest" : formType === "membership" ? "Membership application preview" : "Tell us how we can help"}
+              </h2>
+              <p>
+                This is a design-complete preview. Until secure form handling is connected, please do not enter sensitive information.
+              </p>
+            </div>
+            <MockForm type={formType} />
+          </section>
+        )
+      }
+
+      {
+        page.kind === "contact" && (
+          <div class="contact-layout">
+            <section class="contact-details" aria-labelledby="contact-details">
+              <h2 id="contact-details">Society office</h2>
+              <a href={`mailto:${organization.email}`}><Icon name="mail" size={20} /><span><small>Email</small>{organization.email}</span></a>
+              <a href={`tel:${organization.phoneHref}`}><Icon name="phone" size={20} /><span><small>Phone</small>{organization.phone}</span></a>
+              <p><Icon name="map-pin" size={20} /><span><small>Address</small>{organization.address}</span></p>
+            </section>
+            <section aria-labelledby="contact-form">
+              <div class="content-heading">
+                <h2 id="contact-form">Send an enquiry</h2>
+                <p>The preview form does not transmit information yet.</p>
+              </div>
+              <MockForm type="contact" />
+            </section>
+          </div>
+        )
+      }
+
+      {
+        page.kind === "login" && (
+          <section class="login-panel" aria-labelledby="member-access">
+            <div>
+              <span class="login-panel__icon"><Icon name="shield" size={24} /></span>
+              <h2 id="member-access">Member access preview</h2>
+              <p>Login is intentionally mocked for this design build. No account or password is created or checked.</p>
+            </div>
+            <form data-login-preview>
+              <label><span>Email address</span><input type="email" autocomplete="username" required /></label>
+              <label><span>Password</span><input type="password" autocomplete="current-password" required /></label>
+              <button class="button button--primary" type="submit">Preview member access</button>
+              <p data-login-message tabindex="-1" hidden>Member authentication will be connected in a later phase.</p>
+            </form>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "downloads" && !showComingSoon && (
+          <section aria-labelledby="downloads-heading">
+            <div class="content-heading">
+              <h2 id="downloads-heading">Available files</h2>
+              <p>Only source files found in the existing AOS archive are shown.</p>
+            </div>
+            <div class="download-list">
+              <a href="/assets/documents/orthocon-2025.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>ORTHOCON event brochure</strong><small>PDF · Archived event material</small></span>
+                <Icon name="download" size={20} />
+              </a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "conference-archive" && (
+          <section aria-labelledby="conference-material-heading">
+            <div class="content-heading">
+              <h2 id="conference-material-heading">Original conference material</h2>
+              <p>The brochure below is the original PDF linked from the previous website.</p>
+            </div>
+            <div class="download-list">
+              <a href="/assets/documents/orthocon-2025.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>50th UP Golden Jubilee ORTHOCON brochure</strong><small>PDF · February 2026 conference</small></span>
+                <Icon name="download" size={20} />
+              </a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "notices" && (
+          <section aria-labelledby="notices-heading">
+            <div class="content-heading">
+              <h2 id="notices-heading">Current notices</h2>
+              <p>Dates are ordered by the event date.</p>
+            </div>
+            <div class="notice-list notice-list--interior">
+              <a href="/upcoming-events/#osteoporosis-sarcopenia">
+                <time datetime="2026-07-11">11 Jul</time>
+                <span><strong>Osteoporosis & Sarcopenia Symposium</strong><small>Academic programme</small></span>
+                <Icon name="arrow-right" size={18} />
+              </a>
+              <a href="/upcoming-events/#pg-paper-presentation">
+                <time datetime="2026-07-16">16 Jul</time>
+                <span><strong>Inter-College PG Paper Presentation</strong><small>Academic invitation</small></span>
+                <Icon name="arrow-right" size={18} />
+              </a>
+              <a href="/upcoming-events/#executive-meeting">
+                <time datetime="2026-07-18">18 Jul</time>
+                <span><strong>Extended Executive Meeting</strong><small>Executive notice</small></span>
+                <Icon name="arrow-right" size={18} />
+              </a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.sections?.map((section) => (
+          <section class="prose-section">
+            <h2>{section.title}</h2>
+            {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((bullet) => {
+                  const rawUrl = bullet.match(/https?:\/\/\S+$/)?.[0];
+                  const label = rawUrl ? bullet.replace(` — ${rawUrl}`, "") : bullet;
+                  return (
+                    <li>
+                      <Icon name="check" size={17} />
+                      {rawUrl ? <a href={rawUrl} target="_blank" rel="noreferrer">{label} <Icon name="external" size={15} /></a> : label}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </section>
+        ))
+      }
+
+      {
+        page.slug === "aos-legacy" && (
+          <section class="archive-index" aria-labelledby="archive-index-heading">
+            <div class="content-heading">
+              <h2 id="archive-index-heading">Explore the society archive</h2>
+              <p>Verified records and clearly dated legacy material, kept separate from current society information.</p>
+            </div>
+            <div class="archive-index__links">
+              <a href="/past-leadership/"><span><strong>Past Presidents & Secretaries</strong><small>Leadership register</small></span><Icon name="arrow-right" size={18} /></a>
+              <a href="/executive-body/"><span><strong>Executive Body 2025–2026</strong><small>Previous-term roster</small></span><Icon name="arrow-right" size={18} /></a>
+              <a href="/president-message-2025-2026/"><span><strong>President’s Message 2025–2026</strong><small>Archived message</small></span><Icon name="arrow-right" size={18} /></a>
+              <a href="/ioacon-2013-archive/"><span><strong>IOACON 2013</strong><small>Conference archive</small></span><Icon name="arrow-right" size={18} /></a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.slug === "president-message" && (
+          <section class="archive-reference">
+            <div>
+              <p>Looking for the previous term?</p>
+              <h2>President’s Message 2025–2026</h2>
+            </div>
+            <a class="text-link" href="/president-message-2025-2026/">Read the archived message <Icon name="arrow-right" size={17} /></a>
+          </section>
+        )
+      }
+
+      {
+        page.slug === "executive-committee" && (
+          <section class="archive-reference">
+            <div>
+              <p>Previous-term record</p>
+              <h2>Executive Body 2025–2026</h2>
+            </div>
+            <a class="text-link" href="/executive-body/">View the archived roster <Icon name="arrow-right" size={17} /></a>
+          </section>
+        )
+      }
+    </article>
+
+    <aside class="interior__aside" aria-label="Related pages">
+      <div class="aside-panel">
+        <p>In this section</p>
+        <a class:list={[{ active: page.slug === groupNavigation?.href.replaceAll("/", "") }]} href={groupNavigation?.href ?? "/"}>
+          {page.group} overview
+        </a>
+        {groupNavigation?.items.map((item) => (
+          <a class:list={[{ active: canonicalPath === item.href }]} href={item.href}>{item.label}</a>
+        ))}
+      </div>
+      <div class="aside-contact">
+        <h2>Need help?</h2>
+        <p>Contact the AOS team for society, membership, or programme enquiries.</p>
+        <a class="text-link" href="/contact/">Contact AOS <Icon name="arrow-right" size={17} /></a>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>("[data-login-preview]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const message = form.querySelector<HTMLElement>("[data-login-message]");
+      if (!message) return;
+      message.hidden = false;
+      message.focus();
+    });
+  });
+</script>

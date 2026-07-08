@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Dr Atul Kulshreshtha",
+    "role": "President",
+    "image": "/assets/people/atul-kulshreshtha.jpg"
+  },
+  {
+    "name": "Dr Sanjay Chaturvedi",
+    "role": "Hon. General Secretary",
+    "image": "/assets/people/sanjay-chaturvedi.jpg"
+  },
+  {
+    "name": "Dr Sanjeev Vohra",
+    "role": "Treasurer",
+    "image": "/assets/people/sanjeev-vohra.jpg"
+  }
+]

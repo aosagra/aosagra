@@ -1,0 +1,92 @@
+[
+  {
+    "label": "Academics",
+    "href": "/academics/",
+    "items": [
+      { "label": "Academic Calendar", "href": "/academic-calendar/" },
+      { "label": "Monthly CME", "href": "/monthly-cme/" },
+      { "label": "Journal Club", "href": "/journal-club/" },
+      { "label": "Case Discussions", "href": "/case-discussions/" },
+      { "label": "PG Teaching Programme", "href": "/pg-teaching/" },
+      { "label": "Workshops & Skills Courses", "href": "/workshops/" },
+      { "label": "Lectures & Presentations", "href": "/presentations-lectures/" },
+      { "label": "Research & Publications", "href": "/research-publications/" }
+    ]
+  },
+  {
+    "label": "Events & CME",
+    "href": "/events-cme/",
+    "items": [
+      { "label": "Upcoming Events", "href": "/upcoming-events/" },
+      { "label": "Register for an Event", "href": "/register-for-event/" },
+      { "label": "Past Events", "href": "/past-events/" },
+      { "label": "Event Gallery", "href": "/event-gallery/" },
+      { "label": "CME Certificates", "href": "/cme-certificates/" },
+      { "label": "Academic Collaboration", "href": "/academic-collaboration/" }
+    ]
+  },
+  {
+    "label": "Membership",
+    "href": "/membership/",
+    "items": [
+      { "label": "Membership Overview", "href": "/membership/" },
+      { "label": "Categories", "href": "/membership-categories/" },
+      { "label": "Benefits", "href": "/membership-benefits/" },
+      { "label": "Apply for Membership", "href": "/apply-for-membership/" },
+      { "label": "Membership Enquiry", "href": "/membership-enquiry/" },
+      { "label": "Member Directory", "href": "/member-directory/" },
+      { "label": "Member Login", "href": "/member-login/" }
+    ]
+  },
+  {
+    "label": "AOS Connect",
+    "href": "/aos-connect/",
+    "items": [
+      { "label": "Latest Notices", "href": "/latest-notices/" },
+      { "label": "Circulars", "href": "/circulars/" },
+      { "label": "AOS News", "href": "/aos-news/" },
+      { "label": "Member Achievements", "href": "/member-achievements/" },
+      { "label": "Member Activities", "href": "/member-activities/" },
+      { "label": "Awards & Recognition", "href": "/awards-recognition/" },
+      { "label": "Photo Gallery", "href": "/gallery/" },
+      { "label": "Video Gallery", "href": "/video-gallery/" },
+      { "label": "Downloads", "href": "/downloads-notices/" },
+      { "label": "Useful Links", "href": "/useful-links/" }
+    ]
+  },
+  {
+    "label": "Public Awareness",
+    "href": "/public-awareness/",
+    "items": [
+      { "label": "Bone & Joint Health", "href": "/bone-joint-health/" },
+      { "label": "Osteoporosis", "href": "/osteoporosis/" },
+      { "label": "Knee Pain & Arthritis", "href": "/knee-pain-arthritis/" },
+      { "label": "Shoulder Problems", "href": "/shoulder-problems/" },
+      { "label": "Spine & Back Pain", "href": "/spine-back-pain/" },
+      { "label": "Sports Injuries", "href": "/sports-injuries/" },
+      { "label": "Fracture First Aid", "href": "/fracture-first-aid/" },
+      { "label": "Road Safety & Trauma Prevention", "href": "/road-safety-trauma-prevention/" },
+      { "label": "Senior Citizen Fall Prevention", "href": "/senior-fall-prevention/" },
+      { "label": "हिंदी स्वास्थ्य जागरूकता", "href": "/hindi-public-awareness/" }
+    ]
+  },
+  {
+    "label": "About AOS",
+    "href": "/about-aos/",
+    "items": [
+      { "label": "About the Society", "href": "/about-aos/" },
+      { "label": "Vision, Mission & Objectives", "href": "/vision-mission/" },
+      { "label": "Office Bearers", "href": "/office-bearers/" },
+      { "label": "Executive Committee", "href": "/executive-committee/" },
+      { "label": "Committees", "href": "/committees/" },
+      { "label": "President’s Message", "href": "/president-message/" },
+      { "label": "Secretary’s Message", "href": "/secretary-message/" },
+      { "label": "Legacy & Milestones", "href": "/aos-legacy/" },
+      { "label": "Past Presidents & Secretaries", "href": "/past-leadership/" },
+      { "label": "IOACON 2004 Archive", "href": "/ioacon-2004-archive/" },
+      { "label": "IOACON 2013 Archive", "href": "/ioacon-2013-archive/" },
+      { "label": "Constitution & Governance", "href": "/legal-status-governance/" },
+      { "label": "Contact AOS", "href": "/contact/" }
+    ]
+  }
+]

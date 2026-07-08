@@ -1,0 +1,213 @@
+---
+import Icon from "./Icon.astro";
+import { pages } from "../data/site";
+
+const searchItems = pages.map((page) => ({
+  title: page.title,
+  group: page.group,
+  summary: page.summary,
+  href: `/${page.slug}/`
+}));
+
+const popularSlugs = [
+  "upcoming-events",
+  "academic-calendar",
+  "membership",
+  "office-bearers",
+  "public-awareness",
+  "contact"
+];
+
+const initialItems = popularSlugs
+  .map((slug) => searchItems.find((item) => item.href === `/${slug}/`))
+  .filter((item) => item !== undefined);
+---
+
+<dialog class="site-search" data-search-dialog aria-labelledby="site-search-title">
+  <div class="search-panel">
+    <header class="search-panel__head">
+      <div>
+        <p>Find your way around AOS</p>
+        <h2 id="site-search-title">Search aosagra.com</h2>
+      </div>
+      <button class="search-panel__close" type="button" data-search-close>
+        <span class="sr-only">Close search</span>
+        <Icon name="close" size={23} />
+      </button>
+    </header>
+
+    <div class="search-field">
+      <Icon name="search" size={22} />
+      <label class="sr-only" for="site-search-input">Search by topic, programme, person, or page</label>
+      <input
+        id="site-search-input"
+        type="search"
+        inputmode="search"
+        autocomplete="off"
+        placeholder="Try “osteoporosis”, “PG teaching”, or “executive body”"
+        data-search-input
+      />
+      <button type="button" data-search-clear hidden>Clear</button>
+    </div>
+
+    <div class="search-panel__meta">
+      <p data-search-label>Frequently visited</p>
+      <p class="sr-only" aria-live="polite" data-search-status></p>
+    </div>
+
+    <div class="search-results" data-search-results></div>
+
+    <footer class="search-panel__foot">
+      <p>Search covers society pages, events, archives, membership, academics, and public-awareness topics.</p>
+    </footer>
+  </div>
+</dialog>
+
+<script is:inline define:vars={{ searchItems, initialItems }}>
+  const searchDialog = document.querySelector("[data-search-dialog]");
+  const searchInput = searchDialog?.querySelector("[data-search-input]");
+  const searchResults = searchDialog?.querySelector("[data-search-results]");
+  const searchStatus = searchDialog?.querySelector("[data-search-status]");
+  const searchLabel = searchDialog?.querySelector("[data-search-label]");
+  const clearButton = searchDialog?.querySelector("[data-search-clear]");
+  const closeButton = searchDialog?.querySelector("[data-search-close]");
+  const openButton = document.querySelector("[data-search-open]");
+
+  const normalise = (value) =>
+    value
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s&-]/g, " ");
+
+  const createResult = (item) => {
+    const link = document.createElement("a");
+    link.className = "search-result";
+    link.href = item.href;
+
+    const copy = document.createElement("span");
+    const group = document.createElement("small");
+    const title = document.createElement("strong");
+    const summary = document.createElement("p");
+    const arrow = document.createElement("span");
+
+    group.textContent = item.group;
+    title.textContent = item.title;
+    summary.textContent = item.summary;
+    arrow.className = "search-result__arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "→";
+
+    copy.append(group, title, summary);
+    link.append(copy, arrow);
+    return link;
+  };
+
+  const renderResults = (items, query = "") => {
+    if (!searchResults || !searchStatus || !searchLabel) return;
+    searchResults.replaceChildren();
+
+    if (!items.length) {
+      const empty = document.createElement("div");
+      const heading = document.createElement("h3");
+      const message = document.createElement("p");
+      const contact = document.createElement("a");
+
+      empty.className = "search-empty";
+      heading.textContent = "No matching page yet";
+      message.textContent = `We couldn’t find a result for “${query}”. Try a shorter phrase or ask the AOS team.`;
+      contact.href = "/contact/";
+      contact.textContent = "Contact AOS →";
+      empty.append(heading, message, contact);
+      searchResults.append(empty);
+      searchLabel.textContent = "No results";
+      searchStatus.textContent = `No results found for ${query}`;
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    items.forEach((item) => fragment.append(createResult(item)));
+    searchResults.append(fragment);
+
+    if (query) {
+      const noun = items.length === 1 ? "result" : "results";
+      searchLabel.textContent = `${items.length} ${noun}`;
+      searchStatus.textContent = `${items.length} ${noun} found for ${query}`;
+    } else {
+      searchLabel.textContent = "Frequently visited";
+      searchStatus.textContent = "Frequently visited pages shown";
+    }
+  };
+
+  const search = (query) => {
+    const cleanQuery = normalise(query).trim();
+    clearButton.hidden = !cleanQuery;
+
+    if (!cleanQuery) {
+      renderResults(initialItems);
+      return;
+    }
+
+    const tokens = cleanQuery.split(/\s+/).filter(Boolean);
+    const matches = searchItems
+      .map((item) => {
+        const title = normalise(item.title);
+        const group = normalise(item.group);
+        const summary = normalise(item.summary);
+        const combined = `${title} ${group} ${summary}`;
+
+        if (!tokens.every((token) => combined.includes(token))) return null;
+
+        let score = 0;
+        if (title === cleanQuery) score += 30;
+        if (title.startsWith(cleanQuery)) score += 18;
+        if (title.includes(cleanQuery)) score += 12;
+        if (group.includes(cleanQuery)) score += 6;
+        tokens.forEach((token) => {
+          if (title.includes(token)) score += 4;
+          if (group.includes(token)) score += 2;
+        });
+
+        return { item, score };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title))
+      .slice(0, 8)
+      .map(({ item }) => item);
+
+    renderResults(matches, query.trim());
+  };
+
+  openButton?.addEventListener("click", () => {
+    if (!(searchDialog instanceof HTMLDialogElement)) return;
+    renderResults(initialItems);
+    searchDialog.showModal();
+    requestAnimationFrame(() => searchInput?.focus());
+  });
+
+  closeButton?.addEventListener("click", () => searchDialog?.close());
+
+  clearButton?.addEventListener("click", () => {
+    searchInput.value = "";
+    search("");
+    searchInput.focus();
+  });
+
+  searchInput?.addEventListener("input", () => search(searchInput.value));
+
+  searchDialog?.addEventListener("click", (event) => {
+    if (event.target === searchDialog) searchDialog.close();
+  });
+
+  searchDialog?.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    event.preventDefault();
+    searchDialog.close();
+  });
+
+  searchDialog?.addEventListener("close", () => {
+    searchInput.value = "";
+    clearButton.hidden = true;
+    openButton?.focus();
+  });
+</script>

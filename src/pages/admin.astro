@@ -1,0 +1,827 @@
+---
+import "@fontsource-variable/overpass/index.css";
+import "@fontsource-variable/source-serif-4/index.css";
+
+const fallbackTypes = [
+  { id: "home", label: "Homepage", description: "Hero, homepage doors, and homepage photo-story copy." },
+  { id: "gallery", label: "Gallery", description: "Recent gallery photos, captions, featured status, and ordering." },
+  { id: "events", label: "Upcoming events", description: "Current upcoming programmes shown across the site." },
+  { id: "leaders", label: "Leadership", description: "Current leadership cards and portraits." },
+  { id: "pages", label: "Editable pages", description: "Selected page titles, summaries, and section copy." }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#083c50" />
+    <title>AOS Admin · aosagra.com</title>
+  </head>
+  <body>
+    <main class="admin-shell">
+      <section class="admin-hero" aria-labelledby="admin-title">
+        <div class="brand-plaque">
+          <img src="/assets/brand/aos-mark.png" width="92" height="61" alt="" aria-hidden="true" />
+          <span>
+            <strong>AOS Admin</strong>
+            <small>aosagra.com</small>
+          </span>
+        </div>
+        <div>
+          <p>Static-site control room</p>
+          <h1 id="admin-title">Update the society website without touching WordPress.</h1>
+          <span>Edits are saved to the site repository and published by Netlify after the next deploy.</span>
+        </div>
+      </section>
+
+      <section class="admin-card login-card" id="login-panel">
+        <div>
+          <p class="admin-kicker">Private access</p>
+          <h2>Sign in to edit content.</h2>
+          <p>Use the credentials stored in Netlify environment variables.</p>
+        </div>
+        <form id="login-form" class="login-form">
+          <label>
+            <span>Username</span>
+            <input name="username" autocomplete="username" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="admin-button admin-button--primary" type="submit">Sign in</button>
+        </form>
+      </section>
+
+      <section class="admin-workspace" id="workspace" hidden>
+        <aside class="admin-rail" aria-label="Admin tools">
+          <div class="admin-card">
+            <div class="rail-head">
+              <div>
+                <p class="admin-kicker">Content</p>
+                <h2>Edit JSON</h2>
+              </div>
+              <button class="ghost-button" id="logout-button" type="button">Logout</button>
+            </div>
+            <div class="type-list" id="type-list"></div>
+          </div>
+
+          <form class="admin-card upload-card" id="upload-form">
+            <div>
+              <p class="admin-kicker">Recent gallery</p>
+              <h2>Quick photo upload</h2>
+              <p>Add a photograph and place it into the gallery list.</p>
+            </div>
+            <label>
+              <span>Image</span>
+              <input name="image" type="file" accept="image/png,image/jpeg,image/webp,image/gif" required />
+            </label>
+            <label>
+              <span>Caption</span>
+              <input name="caption" placeholder="Learning in company" />
+            </label>
+            <label>
+              <span>Alt text</span>
+              <input name="alt" placeholder="AOS members at an academic gathering" />
+            </label>
+            <label class="check-row">
+              <input name="featured" type="checkbox" />
+              <span>Feature on homepage</span>
+            </label>
+            <button class="admin-button" type="submit">Upload to gallery</button>
+          </form>
+        </aside>
+
+        <section class="admin-card editor-card" aria-labelledby="editor-title">
+          <div class="editor-head">
+            <div>
+              <p class="admin-kicker" id="editor-kicker">Editor</p>
+              <h2 id="editor-title">Homepage</h2>
+              <p id="editor-description">Choose a content area to begin.</p>
+            </div>
+            <div class="editor-actions">
+              <button class="ghost-button" id="format-button" type="button">Format</button>
+              <button class="admin-button admin-button--primary" id="save-button" type="button">Save changes</button>
+            </div>
+          </div>
+          <textarea id="json-editor" spellcheck="false" aria-label="JSON content editor"></textarea>
+          <div class="editor-note">
+            <strong>Small rule:</strong>
+            keep image paths as site paths like <code>/assets/gallery/aos-activity-01.jpg</code> or uploaded paths from this panel.
+          </div>
+        </section>
+      </section>
+
+      <div class="status-toast" id="status" role="status" aria-live="polite"></div>
+    </main>
+
+    <script is:inline type="application/json" id="fallback-types" set:html={JSON.stringify(fallbackTypes)} />
+    <script is:inline>
+      const fallbackTypes = JSON.parse(document.getElementById("fallback-types").textContent);
+      const state = {
+        types: fallbackTypes,
+        selectedType: "home",
+        busy: false
+      };
+
+      const loginPanel = document.getElementById("login-panel");
+      const workspace = document.getElementById("workspace");
+      const loginForm = document.getElementById("login-form");
+      const uploadForm = document.getElementById("upload-form");
+      const typeList = document.getElementById("type-list");
+      const editor = document.getElementById("json-editor");
+      const editorTitle = document.getElementById("editor-title");
+      const editorDescription = document.getElementById("editor-description");
+      const statusToast = document.getElementById("status");
+      const saveButton = document.getElementById("save-button");
+      const formatButton = document.getElementById("format-button");
+      const logoutButton = document.getElementById("logout-button");
+
+      function showStatus(message, tone = "neutral") {
+        statusToast.textContent = message;
+        statusToast.dataset.tone = tone;
+        statusToast.classList.add("is-visible");
+        window.clearTimeout(showStatus.timer);
+        showStatus.timer = window.setTimeout(() => statusToast.classList.remove("is-visible"), 5200);
+      }
+
+      function errorMessage(error) {
+        const missing = error.details?.missing?.join(", ");
+        return missing ? `${error.message} Missing: ${missing}` : error.message;
+      }
+
+      async function api(path, options = {}) {
+        const response = await fetch(path, {
+          credentials: "same-origin",
+          ...options,
+          headers: {
+            "content-type": "application/json",
+            ...(options.headers ?? {})
+          }
+        });
+
+        let body;
+
+        try {
+          body = await response.json();
+        } catch {
+          body = { error: "The admin API did not return JSON. On Netlify, check that functions are deployed." };
+        }
+
+        if (!response.ok) {
+          const error = new Error(body.error ?? "Request failed.");
+          error.status = response.status;
+          error.details = body.details;
+          throw error;
+        }
+
+        return body;
+      }
+
+      function renderTypes() {
+        typeList.innerHTML = "";
+
+        state.types.forEach((type) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "type-button";
+          button.dataset.type = type.id;
+          button.setAttribute("aria-pressed", String(type.id === state.selectedType));
+          button.innerHTML = `<strong>${type.label}</strong><span>${type.description}</span>`;
+          button.addEventListener("click", () => loadType(type.id));
+          typeList.append(button);
+        });
+      }
+
+      function setActiveType(typeId) {
+        state.selectedType = typeId;
+        document.querySelectorAll(".type-button").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.type === typeId));
+        });
+      }
+
+      function readFileAsDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(new Error("Could not read the selected image."));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      async function loadType(typeId = state.selectedType) {
+        setActiveType(typeId);
+        editor.value = "Loading…";
+
+        try {
+          const result = await api(`/.netlify/functions/admin-content?type=${encodeURIComponent(typeId)}`);
+          editorTitle.textContent = result.label;
+          editorDescription.textContent = result.description;
+          editor.value = JSON.stringify(result.value, null, 2);
+          showStatus(`${result.label} loaded.`, "success");
+        } catch (error) {
+          editor.value = "";
+          showStatus(errorMessage(error), "danger");
+        }
+      }
+
+      async function bootstrap() {
+        renderTypes();
+
+        try {
+          const result = await api("/.netlify/functions/admin-content");
+          state.types = result.types ?? fallbackTypes;
+          loginPanel.hidden = true;
+          workspace.hidden = false;
+          renderTypes();
+          await loadType(state.selectedType);
+        } catch (error) {
+          loginPanel.hidden = false;
+          workspace.hidden = true;
+
+          if (error.status && error.status !== 401) {
+            showStatus(errorMessage(error), "danger");
+          }
+        }
+      }
+
+      loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const form = new FormData(loginForm);
+
+        try {
+          await api("/.netlify/functions/admin-login", {
+            method: "POST",
+            body: JSON.stringify({
+              username: form.get("username"),
+              password: form.get("password")
+            })
+          });
+          loginForm.reset();
+          await bootstrap();
+          showStatus("Signed in. Welcome to the control room.", "success");
+        } catch (error) {
+          showStatus(errorMessage(error), "danger");
+        }
+      });
+
+      saveButton.addEventListener("click", async () => {
+        let value;
+
+        try {
+          value = JSON.parse(editor.value);
+        } catch {
+          showStatus("The editor contains invalid JSON. Use Format to locate obvious structure issues.", "danger");
+          return;
+        }
+
+        try {
+          const result = await api("/.netlify/functions/admin-content", {
+            method: "POST",
+            body: JSON.stringify({
+              type: state.selectedType,
+              value
+            })
+          });
+          showStatus(`${result.label} saved. Netlify will publish after the deploy finishes.`, "success");
+        } catch (error) {
+          showStatus(errorMessage(error), "danger");
+        }
+      });
+
+      formatButton.addEventListener("click", () => {
+        try {
+          editor.value = JSON.stringify(JSON.parse(editor.value), null, 2);
+          showStatus("JSON formatted.", "success");
+        } catch {
+          showStatus("Cannot format yet — the JSON has a syntax issue.", "danger");
+        }
+      });
+
+      uploadForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const form = new FormData(uploadForm);
+        const file = form.get("image");
+
+        if (!file || !file.size) {
+          showStatus("Choose an image first.", "danger");
+          return;
+        }
+
+        try {
+          const dataUrl = await readFileAsDataUrl(file);
+          const result = await api("/.netlify/functions/admin-upload", {
+            method: "POST",
+            body: JSON.stringify({
+              filename: file.name,
+              dataUrl,
+              caption: form.get("caption") || "AOS activity",
+              alt: form.get("alt") || "Agra Orthopaedic Society activity photograph",
+              featured: Boolean(form.get("featured"))
+            })
+          });
+
+          uploadForm.reset();
+          showStatus(`Uploaded ${result.src} and added it to the gallery.`, "success");
+
+          if (state.selectedType === "gallery" && result.gallery) {
+            editor.value = JSON.stringify(result.gallery, null, 2);
+          }
+        } catch (error) {
+          showStatus(errorMessage(error), "danger");
+        }
+      });
+
+      logoutButton.addEventListener("click", async () => {
+        try {
+          await api("/.netlify/functions/admin-logout", { method: "POST" });
+        } finally {
+          workspace.hidden = true;
+          loginPanel.hidden = false;
+          showStatus("Signed out.", "success");
+        }
+      });
+
+      bootstrap();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --admin-navy: #083c50;
+    --admin-deep: #052936;
+    --admin-blue: #0a5672;
+    --admin-cream: #f5f1e8;
+    --admin-paper: #fffdf8;
+    --admin-line: #d7e0e1;
+    --admin-gold: #be963f;
+    --admin-ink: #14242c;
+    --admin-muted: #5d6e76;
+    --admin-danger: #9d2c2c;
+    --admin-success: #246b54;
+    --font-body: "Overpass Variable", "Overpass", system-ui, sans-serif;
+    --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background:
+      radial-gradient(circle at top left, rgb(190 150 63 / 0.16), transparent 28rem),
+      linear-gradient(135deg, #f9fbfb, var(--admin-cream));
+    color: var(--admin-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  button,
+  input,
+  textarea {
+    color: inherit;
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .admin-shell {
+    width: min(100% - 34px, 1380px);
+    margin-inline: auto;
+    padding-block: 28px;
+  }
+
+  .admin-hero {
+    position: relative;
+    min-height: 310px;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr);
+    align-items: end;
+    gap: clamp(24px, 6vw, 90px);
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 58px);
+    border-radius: 22px;
+    background:
+      linear-gradient(135deg, rgb(5 41 54 / 0.94), rgb(8 60 80 / 0.9)),
+      url("/assets/installation.jpg") center / cover;
+    color: white;
+  }
+
+  .admin-hero::after {
+    content: "";
+    position: absolute;
+    right: -150px;
+    bottom: -210px;
+    width: 620px;
+    aspect-ratio: 1.291 / 1;
+    background: white;
+    mask: url("/assets/taj-mahal.svg") center / contain no-repeat;
+    -webkit-mask: url("/assets/taj-mahal.svg") center / contain no-repeat;
+    opacity: 0.08;
+  }
+
+  .admin-hero > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-plaque {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 11px 13px;
+    border: 1px solid rgb(255 255 255 / 0.22);
+    border-radius: 14px;
+    background: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(14px);
+  }
+
+  .brand-plaque img {
+    width: 70px;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .brand-plaque strong,
+  .brand-plaque small {
+    display: block;
+  }
+
+  .brand-plaque strong {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .brand-plaque small {
+    margin-top: 3px;
+    color: rgb(255 255 255 / 0.72);
+    font-size: 0.78rem;
+  }
+
+  .admin-hero p,
+  .admin-kicker {
+    margin: 0;
+    color: var(--admin-gold);
+    font-size: 0.78rem;
+    font-weight: 820;
+    letter-spacing: 0.05em;
+  }
+
+  .admin-hero h1 {
+    max-width: 820px;
+    margin: 12px 0 0;
+    color: white;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 6vw, 5.8rem);
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+  }
+
+  .admin-hero span {
+    display: block;
+    max-width: 680px;
+    margin-top: 18px;
+    color: rgb(255 255 255 / 0.74);
+    line-height: 1.65;
+  }
+
+  .admin-card {
+    border: 1px solid var(--admin-line);
+    border-radius: 18px;
+    background: rgb(255 255 255 / 0.86);
+    box-shadow: 0 18px 44px rgb(8 60 80 / 0.08);
+  }
+
+  .login-card {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+    gap: 26px;
+    margin: -46px auto 0;
+    padding: clamp(24px, 4vw, 38px);
+    position: relative;
+    z-index: 2;
+  }
+
+  .admin-card h2 {
+    margin: 8px 0 0;
+    color: var(--admin-navy);
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+
+  .admin-card p:not(.admin-kicker) {
+    margin: 10px 0 0;
+    color: var(--admin-muted);
+    line-height: 1.6;
+  }
+
+  .login-form,
+  .upload-card {
+    display: grid;
+    gap: 13px;
+  }
+
+  label {
+    display: grid;
+    gap: 7px;
+    color: var(--admin-muted);
+    font-size: 0.82rem;
+    font-weight: 760;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--admin-line);
+    border-radius: 12px;
+    background: white;
+    outline: none;
+  }
+
+  input {
+    min-height: 46px;
+    padding: 10px 12px;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--admin-gold);
+    box-shadow: 0 0 0 4px rgb(190 150 63 / 0.16);
+  }
+
+  .admin-workspace {
+    display: grid;
+    grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .admin-rail {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+  }
+
+  .admin-rail .admin-card,
+  .editor-card {
+    padding: clamp(18px, 3vw, 26px);
+  }
+
+  .rail-head,
+  .editor-head,
+  .editor-actions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .editor-actions {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .type-list {
+    display: grid;
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .type-button {
+    display: grid;
+    gap: 4px;
+    padding: 13px;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    background: transparent;
+    text-align: left;
+  }
+
+  .type-button[aria-pressed="true"] {
+    border-color: rgb(190 150 63 / 0.46);
+    background: rgb(190 150 63 / 0.12);
+  }
+
+  .type-button strong {
+    color: var(--admin-navy);
+    font-size: 0.95rem;
+  }
+
+  .type-button span {
+    color: var(--admin-muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .admin-button,
+  .ghost-button {
+    min-height: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-weight: 820;
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease,
+      transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .admin-button {
+    border: 1px solid var(--admin-navy);
+    background: white;
+    color: var(--admin-navy);
+  }
+
+  .admin-button--primary {
+    border-color: var(--admin-gold);
+    background: var(--admin-gold);
+    color: var(--admin-deep);
+  }
+
+  .ghost-button {
+    border: 1px solid var(--admin-line);
+    background: white;
+    color: var(--admin-navy);
+  }
+
+  .upload-card {
+    padding: clamp(18px, 3vw, 24px);
+  }
+
+  .check-row {
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .check-row input {
+    width: 18px;
+    min-height: 18px;
+  }
+
+  .editor-card {
+    min-height: 760px;
+    display: grid;
+    grid-template-rows: auto minmax(520px, 1fr) auto;
+    gap: 18px;
+  }
+
+  #json-editor {
+    min-height: 520px;
+    resize: vertical;
+    padding: 18px;
+    background: #102b35;
+    color: #f2f7f7;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.91rem;
+    line-height: 1.62;
+    tab-size: 2;
+  }
+
+  .editor-note {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #eef4f6;
+    color: var(--admin-muted);
+    font-size: 0.86rem;
+  }
+
+  .editor-note strong {
+    color: var(--admin-navy);
+  }
+
+  code {
+    color: var(--admin-navy);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.84em;
+  }
+
+  .status-toast {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 10;
+    max-width: min(430px, calc(100% - 36px));
+    padding: 13px 15px;
+    border: 1px solid var(--admin-line);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 18px 45px rgb(8 60 80 / 0.18);
+    color: var(--admin-navy);
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition:
+      opacity 160ms ease,
+      transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .status-toast.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .status-toast[data-tone="success"] {
+    border-color: rgb(36 107 84 / 0.3);
+    color: var(--admin-success);
+  }
+
+  .status-toast[data-tone="danger"] {
+    border-color: rgb(157 44 44 / 0.3);
+    color: var(--admin-danger);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .admin-button:hover,
+    .ghost-button:hover,
+    .type-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .admin-button:not(.admin-button--primary):hover,
+    .ghost-button:hover {
+      border-color: var(--admin-gold);
+      background: rgb(190 150 63 / 0.08);
+    }
+
+    .admin-button--primary:hover {
+      background: #cba74f;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .admin-hero,
+    .login-card,
+    .admin-workspace {
+      grid-template-columns: 1fr;
+    }
+
+    .admin-hero {
+      align-items: start;
+      min-height: 360px;
+    }
+
+    .login-card {
+      margin-top: 18px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .admin-shell {
+      width: min(100% - 24px, 1380px);
+      padding-block: 16px;
+    }
+
+    .admin-hero {
+      min-height: 0;
+      padding: 24px;
+      border-radius: 18px;
+    }
+
+    .admin-hero h1 {
+      font-size: clamp(2.5rem, 15vw, 3.6rem);
+    }
+
+    .brand-plaque {
+      width: 100%;
+    }
+
+    .rail-head,
+    .editor-head {
+      flex-direction: column;
+    }
+
+    .editor-actions,
+    .editor-actions button {
+      width: 100%;
+    }
+
+    .editor-card {
+      min-height: 0;
+      grid-template-rows: auto minmax(420px, 1fr) auto;
+    }
+  }
+</style>

@@ -1,0 +1,9 @@
+{
+  "name": "Agra Orthopaedic Society",
+  "short_name": "AOS Agra",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#083c50",
+  "description": "The official digital home of the Agra Orthopaedic Society."
+}

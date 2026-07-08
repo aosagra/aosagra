@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import TajMotif from "../components/TajMotif.astro";
+import { events, galleryImages, home, leaders, organization } from "../data/site";
+
+const nextEvent = events[0];
+const featuredPhotos = galleryImages.filter((image) => image.featured).slice(0, 3);
+type PathwayIcon = "calendar" | "book" | "users" | "heart";
+const pathwayIconNames: PathwayIcon[] = ["calendar", "book", "users", "heart"];
+const isPathwayIcon = (value: string): value is PathwayIcon => pathwayIconNames.includes(value as PathwayIcon);
+const pathways = home.pathways.map((item, index) => ({
+  ...item,
+  icon: isPathwayIcon(item.icon) ? item.icon : (pathwayIconNames[index] ?? "calendar")
+}));
+---
+
+<BaseLayout>
+  <section class="home-hero">
+    <div class="shell home-hero__grid">
+      <div class="home-hero__copy">
+        <p class="home-hero__kicker">{home.hero.kicker}</p>
+        <h1>{home.hero.title}</h1>
+        <p class="home-hero__lead">{home.hero.lead}</p>
+        <div class="home-hero__actions">
+          <a class="button button--gold" href={home.hero.primaryCta.href}>{home.hero.primaryCta.label}</a>
+          <a class="button button--light" href={home.hero.secondaryCta.href}>{home.hero.secondaryCta.label}</a>
+        </div>
+      </div>
+      <figure class="home-hero__media">
+        <img src={home.hero.image} width="1280" height="853" alt={home.hero.imageAlt} fetchpriority="high" />
+        <figcaption>
+          <span>Rooted in Agra</span>
+          <strong>{organization.name}</strong>
+        </figcaption>
+      </figure>
+    </div>
+    <TajMotif tone="white" class="home-hero__taj" />
+  </section>
+
+  <section class="next-moment" aria-labelledby="next-moment-heading">
+    <div class="shell next-moment__grid">
+      <div>
+        <p class="section-context">Next at AOS</p>
+        <h2 id="next-moment-heading">{nextEvent.title}</h2>
+        <p>{nextEvent.description}</p>
+      </div>
+      <a class="next-moment__card" href={nextEvent.href}>
+        <time datetime={nextEvent.datetime}>
+          <strong>{nextEvent.date}</strong>
+          <span>{nextEvent.month} {nextEvent.year}</span>
+        </time>
+        <span>
+          <small>{nextEvent.meta}</small>
+          View programme <Icon name="arrow-right" size={17} />
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-pathways" aria-labelledby="pathways-heading">
+    <div class="shell home-pathways__inner">
+      <div class="home-pathways__intro">
+        <p class="section-context">Find your way</p>
+        <h2 id="pathways-heading">One society, four clear doors.</h2>
+      </div>
+      <div class="home-pathways__list">
+        {
+          pathways.map((item) => (
+            <a class="home-pathway" href={item.href}>
+              <span class="home-pathway__icon">
+                <Icon name={item.icon} size={22} />
+              </span>
+              <span>
+                <strong>{item.title}</strong>
+                <small>{item.copy}</small>
+              </span>
+              <Icon name="arrow-right" size={18} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="society-story" aria-labelledby="society-story-heading">
+    <div class="shell society-story__grid">
+      <div class="society-story__copy">
+        <p class="section-context">Life of the society</p>
+        <h2 id="society-story-heading">{home.photoStory.title}</h2>
+        <p>{home.photoStory.copy}</p>
+        <a class="text-link" href={home.photoStory.href}>Open the gallery <Icon name="arrow-right" size={18} /></a>
+      </div>
+      <div class="society-story__photos" aria-label="Featured AOS photographs">
+        {
+          featuredPhotos.map((image) => (
+            <figure>
+              <img src={image.src} width="897" height="598" alt={image.alt} loading="lazy" />
+              <figcaption>{image.caption}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="leadership-signal" aria-labelledby="leadership-signal-heading">
+    <div class="shell leadership-signal__grid">
+      <div>
+        <p class="section-context">Current leadership</p>
+        <h2 id="leadership-signal-heading">Steady hands, current work.</h2>
+        <p>
+          The new term keeps the society focused on academic continuity, professional fellowship, and public service.
+        </p>
+        <a class="text-link" href="/office-bearers/">View office bearers <Icon name="arrow-right" size={18} /></a>
+      </div>
+      <div class="leadership-strip">
+        {
+          leaders.map((leader) => (
+            <article>
+              <img src={leader.image} width="375" height="496" alt={leader.name} loading="lazy" />
+              <span>
+                <strong>{leader.name}</strong>
+                <small>{leader.role}</small>
+              </span>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="member-cta member-cta--home">
+    <div class="shell member-cta__inner">
+      <div>
+        <h2>Be part of the AOS community.</h2>
+        <p>Learn, contribute, and stay connected with orthopaedic colleagues across Agra.</p>
+      </div>
+      <a class="button button--gold" href="/apply-for-membership/">Begin membership enquiry</a>
+    </div>
+  </section>
+
+</BaseLayout>

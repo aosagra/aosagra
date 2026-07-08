@@ -1,0 +1,10 @@
+---
+interface Props {
+  tone?: "navy" | "white" | "gold";
+  class?: string;
+}
+
+const { tone = "white", class: className } = Astro.props;
+---
+
+<span class:list={["taj-motif", `taj-motif--${tone}`, className]} aria-hidden="true"></span>

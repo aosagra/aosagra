@@ -1,0 +1,179 @@
+---
+import BrandLockup from "./BrandLockup.astro";
+import Icon from "./Icon.astro";
+import SearchPanel from "./SearchPanel.astro";
+import { events, mainNavigation } from "../data/site";
+
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+const announcementDateFormat = new Intl.DateTimeFormat("en-IN", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC"
+});
+const announcementEvents = events.map((event) => ({
+  datetime: event.datetime,
+  dateLabel: announcementDateFormat.format(new Date(`${event.datetime}T00:00:00Z`)),
+  title: event.title,
+  href: event.href
+}));
+const announcementEventsJson = JSON.stringify(announcementEvents).replaceAll("<", "\\u003c");
+const initialAnnouncement = announcementEvents[0];
+---
+
+<header class="site-header">
+  <div class="announcement" data-announcement>
+    <div class="shell announcement__inner">
+      <p>
+        <time class="announcement__date" datetime={initialAnnouncement.datetime} data-announcement-date>
+          {initialAnnouncement.dateLabel}
+        </time>
+        <span data-announcement-title>{initialAnnouncement.title}</span>
+      </p>
+      <a href={initialAnnouncement.href} data-announcement-link>
+        View programme <Icon name="arrow-right" size={16} />
+      </a>
+    </div>
+  </div>
+
+  <div class="shell masthead">
+    <BrandLockup />
+    <div class="masthead__actions">
+      <button class="search-toggle" type="button" aria-label="Search aosagra.com" data-search-open>
+        <Icon name="search" size={22} />
+      </button>
+      <a class="button button--gold masthead__join" href="/apply-for-membership/">Join AOS</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        data-menu-toggle
+      >
+        <span class="sr-only">Open navigation</span>
+        <span class="menu-toggle__open"><Icon name="menu" size={24} /></span>
+        <span class="menu-toggle__close"><Icon name="close" size={24} /></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <div class="shell desktop-nav__inner">
+      <a class:list={["desktop-nav__home", { active: currentPath === "/" }]} href="/">Home</a>
+      {
+        mainNavigation.map((group) => (
+          <details class="nav-group">
+            <summary class:list={[{ active: isCurrent(group.href) || group.items.some((item) => isCurrent(item.href)) }]}>
+              {group.label}
+              <Icon name="chevron-down" size={15} />
+            </summary>
+            <div class="nav-popover">
+              <a class="nav-popover__overview" href={group.href}>
+                <span>{group.label} overview</span>
+                <Icon name="arrow-right" size={17} />
+              </a>
+              <div class="nav-popover__links">
+                {group.items.map((item) => (
+                  <a class:list={[{ active: isCurrent(item.href) }]} href={item.href}>{item.label}</a>
+                ))}
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </nav>
+
+  <nav id="mobile-navigation" class="mobile-nav" aria-label="Mobile navigation" hidden>
+    <div class="shell mobile-nav__inner">
+      <a class:list={[{ active: currentPath === "/" }]} href="/">Home</a>
+      {
+        mainNavigation.map((group) => (
+          <details>
+            <summary>
+              {group.label}
+              <Icon name="chevron-down" size={17} />
+            </summary>
+            <div>
+              <a class="mobile-nav__overview" href={group.href}>{group.label} overview</a>
+              {group.items.map((item) => <a href={item.href}>{item.label}</a>)}
+            </div>
+          </details>
+        ))
+      }
+      <a class="button button--gold mobile-nav__join" href="/apply-for-membership/">Join AOS</a>
+    </div>
+  </nav>
+</header>
+
+<SearchPanel />
+
+<script is:inline type="application/json" id="announcement-events" set:html={announcementEventsJson}></script>
+<script is:inline>
+  const announcement = document.querySelector("[data-announcement]");
+  const announcementDate = announcement?.querySelector("[data-announcement-date]");
+  const announcementTitle = announcement?.querySelector("[data-announcement-title]");
+  const announcementLink = announcement?.querySelector("[data-announcement-link]");
+  const announcementEvents = JSON.parse(document.querySelector("#announcement-events")?.textContent ?? "[]");
+  const now = new Date();
+  const localToday = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0")
+  ].join("-");
+  const nextAnnouncement = announcementEvents.find((event) => event.datetime >= localToday);
+
+  if (!nextAnnouncement) {
+    if (announcement instanceof HTMLElement) announcement.hidden = true;
+  } else {
+    if (announcementDate instanceof HTMLTimeElement) {
+      announcementDate.dateTime = nextAnnouncement.datetime;
+      announcementDate.textContent = nextAnnouncement.dateLabel;
+    }
+    if (announcementTitle) announcementTitle.textContent = nextAnnouncement.title;
+    if (announcementLink instanceof HTMLAnchorElement) announcementLink.href = nextAnnouncement.href;
+  }
+</script>
+
+<script>
+  const menuToggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const mobileNavigation = document.querySelector<HTMLElement>("#mobile-navigation");
+
+  const closeMobileMenu = () => {
+    if (!menuToggle || !mobileNavigation) return;
+    menuToggle.setAttribute("aria-expanded", "false");
+    mobileNavigation.hidden = true;
+    document.body.classList.remove("menu-open");
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    if (!mobileNavigation) return;
+    const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+    menuToggle.setAttribute("aria-expanded", String(willOpen));
+    mobileNavigation.hidden = !willOpen;
+    document.body.classList.toggle("menu-open", willOpen);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMobileMenu();
+  });
+
+  const desktopMenus = [...document.querySelectorAll<HTMLDetailsElement>(".nav-group")];
+  desktopMenus.forEach((menu) => {
+    menu.addEventListener("toggle", () => {
+      if (!menu.open) return;
+      desktopMenus.forEach((otherMenu) => {
+        if (otherMenu !== menu) otherMenu.open = false;
+      });
+    });
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+    desktopMenus.forEach((menu) => {
+      if (!menu.contains(target)) menu.open = false;
+    });
+  });
+</script>

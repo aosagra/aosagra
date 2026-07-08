@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+import { events } from "../data/site";
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<div class:list={["event-list", { "event-list--compact": compact }]}>
+  {
+    events.map((event) => (
+      <article class="event-row" id={event.href.split("#")[1]}>
+        <time datetime={event.datetime} class="event-date">
+          <strong>{event.date}</strong>
+          <span>{event.month} {event.year}</span>
+        </time>
+        <div class="event-row__content">
+          <h3>{event.title}</h3>
+          <p>{event.description}</p>
+          <span class="event-row__meta"><Icon name="map-pin" size={16} /> {event.meta}</span>
+        </div>
+        <a class="text-link" href="/register-for-event/">
+          Register interest <Icon name="arrow-right" size={17} />
+        </a>
+      </article>
+    ))
+  }
+</div>
