@@ -1,10 +1,19 @@
 ---
 import Icon from "./Icon.astro";
-import { pages } from "../data/site";
+import { publicPages } from "../data/site";
 
-const searchItems = pages.map((page) => ({
+const publicGroupLabels: Record<string, string> = {
+  "About AOS": "Society",
+  Academics: "Learning",
+  "Events & CME": "Events",
+  Membership: "Membership",
+  "Public Awareness": "Public",
+  "AOS Connect": "Learning"
+};
+
+const searchItems = publicPages.map((page) => ({
   title: page.title,
-  group: page.group,
+  group: publicGroupLabels[page.group] ?? page.group,
   summary: page.summary,
   href: `/${page.slug}/`
 }));
@@ -44,7 +53,7 @@ const initialItems = popularSlugs
         type="search"
         inputmode="search"
         autocomplete="off"
-        placeholder="Try “osteoporosis”, “PG teaching”, or “executive body”"
+        placeholder="Try “calendar”, “membership”, or “legacy”"
         data-search-input
       />
       <button type="button" data-search-clear hidden>Clear</button>
@@ -58,7 +67,7 @@ const initialItems = popularSlugs
     <div class="search-results" data-search-results></div>
 
     <footer class="search-panel__foot">
-      <p>Search covers society pages, events, archives, membership, academics, and public-awareness topics.</p>
+      <p>Search covers published society pages, events, membership, learning, and public guidance.</p>
     </footer>
   </div>
 </dialog>

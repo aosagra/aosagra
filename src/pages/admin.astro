@@ -110,7 +110,7 @@ const fallbackTypes = [
           <textarea id="json-editor" spellcheck="false" aria-label="JSON content editor"></textarea>
           <div class="editor-note">
             <strong>Small rule:</strong>
-            keep image paths as site paths like <code>/assets/gallery/aos-activity-01.jpg</code> or uploaded paths from this panel.
+            keep image paths as site paths like <code>/assets/optimized/gallery/aos-activity-01.webp</code> or uploaded paths from this panel.
           </div>
         </section>
       </section>
@@ -415,7 +415,7 @@ const fallbackTypes = [
     border-radius: 22px;
     background:
       linear-gradient(135deg, rgb(5 41 54 / 0.94), rgb(8 60 80 / 0.9)),
-      url("/assets/installation.jpg") center / cover;
+      url("/assets/optimized/installation-1280.webp") center / cover;
     color: white;
   }
 
@@ -488,7 +488,7 @@ const fallbackTypes = [
     font-family: var(--font-display);
     font-size: clamp(2.7rem, 6vw, 5.8rem);
     font-weight: 650;
-    letter-spacing: -0.055em;
+    letter-spacing: -0.03em;
     line-height: 0.96;
   }
 
@@ -802,7 +802,9 @@ const fallbackTypes = [
     }
 
     .admin-hero h1 {
-      font-size: clamp(2.5rem, 15vw, 3.6rem);
+      font-size: clamp(2rem, 10.5vw, 3rem);
+      letter-spacing: -0.025em;
+      line-height: 1.04;
     }
 
     .brand-plaque {

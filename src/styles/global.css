@@ -289,33 +289,10 @@ p {
 .brand-lockup {
   min-width: 0;
   display: grid;
-  grid-template-columns: auto 88px minmax(0, 1fr);
+  grid-template-columns: 88px minmax(0, 1fr);
   align-items: center;
   gap: 12px;
   color: var(--navy);
-}
-
-.affiliation-marks {
-  align-self: start;
-  display: flex;
-  align-items: flex-start;
-  gap: 5px;
-  padding-top: 3px;
-}
-
-.affiliation-marks img {
-  object-fit: contain;
-  filter: saturate(0.95);
-}
-
-.affiliation-marks img:first-child {
-  width: 34px;
-  height: 47px;
-}
-
-.affiliation-marks img:last-child {
-  width: 30px;
-  height: 34px;
 }
 
 .aos-mark {
@@ -360,10 +337,6 @@ p {
 
 .brand-lockup.compact {
   grid-template-columns: 70px minmax(0, 1fr);
-}
-
-.brand-lockup.compact .affiliation-marks {
-  display: none;
 }
 
 .masthead__join {
@@ -1289,7 +1262,7 @@ p {
 .feature-panel__date span {
   font-family: var(--font-display);
   font-size: 4.8rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 }
 
 .feature-panel__date strong {
@@ -1580,7 +1553,7 @@ p {
 
 .site-footer__brand .brand-lockup {
   max-width: 430px;
-  grid-template-columns: auto 76px minmax(0, 1fr);
+  grid-template-columns: 76px minmax(0, 1fr);
 }
 
 .site-footer__brand .aos-mark {
@@ -1626,6 +1599,52 @@ p {
   flex: 0 0 auto;
   margin-top: 2px;
   color: #e4c36e;
+}
+
+.site-footer__affiliations {
+  min-height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding-block: 20px;
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.site-footer__affiliations > div:first-child p {
+  color: var(--white);
+  font-size: 0.76rem;
+  font-weight: 780;
+  letter-spacing: 0.03em;
+}
+
+.site-footer__affiliations > div:first-child span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.72rem;
+}
+
+.site-footer__affiliation-marks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-footer__affiliation-marks img {
+  width: auto;
+  height: 44px;
+  object-fit: contain;
+}
+
+.site-footer__affiliation-marks img:first-child {
+  height: 52px;
+}
+
+.site-footer__affiliation-marks span {
+  margin-left: 5px;
+  color: rgb(255 255 255 / 0.82);
+  font-size: 0.75rem;
+  font-weight: 680;
 }
 
 .site-footer__base {
@@ -2183,6 +2202,21 @@ p {
   font-weight: 680;
 }
 
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 54px);
+  border-block: 1px solid var(--line);
+}
+
+.contact-direct__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
 .form-panel {
   padding: 28px;
   border: 1px solid var(--line);
@@ -2500,8 +2534,8 @@ p {
   max-width: 720px;
   margin-top: 22px;
   color: var(--white);
-  font-size: clamp(3.45rem, 6.4vw, 6.35rem);
-  letter-spacing: -0.055em;
+  font-size: clamp(3.45rem, 6.4vw, 5.8rem);
+  letter-spacing: -0.035em;
   line-height: 0.94;
 }
 
@@ -2646,7 +2680,7 @@ p {
   font-family: var(--font-display);
   font-size: clamp(4.6rem, 8vw, 6rem);
   font-weight: 680;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.035em;
   line-height: 0.8;
 }
 
@@ -2678,7 +2712,24 @@ p {
 }
 
 .home-pathways {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-block: clamp(82px, 9vw, 128px);
+}
+
+.home-pathways::before {
+  content: "";
+  position: absolute;
+  left: max(-170px, -9vw);
+  top: 34px;
+  z-index: -1;
+  width: min(48vw, 540px);
+  aspect-ratio: 1.29;
+  background: var(--blue-soft);
+  -webkit-mask: url("/assets/taj-mahal.svg") center / contain no-repeat;
+  mask: url("/assets/taj-mahal.svg") center / contain no-repeat;
+  opacity: 0.7;
 }
 
 .home-pathways__inner {
@@ -2695,23 +2746,26 @@ p {
 
 .home-pathways__list {
   display: grid;
-  gap: 10px;
+  gap: 0;
 }
 
 .home-pathway {
-  min-height: 104px;
+  min-height: 98px;
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr) auto;
   align-items: center;
   gap: 17px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: #fbfdfd;
+  padding: 19px 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
   transition:
     background-color 160ms ease,
     border-color 160ms ease,
     transform 140ms var(--ease-out);
+}
+
+.home-pathway:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
 .home-pathway__icon {
@@ -2719,7 +2773,7 @@ p {
   height: 54px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: var(--radius-sm);
   background: var(--blue-soft);
   color: var(--blue-strong);
 }
@@ -3052,7 +3106,10 @@ p {
 
 @media (max-width: 960px) {
   .masthead {
+    position: relative;
+    z-index: calc(var(--z-sticky) + 1);
     min-height: 96px;
+    background: var(--white);
   }
 
   .masthead__join,
@@ -3181,9 +3238,9 @@ p {
 
   .brand-lockup {
     flex: 1 1 auto;
-    grid-template-columns: auto 54px minmax(0, 1fr);
+    grid-template-columns: 54px minmax(0, 1fr);
     gap: 7px;
-    max-width: calc(100% - 58px);
+    max-width: calc(100% - 108px);
   }
 
   .masthead__actions {
@@ -3195,21 +3252,11 @@ p {
   }
 
   .search-toggle {
-    display: none;
+    display: grid;
   }
 
   [data-announcement-title] {
     display: none;
-  }
-
-  .affiliation-marks img:first-child {
-    width: 31px;
-    height: 42px;
-  }
-
-  .affiliation-marks img:last-child {
-    width: 27px;
-    height: 30px;
   }
 
   .aos-mark {
@@ -3514,17 +3561,7 @@ p {
   }
 
   .brand-lockup {
-    grid-template-columns: auto 51px minmax(0, 1fr);
-  }
-
-  .affiliation-marks img:first-child {
-    width: 27px;
-    height: 38px;
-  }
-
-  .affiliation-marks img:last-child {
-    width: 23px;
-    height: 27px;
+    grid-template-columns: 51px minmax(0, 1fr);
   }
 
   .aos-mark {
@@ -3542,7 +3579,9 @@ p {
   }
 
   .search-toggle {
-    display: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
   }
 
   .masthead__actions {
@@ -3698,11 +3737,20 @@ p {
   }
 
   .site-footer__brand .brand-lockup {
-    grid-template-columns: auto 58px minmax(0, 1fr);
+    grid-template-columns: 58px minmax(0, 1fr);
   }
 
   .site-footer__brand .aos-mark {
     width: 58px;
+  }
+
+  .site-footer__affiliations {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-footer__affiliation-marks {
+    flex-wrap: wrap;
   }
 
   .page-intro h1 {

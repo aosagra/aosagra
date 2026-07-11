@@ -6,9 +6,16 @@ The website is the formal digital home of the Agra Orthopaedic Society: academic
 
 ## Identity
 
-- The AOS Agra mark is primary. The IOA and Indian Orthopaedic Association seals are supporting affiliations and remain smaller at the upper-left of the lockup.
-- The Taj Mahal silhouette is the distinctive local motif. It appears quietly in the hero and legacy moments, never as decorative wallpaper.
+- The AOS Agra mark and wordmark are the sole header identity. Supporting IOA seals belong only in the footer “Affiliations” strip and must remain visually secondary.
+- The Taj Mahal silhouette is the distinctive local motif. Use its arch, crop, and alignment language as a quiet structural device in heroes, section transitions, and legacy moments—never as decorative wallpaper or a literal Taj-plus-bone logo.
 - Use real AOS photographs. Do not introduce stock medical imagery.
+
+## Information architecture
+
+- Public navigation has five MECE groups: Society, Learning, Events, Membership, and Public.
+- Only verified, ready pages belong in public navigation, search, sitemap, and static output.
+- Draft, login, and mock-form content can remain editable in source but stays unpublished until its underlying service is real.
+- Prefer one clear action per section. Membership and event enquiries use the membership overview or direct society contact until secure forms are connected.
 
 ## Colour
 

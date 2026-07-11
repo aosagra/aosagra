@@ -7,7 +7,7 @@ import { events, galleryImages, home, leaders, organization } from "../data/site
 const nextEvent = events[0];
 const featuredPhotos = galleryImages.filter((image) => image.featured).slice(0, 3);
 type PathwayIcon = "calendar" | "book" | "users" | "heart";
-const pathwayIconNames: PathwayIcon[] = ["calendar", "book", "users", "heart"];
+const pathwayIconNames: PathwayIcon[] = ["book", "calendar", "users", "heart"];
 const isPathwayIcon = (value: string): value is PathwayIcon => pathwayIconNames.includes(value as PathwayIcon);
 const pathways = home.pathways.map((item, index) => ({
   ...item,
@@ -136,7 +136,7 @@ const pathways = home.pathways.map((item, index) => ({
         <h2>Be part of the AOS community.</h2>
         <p>Learn, contribute, and stay connected with orthopaedic colleagues across Agra.</p>
       </div>
-      <a class="button button--gold" href="/apply-for-membership/">Begin membership enquiry</a>
+      <a class="button button--gold" href="/membership/">View membership pathway</a>
     </div>
   </section>
 

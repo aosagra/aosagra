@@ -5,12 +5,12 @@
     "lead": "AOS Agra brings orthopaedic surgeons, teachers, trainees, and the community together through education, ethics, and service.",
     "primaryCta": { "label": "See what is next", "href": "/upcoming-events/" },
     "secondaryCta": { "label": "Know the society", "href": "/about-aos/" },
-    "image": "/assets/installation.jpg",
+    "image": "/assets/optimized/installation-1280.webp",
     "imageAlt": "Agra Orthopaedic Society leadership and members at the installation ceremony"
   },
   "pathways": [
-    { "icon": "calendar", "title": "Academic calendar", "href": "/academic-calendar/", "copy": "Dates, CMEs, meetings, and teaching activity." },
-    { "icon": "book", "title": "PG teaching", "href": "/pg-teaching/", "copy": "Structured opportunities for residents and trainees." },
+    { "icon": "book", "title": "Learning", "href": "/academics/", "copy": "Academic dates, notices, teaching, and shared knowledge." },
+    { "icon": "calendar", "title": "Events", "href": "/upcoming-events/", "copy": "The next society programmes and the verified archive." },
     { "icon": "users", "title": "Membership", "href": "/membership/", "copy": "Join Agra’s professional orthopaedic community." },
     { "icon": "heart", "title": "Public awareness", "href": "/public-awareness/", "copy": "Responsible bone, joint, injury, and mobility guidance." }
   ],

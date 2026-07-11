@@ -1,9 +1,9 @@
-import { allPages } from "../data/site";
+import { publicPages } from "../data/site";
 
 const staticPaths = ["", "404/"];
 
 export function GET() {
-  const urls = [...staticPaths, ...allPages.map((page) => `${page.slug}/`)]
+  const urls = [...staticPaths, ...publicPages.map((page) => `${page.slug}/`)]
     .filter((path) => path !== "404/")
     .map((path) => `<url><loc>https://aosagra.com/${path}</loc></url>`)
     .join("");

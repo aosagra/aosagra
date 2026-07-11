@@ -3,10 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import EventList from "../components/EventList.astro";
 import Gallery from "../components/Gallery.astro";
 import Icon from "../components/Icon.astro";
-import MockForm from "../components/MockForm.astro";
 import PageIntro from "../components/PageIntro.astro";
 import {
-  allPages,
+  publicPages,
   archivedPresidentMessage,
   executiveBody2025,
   leaders,
@@ -18,7 +17,7 @@ import {
 } from "../data/site";
 
 export function getStaticPaths() {
-  return allPages.map((page) => ({
+  return publicPages.map((page) => ({
     params: { slug: page.slug },
     props: { page }
   }));
@@ -30,16 +29,21 @@ interface Props {
 
 const { page } = Astro.props;
 const canonicalPath = `/${page.canonicalSlug ?? page.slug}/`;
-const groupNavigation = mainNavigation.find((group) => group.label === page.group);
-const showComingSoon = page.status === "coming-soon";
-const formType =
-  page.slug === "register-for-event"
-    ? "event"
-    : page.slug === "apply-for-membership"
-      ? "membership"
-      : page.slug === "membership-enquiry"
-        ? "enquiry"
-        : "contact";
+const groupLabelByLegacyGroup: Record<string, string> = {
+  "About AOS": "Society",
+  Academics: "Learning",
+  "Events & CME": "Events",
+  Membership: "Membership",
+  "Public Awareness": "Public",
+  "AOS Connect": "Learning"
+};
+const groupNavigation = mainNavigation.find(
+  (group) =>
+    group.label === groupLabelByLegacyGroup[page.group] ||
+    group.href === canonicalPath ||
+    group.items.some((item) => item.href === canonicalPath)
+);
+const showComingSoon = false;
 ---
 
 <BaseLayout title={page.title} description={page.summary} canonicalPath={canonicalPath} image={page.image}>
@@ -239,22 +243,6 @@ const formType =
       }
 
       {
-        page.kind === "form" && (
-          <section aria-labelledby="form-heading">
-            <div class="content-heading">
-              <h2 id="form-heading">
-                {formType === "event" ? "Registration interest" : formType === "membership" ? "Membership application preview" : "Tell us how we can help"}
-              </h2>
-              <p>
-                This is a design-complete preview. Until secure form handling is connected, please do not enter sensitive information.
-              </p>
-            </div>
-            <MockForm type={formType} />
-          </section>
-        )
-      }
-
-      {
         page.kind === "contact" && (
           <div class="contact-layout">
             <section class="contact-details" aria-labelledby="contact-details">
@@ -263,32 +251,17 @@ const formType =
               <a href={`tel:${organization.phoneHref}`}><Icon name="phone" size={20} /><span><small>Phone</small>{organization.phone}</span></a>
               <p><Icon name="map-pin" size={20} /><span><small>Address</small>{organization.address}</span></p>
             </section>
-            <section aria-labelledby="contact-form">
+            <section class="contact-direct" aria-labelledby="contact-direct">
               <div class="content-heading">
-                <h2 id="contact-form">Send an enquiry</h2>
-                <p>The preview form does not transmit information yet.</p>
+                <h2 id="contact-direct">Start with a direct conversation</h2>
+                <p>Email or call the society office. Membership and event enquiries are routed from there until secure forms are connected.</p>
               </div>
-              <MockForm type="contact" />
+              <div class="contact-direct__actions">
+                <a class="button button--primary" href={`mailto:${organization.email}`}>Email AOS</a>
+                <a class="button button--light" href={`tel:${organization.phoneHref}`}>Call the office</a>
+              </div>
             </section>
           </div>
-        )
-      }
-
-      {
-        page.kind === "login" && (
-          <section class="login-panel" aria-labelledby="member-access">
-            <div>
-              <span class="login-panel__icon"><Icon name="shield" size={24} /></span>
-              <h2 id="member-access">Member access preview</h2>
-              <p>Login is intentionally mocked for this design build. No account or password is created or checked.</p>
-            </div>
-            <form data-login-preview>
-              <label><span>Email address</span><input type="email" autocomplete="username" required /></label>
-              <label><span>Password</span><input type="password" autocomplete="current-password" required /></label>
-              <button class="button button--primary" type="submit">Preview member access</button>
-              <p data-login-message tabindex="-1" hidden>Member authentication will be connected in a later phase.</p>
-            </form>
-          </section>
         )
       }
 
@@ -425,7 +398,7 @@ const formType =
       <div class="aside-panel">
         <p>In this section</p>
         <a class:list={[{ active: page.slug === groupNavigation?.href.replaceAll("/", "") }]} href={groupNavigation?.href ?? "/"}>
-          {page.group} overview
+          {groupNavigation?.label ?? page.group} overview
         </a>
         {groupNavigation?.items.map((item) => (
           <a class:list={[{ active: canonicalPath === item.href }]} href={item.href}>{item.label}</a>
@@ -439,15 +412,3 @@ const formType =
     </aside>
   </div>
 </BaseLayout>
-
-<script>
-  document.querySelectorAll<HTMLFormElement>("[data-login-preview]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const message = form.querySelector<HTMLElement>("[data-login-message]");
-      if (!message) return;
-      message.hidden = false;
-      message.focus();
-    });
-  });
-</script>

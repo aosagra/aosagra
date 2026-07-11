@@ -114,7 +114,7 @@ export const executiveBody2025 = [
 export const archivedPresidentMessage = {
   author: "Dr Atul Agarwal",
   role: "President, 2025–2026",
-  image: "/assets/people/atul-agarwal-2025-26.jpg",
+  image: "/assets/optimized/people/atul-agarwal-2025-26.webp",
   paragraphs: [
     "Dear fellow orthopaedic colleagues,",
     "As we gather to advance orthopaedic care in Agra, I’m honoured to serve as President of the Agra Orthopaedic Society for the year 2025–2026. Our mission is to share knowledge, experience, and expertise to improve patient outcomes.",
@@ -245,7 +245,7 @@ const basePages: ContentPage[] = [
     title: "Legacy & Milestones",
     group: "About AOS",
     summary: "More than four decades of orthopaedic learning, fellowship, and service in Agra.",
-    image: "/assets/installation.jpg",
+    image: "/assets/optimized/installation-1280.webp",
     status: "ready",
     sections: [
       {
@@ -277,7 +277,7 @@ const basePages: ContentPage[] = [
     title: "IOACON 2013 Archive",
     group: "About AOS",
     summary: "Preserving the society’s role in hosting a landmark national orthopaedic conference in Agra.",
-    image: "/assets/ioacon-banner.jpg",
+    image: "/assets/optimized/ioacon-banner-1800.webp",
     status: "ready",
     sections: [
       {
@@ -372,7 +372,7 @@ const basePages: ContentPage[] = [
     group: "Events & CME",
     summary: "The February 2026 Golden Jubilee conference in Agra, preserved with its original brochure and event artwork.",
     kind: "conference-archive",
-    image: "/assets/orthocon-2026.jpg",
+    image: "/assets/optimized/orthocon-2026-1200.webp",
     status: "ready",
     sections: [
       {
@@ -600,6 +600,20 @@ export const pages: ContentPage[] = basePages.map((page) => {
     sections: editablePage.sections ?? page.sections
   };
 });
+
+const unpublishedKinds = new Set(["form", "login"]);
+const unpublishedSlugs = new Set([
+  "aos-connect",
+  "event-gallery",
+  "president-message"
+]);
+
+/** Canonical pages that are complete enough to appear on the public website. */
+export const publicPages: ContentPage[] = pages.filter(
+  (page) => page.status === "ready" && !unpublishedKinds.has(page.kind ?? "") && !unpublishedSlugs.has(page.slug)
+);
+
+export const publicPageBySlug = new Map(publicPages.map((page) => [page.slug, page]));
 
 const aliases: Record<string, string> = {
   "about-the-society": "about-aos",
