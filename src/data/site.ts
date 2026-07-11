@@ -454,7 +454,7 @@ const basePages: ContentPage[] = [
     kind: "form",
     status: "ready"
   },
-  comingSoon("member-directory", "Member Directory", "Membership", "The member directory will open after consent and record verification are complete.", "login"),
+  comingSoon("member-directory", "Member Directory", "Membership", "The member directory will open only after consent review, record verification, and secure member authentication are complete.", "login"),
   {
     slug: "member-login",
     title: "Member Login",

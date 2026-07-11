@@ -7,7 +7,7 @@ The website is a fully static build. It does not require WordPress, PHP, a datab
 - Keep a complete backup of the existing website and database.
 - Confirm that `aosagra.com` and `www.aosagra.com` both have valid HTTPS certificates.
 - Decide which hostname is canonical and redirect the other at the hosting level.
-- Remember that contact, registration, membership, and login forms are design previews. They intentionally do not transmit or store information yet.
+- Contact, event, and membership actions currently use the society’s published email/phone pathways. Mock registration, login, and member-directory routes remain unpublished until secure services are connected.
 
 ## cPanel or Apache hosting
 
