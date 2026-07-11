@@ -34,6 +34,9 @@ Gold is reserved for the primary membership action and small points of emphasis.
 - Interface, navigation, and body copy: Overpass
 - Body measure: no more than 72 characters
 - Display tracking never tighter than `-0.035em`
+- The current pairing remains the production default until a replacement is approved.
+- Compare typography at `/type-lab/`. On any page, add `?fontlab=1&font=source|civic|agra|contemporary` to open the preview controls.
+- The “Agra” candidate uses Martel + Hind and is the preferred locally rooted, Devanagari-ready direction.
 
 ## Shape and motion
 

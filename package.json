@@ -11,8 +11,14 @@
     "audit": "node tools/audit-site.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/libre-franklin": "^5.2.8",
+    "@fontsource-variable/literata": "^5.2.8",
+    "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource-variable/overpass": "latest",
     "@fontsource-variable/source-serif-4": "latest",
+    "@fontsource/hind": "^5.2.8",
+    "@fontsource/libre-caslon-text": "^5.2.7",
+    "@fontsource/martel": "^5.2.8",
     "astro": "latest"
   },
   "devDependencies": {

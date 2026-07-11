@@ -1,8 +1,20 @@
 ---
 import "@fontsource-variable/overpass/index.css";
 import "@fontsource-variable/source-serif-4/index.css";
+import "@fontsource/libre-caslon-text/400.css";
+import "@fontsource/libre-caslon-text/700.css";
+import "@fontsource-variable/libre-franklin/wght.css";
+import "@fontsource/martel/400.css";
+import "@fontsource/martel/600.css";
+import "@fontsource/martel/700.css";
+import "@fontsource/hind/400.css";
+import "@fontsource/hind/600.css";
+import "@fontsource/hind/700.css";
+import "@fontsource-variable/literata/wght.css";
+import "@fontsource-variable/manrope/wght.css";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import FontPreviewToolbar from "../components/FontPreviewToolbar.astro";
 import Header from "../components/Header.astro";
 import { organization } from "../data/site";
 
@@ -11,13 +23,15 @@ interface Props {
   description?: string;
   canonicalPath?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "The official digital home of the Agra Orthopaedic Society.",
   canonicalPath = Astro.url.pathname,
-  image = "/assets/optimized/installation-1280.webp"
+  image = "/assets/optimized/installation-1280.webp",
+  noindex = false
 } = Astro.props;
 
 const pageTitle = title ? `${title} · AOS Agra` : "Agra Orthopaedic Society · Education, Ethics, Excellence";
@@ -48,6 +62,7 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#083c50" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
@@ -64,6 +79,13 @@ const structuredData = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
     <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        const allowed = new Set(["source", "civic", "agra", "contemporary"]);
+        const requested = new URLSearchParams(window.location.search).get("font");
+        document.documentElement.dataset.font = allowed.has(requested ?? "") ? requested : "source";
+      })();
+    </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
@@ -73,5 +95,6 @@ const structuredData = {
       <slot />
     </main>
     <Footer />
+    <FontPreviewToolbar />
   </body>
 </html>

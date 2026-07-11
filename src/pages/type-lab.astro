@@ -1,0 +1,272 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const options = [
+  {
+    id: "source",
+    name: "Current",
+    display: "Source Serif 4",
+    body: "Overpass",
+    description: "Clear, scholarly, and dependable. It serves the content well, but its personality is deliberately quiet."
+  },
+  {
+    id: "civic",
+    name: "Civic",
+    display: "Libre Caslon Text",
+    body: "Libre Franklin",
+    description: "Authoritative and archival—closer to a civic institution, programme booklet, or society record."
+  },
+  {
+    id: "agra",
+    name: "Agra",
+    display: "Martel",
+    body: "Hind",
+    description: "Rooted, dignified, and Devanagari-ready. It gives AOS a more specific Indian institutional voice.",
+    recommended: true
+  },
+  {
+    id: "contemporary",
+    name: "Contemporary",
+    display: "Literata",
+    body: "Manrope",
+    description: "Sharper and more current, with enough literary character to remain serious rather than corporate."
+  }
+];
+---
+
+<BaseLayout
+  title="Typography Lab"
+  description="A local typography comparison for the Agra Orthopaedic Society website."
+  canonicalPath="/type-lab/"
+  noindex
+>
+  <section class="type-lab-hero">
+    <div class="shell">
+      <p>Typography lab · design tool</p>
+      <h1>Which voice belongs to AOS?</h1>
+      <span>
+        Compare the same institutional language in four complete type systems. Use “Open on homepage” to walk through the real site with that pairing.
+      </span>
+    </div>
+  </section>
+
+  <section class="type-lab-grid shell" aria-label="Typography options">
+    {
+      options.map((option) => (
+        <article class:list={["type-specimen", `type-specimen--${option.id}`]}>
+          <header>
+            <div>
+              <p>{option.name}</p>
+              <span>{option.display} + {option.body}</span>
+            </div>
+            {option.recommended && <strong>Recommended</strong>}
+          </header>
+
+          <div class="type-specimen__sample">
+            <h2>A city of learning. A society of care.</h2>
+            <p>
+              Agra Orthopaedic Society brings surgeons, teachers, trainees, and the community together through education, ethics, and service.
+            </p>
+            <p class="type-specimen__hindi" lang="hi">शिक्षा · नैतिकता · उत्कृष्टता</p>
+          </div>
+
+          <div class="type-specimen__interface">
+            <span>Academic Calendar</span>
+            <span>11 July 2026</span>
+            <strong>Join AOS →</strong>
+          </div>
+
+          <footer>
+            <p>{option.description}</p>
+            <a href={`/?font=${option.id}&fontlab=1`}>Open on homepage</a>
+          </footer>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .type-lab-hero {
+    padding-block: clamp(70px, 9vw, 126px);
+    background: var(--navy-deep);
+    color: white;
+  }
+
+  .type-lab-hero p {
+    color: var(--gold-light);
+    font-size: 0.82rem;
+    font-weight: 760;
+  }
+
+  .type-lab-hero h1 {
+    max-width: 860px;
+    margin-top: 13px;
+    color: white;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    letter-spacing: -0.035em;
+  }
+
+  .type-lab-hero span {
+    display: block;
+    max-width: 68ch;
+    margin-top: 24px;
+    color: rgb(255 255 255 / 0.78);
+    line-height: 1.7;
+  }
+
+  .type-lab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding-block: clamp(54px, 8vw, 96px);
+  }
+
+  .type-specimen {
+    --sample-display: "Source Serif 4 Variable", Georgia, serif;
+    --sample-body: "Overpass Variable", system-ui, sans-serif;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: white;
+    overflow: hidden;
+  }
+
+  .type-specimen--civic {
+    --sample-display: "Libre Caslon Text", Georgia, serif;
+    --sample-body: "Libre Franklin Variable", system-ui, sans-serif;
+  }
+
+  .type-specimen--agra {
+    --sample-display: "Martel", Georgia, serif;
+    --sample-body: "Hind", system-ui, sans-serif;
+  }
+
+  .type-specimen--contemporary {
+    --sample-display: "Literata Variable", Georgia, serif;
+    --sample-body: "Manrope Variable", system-ui, sans-serif;
+  }
+
+  .type-specimen > header,
+  .type-specimen > footer {
+    font-family: var(--sample-body);
+  }
+
+  .type-specimen > header {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .type-specimen > header p {
+    color: var(--navy);
+    font-size: 1.05rem;
+    font-weight: 750;
+  }
+
+  .type-specimen > header span {
+    display: block;
+    margin-top: 2px;
+    color: var(--ink-soft);
+    font-size: 0.74rem;
+  }
+
+  .type-specimen > header strong {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-size: 0.68rem;
+  }
+
+  .type-specimen__sample {
+    flex: 1;
+    padding: clamp(24px, 4vw, 42px) 22px;
+    background: var(--blue-soft);
+  }
+
+  .type-specimen__sample h2 {
+    color: var(--navy);
+    font-family: var(--sample-display);
+    font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.03;
+  }
+
+  .type-specimen--agra .type-specimen__sample h2 {
+    line-height: 1.15;
+  }
+
+  .type-specimen__sample > p:not(.type-specimen__hindi) {
+    max-width: 50ch;
+    margin-top: 22px;
+    color: var(--ink);
+    font-family: var(--sample-body);
+    line-height: 1.65;
+  }
+
+  .type-specimen__hindi {
+    margin-top: 26px;
+    color: var(--gold-ink);
+    font-family: var(--sample-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .type-specimen__interface {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 17px;
+    min-height: 62px;
+    padding: 13px 22px;
+    border-block: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: var(--sample-body);
+    font-size: 0.78rem;
+  }
+
+  .type-specimen__interface strong {
+    margin-inline-start: auto;
+    color: var(--navy);
+  }
+
+  .type-specimen > footer {
+    min-height: 138px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 22px 22px;
+  }
+
+  .type-specimen > footer p {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .type-specimen > footer a {
+    color: var(--blue-strong);
+    font-size: 0.8rem;
+    font-weight: 760;
+  }
+
+  @media (max-width: 760px) {
+    .type-lab-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .type-specimen__sample h2 {
+      font-size: clamp(2.1rem, 11vw, 3rem);
+    }
+  }
+</style>
