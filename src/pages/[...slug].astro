@@ -397,12 +397,14 @@ const showComingSoon = false;
     <aside class="interior__aside" aria-label="Related pages">
       <div class="aside-panel">
         <p>In this section</p>
-        <a class:list={[{ active: page.slug === groupNavigation?.href.replaceAll("/", "") }]} href={groupNavigation?.href ?? "/"}>
+        <a class:list={[{ active: canonicalPath === groupNavigation?.href }]} href={groupNavigation?.href ?? "/"}>
           {groupNavigation?.label ?? page.group} overview
         </a>
-        {groupNavigation?.items.map((item) => (
+        {groupNavigation?.items
+          .filter((item) => item.href !== groupNavigation.href && item.href !== "/contact/")
+          .map((item) => (
           <a class:list={[{ active: canonicalPath === item.href }]} href={item.href}>{item.label}</a>
-        ))}
+          ))}
       </div>
       <div class="aside-contact">
         <h2>Need help?</h2>
