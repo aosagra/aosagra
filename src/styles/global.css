@@ -2053,7 +2053,29 @@ p {
 }
 
 .leadership-related {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
   margin-top: 28px;
+  padding-block: 24px;
+  border-block: 1px solid var(--line);
+}
+
+.leadership-related h3 {
+  font-size: 1.25rem;
+}
+
+.leadership-related p {
+  max-width: 68ch;
+  margin-top: 7px;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.58;
+}
+
+.leadership-related .text-link {
+  flex: 0 0 auto;
 }
 
 .executive-groups {
@@ -4336,7 +4358,8 @@ p {
   }
 
   .archive-pending,
-  .archive-reference {
+  .archive-reference,
+  .leadership-related {
     align-items: flex-start;
     flex-direction: column;
   }
