@@ -10,6 +10,7 @@ import {
   executiveBody2025,
   leaders,
   mainNavigation,
+  notices,
   organization,
   pastPresidents,
   pastEvents,
@@ -309,21 +310,13 @@ const showComingSoon = false;
               <p>Dates are ordered by the event date.</p>
             </div>
             <div class="notice-list notice-list--interior">
-              <a href="/upcoming-events/#osteoporosis-sarcopenia">
-                <time datetime="2026-07-11">11 Jul</time>
-                <span><strong>Osteoporosis & Sarcopenia Symposium</strong><small>Academic programme</small></span>
-                <Icon name="arrow-right" size={18} />
-              </a>
-              <a href="/upcoming-events/#pg-paper-presentation">
-                <time datetime="2026-07-16">16 Jul</time>
-                <span><strong>Inter-College PG Paper Presentation</strong><small>Academic invitation</small></span>
-                <Icon name="arrow-right" size={18} />
-              </a>
-              <a href="/upcoming-events/#executive-meeting">
-                <time datetime="2026-07-18">18 Jul</time>
-                <span><strong>Extended Executive Meeting</strong><small>Executive notice</small></span>
-                <Icon name="arrow-right" size={18} />
-              </a>
+              {notices.map((notice) => (
+                <a href={notice.href}>
+                  <time datetime={notice.datetime}>{notice.dateLabel}</time>
+                  <span><strong>{notice.title}</strong><small>{notice.summary}</small></span>
+                  <Icon name="arrow-right" size={18} />
+                </a>
+              ))}
             </div>
           </section>
         )

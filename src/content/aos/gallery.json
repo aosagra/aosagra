@@ -1,24 +1,986 @@
 [
-  { "id": "gbm-july-2026-programme", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-programme-board.webp", "alt": "Programme board for the AOS First General Body Meeting cum Scientific Meeting on 2 July 2026", "caption": "2 July GBM · First General Body Meeting cum Scientific Meeting", "featured": true, "order": 1 },
-  { "id": "gbm-july-2026-leadership", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-leadership-table.webp", "alt": "AOS office bearers seated at the General Body Meeting table", "caption": "2 July GBM · The meeting opens", "featured": true, "order": 2 },
-  { "id": "gbm-july-2026-scientific-session", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-scientific-session.webp", "alt": "Members attending the AOS scientific session at Fairfield by Marriott, Agra", "caption": "2 July GBM · Scientific session", "featured": true, "order": 3 },
-  { "id": "gbm-july-2026-audience", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-audience-wide.webp", "alt": "A wide view of members attending the AOS programme", "caption": "2 July GBM · Members in session", "featured": false, "order": 4 },
-  { "id": "gbm-july-2026-full-hall", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-full-hall.webp", "alt": "Full hall view during the AOS academic programme", "caption": "2 July GBM · A full room for learning", "featured": false, "order": 5 },
-  { "id": "gbm-july-2026-knee-imaging", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-knee-imaging.webp", "alt": "Clinical speaker presenting knee imaging during the scientific meeting", "caption": "2 July GBM · Clinical imaging discussion", "featured": false, "order": 6 },
-  { "id": "gbm-july-2026-podium", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-podium-speaker.webp", "alt": "Speaker addressing the AOS scientific meeting from the podium", "caption": "2 July GBM · Academic presentation", "featured": false, "order": 7 },
-  { "id": "gbm-july-2026-clinical-presentation", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-clinical-presentation.webp", "alt": "A clinical presentation at the AOS scientific meeting", "caption": "2 July GBM · Shared clinical insight", "featured": false, "order": 8 },
-  { "id": "gbm-july-2026-floor-discussion", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-floor-discussion.webp", "alt": "Member contributing to the General Body Meeting discussion", "caption": "2 July GBM · Discussion from the floor", "featured": false, "order": 9 },
-  { "id": "gbm-july-2026-member-address", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-member-address.webp", "alt": "Member addressing fellow AOS members during the meeting", "caption": "2 July GBM · Member address", "featured": false, "order": 10 },
-  { "id": "gbm-july-2026-member-dialogue", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-member-dialogue.webp", "alt": "Members listening during the General Body Meeting", "caption": "2 July GBM · Member dialogue", "featured": false, "order": 11 },
-  { "id": "gbm-july-2026-general-body-dialogue", "src": "/assets/optimized/gallery/gbm-july-2026/gbm-general-body-dialogue.webp", "alt": "AOS members in conversation during the General Body Meeting", "caption": "2 July GBM · General body discussion", "featured": false, "order": 12 },
-  { "id": "aos-activity-01", "src": "/assets/optimized/gallery/aos-activity-01.webp", "alt": "Agra Orthopaedic Society members at an academic gathering", "caption": "Learning in company", "featured": false, "order": 13 },
-  { "id": "aos-activity-02", "src": "/assets/optimized/gallery/aos-activity-02.webp", "alt": "AOS Agra members during a society programme", "caption": "Society programme", "featured": false, "order": 14 },
-  { "id": "aos-activity-03", "src": "/assets/optimized/gallery/aos-activity-03.webp", "alt": "Members participating in an AOS academic event", "caption": "A platform for trainees", "featured": false, "order": 15 },
-  { "id": "aos-activity-04", "src": "/assets/optimized/gallery/aos-activity-04.webp", "alt": "AOS Agra professional gathering", "caption": "Professional fellowship", "featured": false, "order": 16 },
-  { "id": "aos-activity-05", "src": "/assets/optimized/gallery/aos-activity-05.webp", "alt": "Society members at an AOS programme", "caption": "Fellowship with purpose", "featured": false, "order": 17 },
-  { "id": "aos-activity-06", "src": "/assets/optimized/gallery/aos-activity-06.webp", "alt": "AOS Agra event photograph", "caption": "AOS event", "featured": false, "order": 18 },
-  { "id": "aos-activity-07", "src": "/assets/optimized/gallery/aos-activity-07.webp", "alt": "AOS members sharing an academic moment", "caption": "Academic moment", "featured": false, "order": 19 },
-  { "id": "aos-activity-08", "src": "/assets/optimized/gallery/aos-activity-08.webp", "alt": "Agra Orthopaedic Society activity photograph", "caption": "Society activity", "featured": false, "order": 20 },
-  { "id": "aos-activity-09", "src": "/assets/optimized/gallery/aos-activity-09.webp", "alt": "Members at an Agra Orthopaedic Society gathering", "caption": "AOS gathering", "featured": false, "order": 21 },
-  { "id": "aos-activity-10", "src": "/assets/optimized/gallery/aos-activity-10.webp", "alt": "AOS Agra community and academic activity", "caption": "Community and academic activity", "featured": false, "order": 22 }
+  {
+    "id": "osteoporosis-sarcopenia-2026-084",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-084.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Faculty felicitation",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-066",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-066.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Expert faculty session",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-039",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-039.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Members in session",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-085",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-085.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · AOS group photograph",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-073",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-073.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Invited lecture",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-060",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-060.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Faculty panel",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-006",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-006.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Venue ready for members",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-017",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-017.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Opening remarks",
+    "featured": false,
+    "order": 8
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-031",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-031.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Scientific session",
+    "featured": false,
+    "order": 9
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-083",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-083.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Felicitation ceremony",
+    "featured": false,
+    "order": 10
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-096",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-096.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Faculty and members",
+    "featured": false,
+    "order": 11
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-101",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-101.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Fellowship after the programme",
+    "featured": false,
+    "order": 12
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-065",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-065.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 13",
+    "featured": false,
+    "order": 13
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-074",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-074.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 14",
+    "featured": false,
+    "order": 14
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-087",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-087.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 15",
+    "featured": false,
+    "order": 15
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-088",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-088.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 16",
+    "featured": false,
+    "order": 16
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-091",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-091.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 17",
+    "featured": false,
+    "order": 17
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-093",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-093.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 18",
+    "featured": false,
+    "order": 18
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-094",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-094.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 19",
+    "featured": false,
+    "order": 19
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-097",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-097.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 20",
+    "featured": false,
+    "order": 20
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-098",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-098.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 21",
+    "featured": false,
+    "order": 21
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-099",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-099.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 22",
+    "featured": false,
+    "order": 22
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-010",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-010.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 23",
+    "featured": false,
+    "order": 23
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-013",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-013.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 24",
+    "featured": false,
+    "order": 24
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-027",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-027.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 25",
+    "featured": false,
+    "order": 25
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-029",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-029.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 26",
+    "featured": false,
+    "order": 26
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-033",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-033.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 27",
+    "featured": false,
+    "order": 27
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-034",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-034.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 28",
+    "featured": false,
+    "order": 28
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-036",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-036.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 29",
+    "featured": false,
+    "order": 29
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-037",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-037.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 30",
+    "featured": false,
+    "order": 30
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-038",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-038.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 31",
+    "featured": false,
+    "order": 31
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-040",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-040.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 32",
+    "featured": false,
+    "order": 32
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-041",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-041.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 33",
+    "featured": false,
+    "order": 33
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-042",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-042.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 34",
+    "featured": false,
+    "order": 34
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-047",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-047.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 35",
+    "featured": false,
+    "order": 35
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-048",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-048.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 36",
+    "featured": false,
+    "order": 36
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-052",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-052.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 37",
+    "featured": false,
+    "order": 37
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-053",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-053.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 38",
+    "featured": false,
+    "order": 38
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-055",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-055.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 39",
+    "featured": false,
+    "order": 39
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-061",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-061.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 40",
+    "featured": false,
+    "order": 40
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-062",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-062.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 41",
+    "featured": false,
+    "order": 41
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-063",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-063.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 42",
+    "featured": false,
+    "order": 42
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-064",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-064.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 43",
+    "featured": false,
+    "order": 43
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-067",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-067.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 44",
+    "featured": false,
+    "order": 44
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-069",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-069.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 45",
+    "featured": false,
+    "order": 45
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-070",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-070.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 46",
+    "featured": false,
+    "order": 46
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-071",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-071.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 47",
+    "featured": false,
+    "order": 47
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-072",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-072.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 48",
+    "featured": false,
+    "order": 48
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-075",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-075.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 49",
+    "featured": false,
+    "order": 49
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-076",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-076.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 50",
+    "featured": false,
+    "order": 50
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-077",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-077.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 51",
+    "featured": false,
+    "order": 51
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-078",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-078.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 52",
+    "featured": false,
+    "order": 52
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-079",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-079.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 53",
+    "featured": false,
+    "order": 53
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-080",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-080.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 54",
+    "featured": false,
+    "order": 54
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-081",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-081.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 55",
+    "featured": false,
+    "order": 55
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-082",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-082.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 56",
+    "featured": false,
+    "order": 56
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-086",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-086.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 57",
+    "featured": false,
+    "order": 57
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-089",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-089.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 58",
+    "featured": false,
+    "order": 58
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-090",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-090.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 59",
+    "featured": false,
+    "order": 59
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-092",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-092.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 60",
+    "featured": false,
+    "order": 60
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-095",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-095.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 61",
+    "featured": false,
+    "order": 61
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-100",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-100.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 62",
+    "featured": false,
+    "order": 62
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-001",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-001.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 63",
+    "featured": false,
+    "order": 63
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-002",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-002.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 64",
+    "featured": false,
+    "order": 64
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-003",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-003.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 65",
+    "featured": false,
+    "order": 65
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-004",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-004.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 66",
+    "featured": false,
+    "order": 66
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-005",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-005.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 67",
+    "featured": false,
+    "order": 67
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-007",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-007.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 68",
+    "featured": false,
+    "order": 68
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-008",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-008.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 69",
+    "featured": false,
+    "order": 69
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-009",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-009.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 70",
+    "featured": false,
+    "order": 70
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-011",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-011.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 71",
+    "featured": false,
+    "order": 71
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-012",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-012.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 72",
+    "featured": false,
+    "order": 72
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-014",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-014.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 73",
+    "featured": false,
+    "order": 73
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-015",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-015.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 74",
+    "featured": false,
+    "order": 74
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-016",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-016.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 75",
+    "featured": false,
+    "order": 75
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-018",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-018.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 76",
+    "featured": false,
+    "order": 76
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-019",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-019.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 77",
+    "featured": false,
+    "order": 77
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-020",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-020.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 78",
+    "featured": false,
+    "order": 78
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-021",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-021.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 79",
+    "featured": false,
+    "order": 79
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-022",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-022.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 80",
+    "featured": false,
+    "order": 80
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-023",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-023.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 81",
+    "featured": false,
+    "order": 81
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-024",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-024.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 82",
+    "featured": false,
+    "order": 82
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-025",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-025.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 83",
+    "featured": false,
+    "order": 83
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-026",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-026.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 84",
+    "featured": false,
+    "order": 84
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-028",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-028.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 85",
+    "featured": false,
+    "order": 85
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-030",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-030.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 86",
+    "featured": false,
+    "order": 86
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-032",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-032.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 87",
+    "featured": false,
+    "order": 87
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-035",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-035.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 88",
+    "featured": false,
+    "order": 88
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-043",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-043.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 89",
+    "featured": false,
+    "order": 89
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-044",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-044.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 90",
+    "featured": false,
+    "order": 90
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-045",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-045.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 91",
+    "featured": false,
+    "order": 91
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-046",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-046.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 92",
+    "featured": false,
+    "order": 92
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-049",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-049.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 93",
+    "featured": false,
+    "order": 93
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-050",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-050.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 94",
+    "featured": false,
+    "order": 94
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-051",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-051.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 95",
+    "featured": false,
+    "order": 95
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-054",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-054.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 96",
+    "featured": false,
+    "order": 96
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-056",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-056.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 97",
+    "featured": false,
+    "order": 97
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-057",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-057.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 98",
+    "featured": false,
+    "order": 98
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-058",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-058.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 99",
+    "featured": false,
+    "order": 99
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-059",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-059.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 100",
+    "featured": false,
+    "order": 100
+  },
+  {
+    "id": "osteoporosis-sarcopenia-2026-068",
+    "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-068.webp",
+    "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
+    "caption": "11 July Symposium · Programme photograph 101",
+    "featured": false,
+    "order": 101
+  },
+  {
+    "id": "gbm-july-2026-programme",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-programme-board.webp",
+    "alt": "Programme board for the AOS First General Body Meeting cum Scientific Meeting on 2 July 2026",
+    "caption": "2 July GBM · First General Body Meeting cum Scientific Meeting",
+    "featured": false,
+    "order": 102
+  },
+  {
+    "id": "gbm-july-2026-leadership",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-leadership-table.webp",
+    "alt": "AOS office bearers seated at the General Body Meeting table",
+    "caption": "2 July GBM · The meeting opens",
+    "featured": false,
+    "order": 103
+  },
+  {
+    "id": "gbm-july-2026-scientific-session",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-scientific-session.webp",
+    "alt": "Members attending the AOS scientific session at Fairfield by Marriott, Agra",
+    "caption": "2 July GBM · Scientific session",
+    "featured": false,
+    "order": 104
+  },
+  {
+    "id": "gbm-july-2026-audience",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-audience-wide.webp",
+    "alt": "A wide view of members attending the AOS programme",
+    "caption": "2 July GBM · Members in session",
+    "featured": false,
+    "order": 105
+  },
+  {
+    "id": "gbm-july-2026-full-hall",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-full-hall.webp",
+    "alt": "Full hall view during the AOS academic programme",
+    "caption": "2 July GBM · A full room for learning",
+    "featured": false,
+    "order": 106
+  },
+  {
+    "id": "gbm-july-2026-knee-imaging",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-knee-imaging.webp",
+    "alt": "Clinical speaker presenting knee imaging during the scientific meeting",
+    "caption": "2 July GBM · Clinical imaging discussion",
+    "featured": false,
+    "order": 107
+  },
+  {
+    "id": "gbm-july-2026-podium",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-podium-speaker.webp",
+    "alt": "Speaker addressing the AOS scientific meeting from the podium",
+    "caption": "2 July GBM · Academic presentation",
+    "featured": false,
+    "order": 108
+  },
+  {
+    "id": "gbm-july-2026-clinical-presentation",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-clinical-presentation.webp",
+    "alt": "A clinical presentation at the AOS scientific meeting",
+    "caption": "2 July GBM · Shared clinical insight",
+    "featured": false,
+    "order": 109
+  },
+  {
+    "id": "gbm-july-2026-floor-discussion",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-floor-discussion.webp",
+    "alt": "Member contributing to the General Body Meeting discussion",
+    "caption": "2 July GBM · Discussion from the floor",
+    "featured": false,
+    "order": 110
+  },
+  {
+    "id": "gbm-july-2026-member-address",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-member-address.webp",
+    "alt": "Member addressing fellow AOS members during the meeting",
+    "caption": "2 July GBM · Member address",
+    "featured": false,
+    "order": 111
+  },
+  {
+    "id": "gbm-july-2026-member-dialogue",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-member-dialogue.webp",
+    "alt": "Members listening during the General Body Meeting",
+    "caption": "2 July GBM · Member dialogue",
+    "featured": false,
+    "order": 112
+  },
+  {
+    "id": "gbm-july-2026-general-body-dialogue",
+    "src": "/assets/optimized/gallery/gbm-july-2026/gbm-general-body-dialogue.webp",
+    "alt": "AOS members in conversation during the General Body Meeting",
+    "caption": "2 July GBM · General body discussion",
+    "featured": false,
+    "order": 113
+  },
+  {
+    "id": "aos-activity-01",
+    "src": "/assets/optimized/gallery/aos-activity-01.webp",
+    "alt": "Agra Orthopaedic Society members at an academic gathering",
+    "caption": "Learning in company",
+    "featured": false,
+    "order": 114
+  },
+  {
+    "id": "aos-activity-02",
+    "src": "/assets/optimized/gallery/aos-activity-02.webp",
+    "alt": "AOS Agra members during a society programme",
+    "caption": "Society programme",
+    "featured": false,
+    "order": 115
+  },
+  {
+    "id": "aos-activity-03",
+    "src": "/assets/optimized/gallery/aos-activity-03.webp",
+    "alt": "Members participating in an AOS academic event",
+    "caption": "A platform for trainees",
+    "featured": false,
+    "order": 116
+  },
+  {
+    "id": "aos-activity-04",
+    "src": "/assets/optimized/gallery/aos-activity-04.webp",
+    "alt": "AOS Agra professional gathering",
+    "caption": "Professional fellowship",
+    "featured": false,
+    "order": 117
+  },
+  {
+    "id": "aos-activity-05",
+    "src": "/assets/optimized/gallery/aos-activity-05.webp",
+    "alt": "Society members at an AOS programme",
+    "caption": "Fellowship with purpose",
+    "featured": false,
+    "order": 118
+  },
+  {
+    "id": "aos-activity-06",
+    "src": "/assets/optimized/gallery/aos-activity-06.webp",
+    "alt": "AOS Agra event photograph",
+    "caption": "AOS event",
+    "featured": false,
+    "order": 119
+  },
+  {
+    "id": "aos-activity-07",
+    "src": "/assets/optimized/gallery/aos-activity-07.webp",
+    "alt": "AOS members sharing an academic moment",
+    "caption": "Academic moment",
+    "featured": false,
+    "order": 120
+  },
+  {
+    "id": "aos-activity-08",
+    "src": "/assets/optimized/gallery/aos-activity-08.webp",
+    "alt": "Agra Orthopaedic Society activity photograph",
+    "caption": "Society activity",
+    "featured": false,
+    "order": 121
+  },
+  {
+    "id": "aos-activity-09",
+    "src": "/assets/optimized/gallery/aos-activity-09.webp",
+    "alt": "Members at an Agra Orthopaedic Society gathering",
+    "caption": "AOS gathering",
+    "featured": false,
+    "order": 122
+  },
+  {
+    "id": "aos-activity-10",
+    "src": "/assets/optimized/gallery/aos-activity-10.webp",
+    "alt": "AOS Agra community and academic activity",
+    "caption": "Community and academic activity",
+    "featured": false,
+    "order": 123
+  }
 ]

@@ -14,11 +14,13 @@ const images = typeof limit === "number" ? galleryImages.slice(0, limit) : galle
   {
     images.map((image, index) => (
       <button
+        id={image.id}
         class:list={["gallery-item", { "gallery-item--wide": index === 0 || index === 5 }]}
         type="button"
         data-gallery-item
         data-src={image.src}
         data-alt={image.alt}
+        data-caption={image.caption}
         aria-label={`Open image ${index + 1}: ${image.alt}`}
       >
         <img src={image.src} alt={image.alt} width="897" height="598" loading={index > 2 ? "lazy" : "eager"} />
@@ -47,7 +49,7 @@ const images = typeof limit === "number" ? galleryImages.slice(0, limit) : galle
       if (!lightbox || !lightboxImage || !lightboxCaption) return;
       lightboxImage.src = item.dataset.src ?? "";
       lightboxImage.alt = item.dataset.alt ?? "";
-      lightboxCaption.textContent = item.dataset.alt ?? "";
+      lightboxCaption.textContent = item.dataset.caption || item.dataset.alt || "";
       lightbox.showModal();
     });
   });
