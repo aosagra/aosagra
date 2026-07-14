@@ -66,19 +66,6 @@ const pathways = home.pathways.map((item, index) => ({
         <p>{secretaryMessage.excerpt}</p>
         <a class="text-link" href="/secretary-message/">Read Secretary’s Message <Icon name="arrow-right" size={18} /></a>
       </div>
-      <div class="secretary-highlight__officers" aria-label="Current AOS office bearers">
-        {
-          leaders.map((leader) => (
-            <article class="secretary-highlight__officer">
-              <img src={leader.image} width="375" height="496" alt={leader.name} loading="lazy" />
-              <span>
-                <strong>{leader.name}</strong>
-                <small>{leader.role}</small>
-              </span>
-            </article>
-          ))
-        }
-      </div>
     </div>
   </section>
 
@@ -136,7 +123,10 @@ const pathways = home.pathways.map((item, index) => ({
         <p>
           The new term keeps the society focused on academic continuity, professional fellowship, and public service.
         </p>
-        <a class="text-link" href="/office-bearers/">View office bearers <Icon name="arrow-right" size={18} /></a>
+        <div class="leadership-signal__actions">
+          <a class="text-link" href="/office-bearers/">View office bearers <Icon name="arrow-right" size={18} /></a>
+          <a class="text-link" href="/executive-committee/">View present executive <Icon name="arrow-right" size={18} /></a>
+        </div>
       </div>
       <div class="leadership-strip">
         {

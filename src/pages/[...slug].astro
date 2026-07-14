@@ -7,6 +7,7 @@ import PageIntro from "../components/PageIntro.astro";
 import {
   publicPages,
   archivedPresidentMessage,
+  currentExecutive2026,
   executiveBody2025,
   leaders,
   mainNavigation,
@@ -85,6 +86,19 @@ const memberAreaSteps = [
   "Member-only directory and approved society documents.",
   "CME certificates, circulars, and academic resources as records are prepared."
 ];
+const currentExecutiveGroupOrder = [
+  "Office Bearers",
+  "Executive Members",
+  "Patrons / Past Presidents",
+  "Special Invitees / Advisors",
+  "Designation to be updated"
+];
+const currentExecutiveGroups = currentExecutiveGroupOrder
+  .map((group) => ({
+    group,
+    members: currentExecutive2026.filter((member) => member.group === group)
+  }))
+  .filter((entry) => entry.members.length > 0);
 ---
 
 <BaseLayout title={page.title} description={page.summary} canonicalPath={canonicalPath} image={page.image}>
@@ -131,6 +145,44 @@ const memberAreaSteps = [
                     <h3>{leader.name}</h3>
                   </div>
                 </article>
+              ))}
+            </div>
+            <div class="leadership-related">
+              <a class="text-link" href="/executive-committee/">View present executive committee <Icon name="arrow-right" size={17} /></a>
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "current-executive" && (
+          <section class="current-executive" aria-labelledby="current-executive-heading">
+            <div class="content-heading">
+              <h2 id="current-executive-heading">Present executive roster</h2>
+              <p>
+                Names and designations are listed from the AOS Executive 2026 spreadsheet. Individual photographs can be added as they are received.
+              </p>
+            </div>
+            <div class="archive-note">
+              <Icon name="file" size={20} />
+              <p>Public roster · Names and designations only</p>
+            </div>
+            <div class="executive-groups">
+              {currentExecutiveGroups.map((entry) => (
+                <section class="executive-group" aria-labelledby={`executive-${entry.group.toLowerCase().replaceAll(" ", "-").replaceAll("/", "")}`}>
+                  <div class="executive-group__head">
+                    <h3 id={`executive-${entry.group.toLowerCase().replaceAll(" ", "-").replaceAll("/", "")}`}>{entry.group}</h3>
+                    <span>{entry.members.length} {entry.members.length === 1 ? "member" : "members"}</span>
+                  </div>
+                  <div class="executive-roster">
+                    {entry.members.map((member) => (
+                      <article class="executive-member">
+                        <strong>{member.name}</strong>
+                        <span>{member.role}</span>
+                      </article>
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
           </section>

@@ -36,6 +36,7 @@ export type PageKind =
   | "videos"
   | "downloads"
   | "notices"
+  | "current-executive"
   | "past-leadership"
   | "archive-roster"
   | "archived-message"
@@ -112,6 +113,52 @@ export const executiveBody2025 = [
   { name: "Dr Shashi Kumar", role: "Executive Member" },
   { name: "Dr Vivek Mittal", role: "Executive Member" },
   { name: "Dr Vineet Pathak", role: "Executive Member" }
+];
+
+export const currentExecutive2026 = [
+  { name: "Dr Atul Kulshreshtha", role: "President", group: "Office Bearers" },
+  { name: "Dr Sanjay Chaturvedi", role: "Hon. General Secretary", group: "Office Bearers" },
+  { name: "Dr Pramod Gupta", role: "President-Elect", group: "Office Bearers" },
+  { name: "Dr Manoj Sharma", role: "Vice President", group: "Office Bearers" },
+  { name: "Dr S. K. Jain", role: "Vice President", group: "Office Bearers" },
+  { name: "Dr Sanjeev Vohra", role: "Treasurer", group: "Office Bearers" },
+  { name: "Dr Ashwani Sadana", role: "Joint Secretary", group: "Office Bearers" },
+  { name: "Dr Rajeev Gupta", role: "Joint Secretary", group: "Office Bearers" },
+  { name: "Dr Atul Agarwal", role: "Immediate Past President", group: "Office Bearers" },
+  { name: "Dr Anupam Gupta", role: "Immediate Past Secretary", group: "Office Bearers" },
+  { name: "Dr Sanjay Agarwal", role: "Joint Treasurer", group: "Office Bearers" },
+  { name: "Dr Kartik Pruthi", role: "Scientific Secretary", group: "Office Bearers" },
+  { name: "Dr Ankit Varshney", role: "IT & Web Incharge", group: "Office Bearers" },
+  { name: "Dr Mukesh Goyal", role: "Cultural Secretary", group: "Office Bearers" },
+  { name: "Dr Rajeev Goyal", role: "Scientific Secretary", group: "Office Bearers" },
+  { name: "Dr Arpit Goyal", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Ashank Gupta", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Imran", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Rajesh Agrawal", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Rajat Kapoor", role: "Web Incharge", group: "Executive Members" },
+  { name: "Dr Shashi Kumar", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Vivek Mittal", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Vineet Pathak", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr Brijesh Sharma", role: "Executive Member", group: "Executive Members" },
+  { name: "Dr A. K. Varshney", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr S. C. Sahu", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr I. A. Khan", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Ashok Saxena", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Ravi Sabharwal", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr J. K. Jain", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr D. V. Sharma", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Anup Khare", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Ashok Vij", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Sajid Hussain", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Anuj Kumar", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Sanjay Prakash", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Manvendra Sharma", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Arun Kapoor", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr A. K. Gupta", role: "Patron / Past President", group: "Patrons / Past Presidents" },
+  { name: "Dr Sanjay Dhawan", role: "Special Invitee / Advisor", group: "Special Invitees / Advisors" },
+  { name: "Dr Atul Srivastava", role: "Special Invitee / Advisor", group: "Special Invitees / Advisors" },
+  { name: "Dr Dev Rajan Agarwal", role: "Designation to be updated", group: "Designation to be updated" },
+  { name: "Dr Shubham Khandelwal", role: "Designation to be updated", group: "Designation to be updated" }
 ];
 
 export const archivedPresidentMessage = {
@@ -283,7 +330,14 @@ const basePages: ContentPage[] = [
     kind: "leadership",
     status: "ready"
   },
-  comingSoon("executive-committee", "Executive Committee", "About AOS", "The complete current 2026 executive committee roster is being prepared for publication."),
+  {
+    slug: "executive-committee",
+    title: "Executive Committee 2026",
+    group: "About AOS",
+    summary: "The present AOS executive roster for 2026, with names and designations from the society spreadsheet.",
+    kind: "current-executive",
+    status: "ready"
+  },
   {
     slug: "executive-body",
     title: "Executive Body 2025–2026",

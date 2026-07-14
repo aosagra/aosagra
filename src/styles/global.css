@@ -2052,6 +2052,75 @@ p {
   font-size: 0.73rem;
 }
 
+.leadership-related {
+  margin-top: 28px;
+}
+
+.executive-groups {
+  display: grid;
+  gap: 46px;
+  margin-top: 34px;
+}
+
+.executive-group {
+  border-top: 1px solid var(--line);
+}
+
+.executive-group__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 20px 0 16px;
+}
+
+.executive-group__head h3 {
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.executive-group__head span {
+  flex: 0 0 auto;
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.executive-roster {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.executive-member {
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.executive-member strong,
+.executive-member span {
+  display: block;
+}
+
+.executive-member strong {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  line-height: 1.22;
+}
+
+.executive-member span {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .archived-message {
   display: grid;
   grid-template-columns: minmax(210px, 0.55fr) minmax(0, 1.45fr);
@@ -3094,16 +3163,12 @@ p {
 }
 
 .secretary-highlight__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 0.78fr);
-  align-items: center;
-  gap: clamp(34px, 5vw, 68px);
   padding-block: 34px;
   border-block: 1px solid var(--line);
 }
 
 .secretary-highlight__copy {
-  max-width: 780px;
+  max-width: 860px;
 }
 
 .secretary-highlight h2 {
@@ -3120,65 +3185,6 @@ p {
 
 .secretary-highlight .text-link {
   margin-top: 23px;
-}
-
-.secretary-highlight__officers {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.secretary-highlight__officer {
-  position: relative;
-  min-height: 320px;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--navy);
-}
-
-.secretary-highlight__officer::after {
-  content: "";
-  position: absolute;
-  inset: 40% 0 0;
-  background: linear-gradient(180deg, transparent, rgb(0 18 26 / 0.84));
-}
-
-.secretary-highlight__officer img {
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 500ms var(--ease-out);
-}
-
-.secretary-highlight__officer span {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  left: 12px;
-  z-index: 1;
-  color: var(--white);
-}
-
-.secretary-highlight__officer strong,
-.secretary-highlight__officer small {
-  display: block;
-}
-
-.secretary-highlight__officer strong {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.14;
-}
-
-.secretary-highlight__officer small {
-  margin-top: 4px;
-  color: rgb(255 255 255 / 0.76);
-  font-size: 0.7rem;
-  font-weight: 700;
-  line-height: 1.25;
 }
 
 .home-pathways {
@@ -3345,6 +3351,18 @@ p {
   margin-top: 24px;
 }
 
+.leadership-signal__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: 24px;
+}
+
+.leadership-signal__actions .text-link {
+  margin-top: 0;
+}
+
 .leadership-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3483,7 +3501,6 @@ p {
   .leader:hover img,
   .gallery-item:hover img,
   .society-story__photos figure:hover img,
-  .secretary-highlight__officer:hover img,
   .leadership-strip article:hover img {
     transform: scale(1.025);
   }
@@ -3629,10 +3646,6 @@ p {
 
   .next-moment {
     margin-top: -42px;
-  }
-
-  .secretary-highlight__officers {
-    width: min(100%, 720px);
   }
 
   .home-pathways__intro {
@@ -4193,14 +4206,6 @@ p {
     margin-top: -24px;
   }
 
-  .secretary-highlight__officers {
-    grid-template-columns: 1fr;
-  }
-
-  .secretary-highlight__officer {
-    min-height: 360px;
-  }
-
   .home-pathway {
     min-height: 92px;
     padding: 15px;
@@ -4320,6 +4325,16 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .executive-roster {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-group__head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   .archive-pending,
   .archive-reference {
     align-items: flex-start;
@@ -4345,7 +4360,6 @@ p {
   .leader img,
   .gallery-item img,
   .society-story__photos img,
-  .secretary-highlight__officer img,
   .leadership-strip img {
     transform: none !important;
   }
