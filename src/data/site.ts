@@ -39,6 +39,7 @@ export type PageKind =
   | "past-leadership"
   | "archive-roster"
   | "archived-message"
+  | "secretary-message"
   | "conference-archive";
 
 export type ContentPage = {
@@ -122,6 +123,47 @@ export const archivedPresidentMessage = {
     "As we gather to advance orthopaedic care in Agra, I’m honoured to serve as President of the Agra Orthopaedic Society for the year 2025–2026. Our mission is to share knowledge, experience, and expertise to improve patient outcomes.",
     "I invite you to participate in our academic programmes, share your insights, and lead initiatives. Together, let’s elevate orthopaedic care in our region.",
     "Thank you for your trust and support."
+  ]
+};
+
+export const secretaryMessage = {
+  author: "Dr Sanjay Chaturvedi",
+  role: "Hon. General Secretary, Agra Orthopaedic Society",
+  image: "/assets/optimized/people/sanjay-chaturvedi.webp",
+  headline: "Making AOS active, documented, academic, and connected.",
+  excerpt:
+    "The current AOS working year is being built around regular academic activity, better records, transparent planning, public awareness, and a stronger connection with every member.",
+  paragraphs: [
+    "Respected seniors, colleagues, and dear members,",
+    "It is a privilege to serve the Agra Orthopaedic Society as Hon. General Secretary. AOS has grown through the commitment of generations of orthopaedic surgeons in Agra, and our responsibility is to honour that legacy while making the society more useful, better documented, and easier for every member to engage with.",
+    "Since the installation of the present team, our effort has been to move with steady and practical steps: regular academic activity, postgraduate participation, verified member records, committee-based working, public-awareness programmes, and a durable digital archive. Each of these is important if AOS is to remain both active in the present and well preserved for the future.",
+    "The AOS Digital Directory and Member Activity Update process have been started so that member communication becomes more reliable and the academic, professional, teaching, research, public-awareness, and service contributions of members can be recorded and acknowledged. The proposed monthly AOS Member Achievements report will help ensure that good work done by members does not remain invisible.",
+    "The scientific and governance calendar also gives us a clearer rhythm: GBM-CME meetings, journal clubs, postgraduate presentations, case discussions, invited lectures, committee reviews, public-awareness activity, and planned reporting. The aim is not only to hold meetings, but to create continuity, documentation, and meaningful participation.",
+    "Our public-awareness work will continue around themes such as clubfoot awareness, bone and joint health, osteoporosis, falls prevention, road safety, trauma prevention, posture, safe exercise, and fracture first aid. A professional society has a responsibility to serve its members, its trainees, and the wider community.",
+    "I request all AOS members to take part actively: attend programmes, encourage postgraduate colleagues, update directory details, share member achievements, contribute to committees, and help us build a clean institutional record. With the guidance of our seniors, the support of President Dr Atul Kulshreshtha, and the participation of every member, we can make this year academically productive, well organised, and worthy of the AOS legacy."
+  ],
+  priorities: [
+    {
+      title: "Academic continuity",
+      text: "Monthly academic activity, GBM-CME meetings, journal clubs, case discussions, postgraduate paper presentations, and practical teaching formats."
+    },
+    {
+      title: "Member records and achievements",
+      text: "Digital directory updates, verified communication records, and a structured way to collect and acknowledge member activity."
+    },
+    {
+      title: "Governance and archive",
+      text: "Committee-based work, Constitution review, finance and compliance review, handover records, and a dependable digital society archive."
+    },
+    {
+      title: "Public awareness",
+      text: "Bone and joint health, osteoporosis, road safety, trauma prevention, falls prevention, sports injury prevention, and community-facing education."
+    }
+  ],
+  links: [
+    { label: "View the academic calendar", href: "/academic-calendar/" },
+    { label: "Open the member area", href: "/member-area/" },
+    { label: "See recent photographs", href: "/gallery/" }
   ]
 };
 
@@ -260,7 +302,14 @@ const basePages: ContentPage[] = [
     kind: "archived-message",
     status: "ready"
   },
-  comingSoon("secretary-message", "Secretary’s Message", "About AOS", "A message from the Hon. General Secretary will be published here."),
+  {
+    slug: "secretary-message",
+    title: "Secretary’s Message",
+    group: "About AOS",
+    summary: "A message from Dr Sanjay Chaturvedi on AOS academic continuity, member records, public awareness, and digital documentation.",
+    kind: "secretary-message",
+    status: "ready"
+  },
   {
     slug: "aos-legacy",
     title: "Legacy & Milestones",

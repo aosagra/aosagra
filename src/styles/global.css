@@ -2109,6 +2109,106 @@ p {
   color: var(--navy) !important;
 }
 
+.secretary-message {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(36px, 6vw, 72px);
+  align-items: start;
+}
+
+.secretary-message__portrait {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--navy);
+}
+
+.secretary-message__portrait img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.secretary-message__portrait figcaption {
+  padding: 17px 19px;
+  color: var(--white);
+}
+
+.secretary-message__portrait strong,
+.secretary-message__portrait span {
+  display: block;
+}
+
+.secretary-message__portrait strong {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+}
+
+.secretary-message__portrait span {
+  margin-top: 3px;
+  color: var(--gold-light);
+  font-size: 0.72rem;
+}
+
+.secretary-message__copy h2 {
+  margin: 24px 0 22px;
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+}
+
+.secretary-message__letter > p {
+  max-width: 70ch;
+  margin-top: 16px;
+  color: var(--ink-soft);
+}
+
+.secretary-message__letter > p:first-child {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.secretary-message__signoff {
+  padding-top: 12px;
+  color: var(--navy) !important;
+}
+
+.secretary-message__signoff span {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.secretary-message__priorities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.secretary-message__priorities article {
+  min-height: 138px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.secretary-message__priorities h3 {
+  font-size: 1.14rem;
+}
+
+.secretary-message__priorities p {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.58;
+}
+
+.secretary-message__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  margin-top: 28px;
+}
+
 .archive-index {
   padding-top: 48px;
   border-top: 1px solid var(--line);
@@ -2988,6 +3088,74 @@ p {
   line-height: 1.35;
 }
 
+.secretary-highlight {
+  padding-block: clamp(72px, 8vw, 112px);
+  background: var(--white);
+}
+
+.secretary-highlight__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 285px);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding-block: 34px;
+  border-block: 1px solid var(--line);
+}
+
+.secretary-highlight__copy {
+  max-width: 780px;
+}
+
+.secretary-highlight h2 {
+  margin-top: 10px;
+  font-size: clamp(2.05rem, 4vw, 3.45rem);
+}
+
+.secretary-highlight__copy > p:not(.section-context) {
+  max-width: 68ch;
+  margin-top: 16px;
+  color: var(--ink-soft);
+  line-height: 1.72;
+}
+
+.secretary-highlight .text-link {
+  margin-top: 23px;
+}
+
+.secretary-highlight__portrait {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--navy);
+}
+
+.secretary-highlight__portrait img {
+  width: 100%;
+  max-height: 335px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.secretary-highlight__portrait figcaption {
+  padding: 15px 17px;
+  color: var(--white);
+}
+
+.secretary-highlight__portrait strong,
+.secretary-highlight__portrait span {
+  display: block;
+}
+
+.secretary-highlight__portrait strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.secretary-highlight__portrait span {
+  margin-top: 3px;
+  color: var(--gold-light);
+  font-size: 0.7rem;
+}
+
 .home-pathways {
   position: relative;
   isolation: isolate;
@@ -3416,6 +3584,7 @@ p {
 
   .home-hero__grid,
   .next-moment__grid,
+  .secretary-highlight__inner,
   .home-pathways__inner,
   .society-story__grid,
   .leadership-signal__grid {
@@ -3434,6 +3603,10 @@ p {
 
   .next-moment {
     margin-top: -42px;
+  }
+
+  .secretary-highlight__portrait {
+    width: min(100%, 320px);
   }
 
   .home-pathways__intro {
@@ -3852,8 +4025,20 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .secretary-message {
+    grid-template-columns: 1fr;
+  }
+
   .archived-message__portrait {
     max-width: 350px;
+  }
+
+  .secretary-message__portrait {
+    max-width: 350px;
+  }
+
+  .secretary-message__priorities {
+    grid-template-columns: 1fr;
   }
 
   .form-panel__actions {

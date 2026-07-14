@@ -5,6 +5,7 @@
     "items": [
       { "label": "About AOS", "href": "/about-aos/" },
       { "label": "Leadership", "href": "/office-bearers/" },
+      { "label": "Secretary’s Message", "href": "/secretary-message/" },
       { "label": "Vision & Mission", "href": "/vision-mission/" },
       { "label": "Legacy", "href": "/aos-legacy/" },
       { "label": "Past Leadership", "href": "/past-leadership/" },
