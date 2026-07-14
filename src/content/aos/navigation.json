@@ -38,6 +38,7 @@
     "items": [
       { "label": "Membership Overview", "href": "/membership/" },
       { "label": "Benefits", "href": "/membership-benefits/" },
+      { "label": "Member Area", "href": "/member-area/" },
       { "label": "Contact AOS", "href": "/contact/" }
     ]
   },

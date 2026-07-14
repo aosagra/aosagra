@@ -32,6 +32,7 @@ export type PageKind =
   | "contact"
   | "form"
   | "login"
+  | "member-area"
   | "downloads"
   | "notices"
   | "past-leadership"
@@ -456,11 +457,11 @@ const basePages: ContentPage[] = [
   },
   comingSoon("member-directory", "Member Directory", "Membership", "The member directory will open only after consent review, record verification, and secure member authentication are complete.", "login"),
   {
-    slug: "member-login",
-    title: "Member Login",
+    slug: "member-area",
+    title: "Member Area",
     group: "Membership",
-    summary: "A preview of the future member area. Account access is not yet connected.",
-    kind: "login",
+    summary: "Directory updates, member activity submissions, and the secure member portal roadmap for AOS members.",
+    kind: "member-area",
     status: "ready"
   },
   {
@@ -623,6 +624,8 @@ const aliases: Record<string, string> = {
   "past-presidents": "past-leadership",
   "past-secretaries": "past-leadership",
   "contact-2": "contact",
+  "member-login": "member-area",
+  "members-area": "member-area",
   "2025/10/10/50th-up-golden-jubilee-orthocon-2026": "orthocon-2026"
 };
 

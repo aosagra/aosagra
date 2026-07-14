@@ -45,6 +45,41 @@ const groupNavigation = mainNavigation.find(
     group.items.some((item) => item.href === canonicalPath)
 );
 const showComingSoon = false;
+const memberAreaActions: {
+  icon: "users" | "book" | "mail";
+  title: string;
+  copy: string;
+  href: string;
+  cta: string;
+}[] = [
+  {
+    icon: "users",
+    title: "Update AOS Digital Directory",
+    copy: "Use the current society directory form to submit or correct your member record for 2026-2027.",
+    href: "https://forms.gle/9G18h7ZcSaoSEbkV8",
+    cta: "Open directory form"
+  },
+  {
+    icon: "book",
+    title: "Share member activities",
+    copy: "Submit academic, community, publication, award, and professional activity updates for review before website publication.",
+    href: "https://forms.gle/sX8MFRRGxyCxaezQA",
+    cta: "Submit activity update"
+  },
+  {
+    icon: "mail",
+    title: "Send corrections to AOS",
+    copy: "For corrections that should stay outside public forms, contact the society office directly.",
+    href: `mailto:${organization.email}`,
+    cta: "Email AOS"
+  }
+];
+const memberAreaSteps = [
+  "Secure login for verified AOS members.",
+  "Member profile correction and consent review.",
+  "Member-only directory and approved society documents.",
+  "CME certificates, circulars, and academic resources as records are prepared."
+];
 ---
 
 <BaseLayout title={page.title} description={page.summary} canonicalPath={canonicalPath} image={page.image}>
@@ -263,6 +298,55 @@ const showComingSoon = false;
               </div>
             </section>
           </div>
+        )
+      }
+
+      {
+        page.kind === "member-area" && (
+          <section class="member-area" aria-labelledby="member-area-heading">
+            <div class="content-heading">
+              <h2 id="member-area-heading">Member services, started carefully</h2>
+              <p>
+                The first public version of the AOS member area is now open for verified updates. Directory information remains consent-led and is not published as an open public directory.
+              </p>
+            </div>
+
+            <div class="member-area__actions">
+              {memberAreaActions.map((action) => (
+                <a class="member-area__action" href={action.href} target={action.href.startsWith("http") ? "_blank" : undefined} rel={action.href.startsWith("http") ? "noreferrer" : undefined}>
+                  <span class="member-area__icon"><Icon name={action.icon} size={23} /></span>
+                  <span>
+                    <strong>{action.title}</strong>
+                    <small>{action.copy}</small>
+                    <span class="text-link">{action.cta} <Icon name={action.href.startsWith("http") ? "external" : "arrow-right"} size={16} /></span>
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div class="member-area__plan">
+              <div class="member-area__status">
+                <span class="member-area__icon"><Icon name="shield" size={24} /></span>
+                <h3>Privacy first</h3>
+                <p>
+                  Member phone numbers, email addresses, photographs, family details, and directory records will stay off the public website until secure access, member consent, and society verification are complete.
+                </p>
+              </div>
+              <div class="member-area__roadmap">
+                <h3>Next portal stages</h3>
+                <ol>
+                  {memberAreaSteps.map((step) => <li>{step}</li>)}
+                </ol>
+              </div>
+            </div>
+
+            <div class="member-area__note">
+              <Icon name="check" size={21} />
+              <p>
+                Member achievements and activities can be submitted now. Only reviewed, approved, and appropriately consented material will be considered for public website updates.
+              </p>
+            </div>
+          </section>
         )
       }
 
