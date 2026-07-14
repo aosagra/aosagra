@@ -1454,6 +1454,83 @@ p {
   margin-top: 22px;
 }
 
+.gallery-jump {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.gallery-jump a {
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.gallery-jump strong,
+.gallery-jump span {
+  display: block;
+}
+
+.gallery-jump strong {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.18;
+}
+
+.gallery-jump span {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.gallery-collection {
+  display: grid;
+  gap: 54px;
+}
+
+.gallery-section {
+  scroll-margin-top: 28px;
+}
+
+.gallery-section__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--line);
+}
+
+.gallery-section__head h3 {
+  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+}
+
+.gallery-section__head p {
+  max-width: 62ch;
+  margin-top: 7px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.gallery-section__head > span {
+  flex: 0 0 auto;
+  color: var(--gold-ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3229,6 +3306,11 @@ p {
     transform: translateX(3px);
   }
 
+  .gallery-jump a:hover {
+    border-color: rgb(190 150 63 / 0.44);
+    background: var(--blue-soft);
+  }
+
   .member-area__action:hover {
     border-color: rgb(190 150 63 / 0.5);
     background: var(--blue-soft);
@@ -3694,6 +3776,15 @@ p {
 
   .notice-gallery__grid {
     gap: 76px;
+  }
+
+  .gallery-jump {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-section__head {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .gallery-grid {

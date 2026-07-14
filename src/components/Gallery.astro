@@ -8,24 +8,87 @@ interface Props {
 
 const { limit } = Astro.props;
 const images = typeof limit === "number" ? galleryImages.slice(0, limit) : galleryImages;
+const galleryGroups =
+  typeof limit === "number"
+    ? [
+        {
+          id: "selected",
+          title: "Selected photographs",
+          description: "AOS photographs selected for this page.",
+          images
+        }
+      ]
+    : [
+        {
+          id: "osteoporosis-sarcopenia-2026",
+          title: "11 July Osteoporosis & Sarcopenia Symposium",
+          description: "Photographs from the 11 July 2026 AOS academic programme.",
+          images: images.filter((image) => image.src.includes("/osteoporosis-sarcopenia-july-2026/"))
+        },
+        {
+          id: "gbm-july-2026",
+          title: "July GBM & Scientific Session",
+          description: "Photographs from the July 2026 general body and scientific meeting.",
+          images: images.filter((image) => image.src.includes("/gbm-july-2026/"))
+        },
+        {
+          id: "aos-archive",
+          title: "AOS archive photographs",
+          description: "Earlier AOS activity photographs preserved from the website archive.",
+          images: images.filter(
+            (image) =>
+              !image.src.includes("/osteoporosis-sarcopenia-july-2026/") &&
+              !image.src.includes("/gbm-july-2026/")
+          )
+        }
+      ].filter((group) => group.images.length > 0);
 ---
 
-<div class="gallery-grid" data-gallery>
+{
+  typeof limit !== "number" && (
+    <nav class="gallery-jump" aria-label="Gallery groups">
+      {galleryGroups.map((group) => (
+        <a href={`#${group.id}`}>
+          <strong>{group.title}</strong>
+          <span>{group.images.length} photographs</span>
+        </a>
+      ))}
+    </nav>
+  )
+}
+
+<div class="gallery-collection" data-gallery>
   {
-    images.map((image, index) => (
-      <button
-        id={image.id}
-        class:list={["gallery-item", { "gallery-item--wide": index === 0 || index === 5 }]}
-        type="button"
-        data-gallery-item
-        data-src={image.src}
-        data-alt={image.alt}
-        data-caption={image.caption}
-        aria-label={`Open image ${index + 1}: ${image.alt}`}
-      >
-        <img src={image.src} alt={image.alt} width="897" height="598" loading={index > 2 ? "lazy" : "eager"} />
-        <span><Icon name="image" size={17} /> View photograph</span>
-      </button>
+    galleryGroups.map((group) => (
+      <section class="gallery-section" id={group.id} aria-labelledby={`${group.id}-heading`}>
+        {typeof limit !== "number" && (
+          <div class="gallery-section__head">
+            <div>
+              <h3 id={`${group.id}-heading`}>{group.title}</h3>
+              <p>{group.description}</p>
+            </div>
+            <span>{group.images.length} photos</span>
+          </div>
+        )}
+
+        <div class="gallery-grid">
+          {group.images.map((image, index) => (
+            <button
+              id={image.id}
+              class:list={["gallery-item", { "gallery-item--wide": index === 0 || index === 5 }]}
+              type="button"
+              data-gallery-item
+              data-src={image.src}
+              data-alt={image.alt}
+              data-caption={image.caption}
+              aria-label={`Open image ${index + 1} in ${group.title}: ${image.alt}`}
+            >
+              <img src={image.src} alt={image.alt} width="897" height="598" loading={index > 2 ? "lazy" : "eager"} />
+              <span><Icon name="image" size={17} /> View photograph</span>
+            </button>
+          ))}
+        </div>
+      </section>
     ))
   }
 </div>
