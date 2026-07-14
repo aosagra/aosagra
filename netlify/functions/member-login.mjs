@@ -16,11 +16,13 @@ export async function handler(event) {
 
     const { accessCode = "" } = await readJsonBody(event);
 
-    if (!verifyMemberAccessCode(accessCode)) {
+    const member = verifyMemberAccessCode(accessCode);
+
+    if (!member) {
       throw statusError(401, "The member access code is incorrect.");
     }
 
-    const token = createMemberSession();
+    const token = createMemberSession(member);
 
     return jsonResponse(
       200,

@@ -9,12 +9,32 @@ The directory is private member information and must be supplied through Netlify
 
 ## Required Netlify environment variables
 
-- `AOS_MEMBER_ACCESS_CODE` or `AOS_MEMBER_ACCESS_CODE_HASH`
+- `AOS_MEMBER_ACCESS_CODES_JSON_BASE64`, `AOS_MEMBER_ACCESS_CODES_JSON`, `AOS_MEMBER_ACCESS_CODE`, or `AOS_MEMBER_ACCESS_CODE_HASH`
 - `AOS_MEMBER_SESSION_SECRET`
 - `AOS_MEMBER_DIRECTORY_JSON` or `AOS_MEMBER_DIRECTORY_JSON_BASE64`
 
 `AOS_MEMBER_SESSION_SECRET` should be a long random value of at least 24 characters.
-Use the hash variant for the access code when possible.
+Use the individual member-code list when possible. The single access-code variables are retained only as a fallback.
+
+## Individual member access-code JSON shape
+
+Use `AOS_MEMBER_ACCESS_CODES_JSON_BASE64` for the generated private access-code hash list:
+
+```json
+{
+  "codes": [
+    {
+      "id": "AOS-0001",
+      "name": "Dr Example Member",
+      "email": "member@example.invalid",
+      "codeHash": "sha256-hash-goes-here",
+      "active": true
+    }
+  ]
+}
+```
+
+The website verifies only hashes. Do not put plain member access codes into Netlify variables or this repository.
 
 ## Directory JSON shape
 

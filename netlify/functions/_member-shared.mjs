@@ -96,11 +96,13 @@ function sign(value) {
   return createHmac("sha256", memberSessionSecret()).update(value).digest("base64url");
 }
 
-export function createMemberSession() {
+export function createMemberSession(member = {}) {
   const maxAge = Number(process.env.AOS_MEMBER_SESSION_SECONDS ?? DEFAULT_SESSION_SECONDS);
   const payload = base64url(
     JSON.stringify({
-      sub: "aos-member",
+      sub: member.id ?? "aos-member",
+      name: member.name ?? "",
+      email: member.email ?? "",
       exp: Date.now() + maxAge * 1000
     })
   );
@@ -155,11 +157,58 @@ export function clearMemberSessionCookie(event) {
   return memberSessionCookie(event, "", 0);
 }
 
+function readAccessCodesSource() {
+  if (process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64) {
+    return Buffer.from(process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64, "base64").toString("utf8");
+  }
+
+  return process.env.AOS_MEMBER_ACCESS_CODES_JSON ?? "";
+}
+
+function configuredMemberCodes() {
+  const source = readAccessCodesSource();
+
+  if (!source) {
+    return [];
+  }
+
+  let parsed;
+
+  try {
+    parsed = JSON.parse(source);
+  } catch {
+    throw statusError(500, "AOS member access codes are not valid JSON.");
+  }
+
+  const rows = Array.isArray(parsed) ? parsed : parsed.codes;
+
+  if (!Array.isArray(rows)) {
+    throw statusError(500, "AOS member access code data must be a JSON array or an object with a codes array.");
+  }
+
+  return rows
+    .map((row, index) => ({
+      id: cleanText(row.id) || `member-${index + 1}`,
+      name: cleanText(row.name),
+      email: cleanText(row.email),
+      codeHash: cleanText(row.codeHash ?? row.hash).toLowerCase(),
+      active: row.active !== false
+    }))
+    .filter((row) => row.codeHash);
+}
+
 function assertMemberAccessConfig() {
   const missing = [];
 
-  if (!process.env.AOS_MEMBER_ACCESS_CODE && !process.env.AOS_MEMBER_ACCESS_CODE_HASH) {
-    missing.push("AOS_MEMBER_ACCESS_CODE or AOS_MEMBER_ACCESS_CODE_HASH");
+  if (
+    !process.env.AOS_MEMBER_ACCESS_CODES_JSON &&
+    !process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64 &&
+    !process.env.AOS_MEMBER_ACCESS_CODE &&
+    !process.env.AOS_MEMBER_ACCESS_CODE_HASH
+  ) {
+    missing.push(
+      "AOS_MEMBER_ACCESS_CODES_JSON_BASE64, AOS_MEMBER_ACCESS_CODES_JSON, AOS_MEMBER_ACCESS_CODE, or AOS_MEMBER_ACCESS_CODE_HASH"
+    );
   }
   if (!process.env.AOS_MEMBER_SESSION_SECRET) {
     missing.push("AOS_MEMBER_SESSION_SECRET");
@@ -173,13 +222,26 @@ function assertMemberAccessConfig() {
 export function verifyMemberAccessCode(accessCode) {
   assertMemberAccessConfig();
 
+  const accessHash = sha256(accessCode);
+  const memberCode = configuredMemberCodes().find(
+    (row) => row.active && safeEqual(accessHash, row.codeHash)
+  );
+
+  if (memberCode) {
+    return {
+      id: memberCode.id,
+      name: memberCode.name,
+      email: memberCode.email
+    };
+  }
+
   const expectedHash = process.env.AOS_MEMBER_ACCESS_CODE_HASH?.trim().toLowerCase();
 
   if (expectedHash) {
-    return safeEqual(sha256(accessCode), expectedHash);
+    return safeEqual(accessHash, expectedHash) ? { id: "aos-member" } : null;
   }
 
-  return safeEqual(sha256(accessCode), sha256(process.env.AOS_MEMBER_ACCESS_CODE));
+  return safeEqual(accessHash, sha256(process.env.AOS_MEMBER_ACCESS_CODE)) ? { id: "aos-member" } : null;
 }
 
 function readDirectorySource() {
