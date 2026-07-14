@@ -14,6 +14,7 @@ import {
   organization,
   pastPresidents,
   pastEvents,
+  videoRecordings,
   type ContentPage
 } from "../data/site";
 
@@ -38,12 +39,15 @@ const groupLabelByLegacyGroup: Record<string, string> = {
   "Public Awareness": "Public",
   "AOS Connect": "Learning"
 };
-const groupNavigation = mainNavigation.find(
+const directGroupNavigation = mainNavigation.find(
   (group) =>
-    group.label === groupLabelByLegacyGroup[page.group] ||
     group.href === canonicalPath ||
     group.items.some((item) => item.href === canonicalPath)
 );
+const groupNavigation = directGroupNavigation ?? mainNavigation.find(
+  (group) => group.label === groupLabelByLegacyGroup[page.group]
+);
+const introGroup = groupNavigation?.label ?? groupLabelByLegacyGroup[page.group] ?? page.group;
 const showComingSoon = false;
 const memberAreaActions: {
   icon: "users" | "book" | "mail";
@@ -83,7 +87,7 @@ const memberAreaSteps = [
 ---
 
 <BaseLayout title={page.title} description={page.summary} canonicalPath={canonicalPath} image={page.image}>
-  <PageIntro title={page.title} summary={page.summary} group={page.group} />
+  <PageIntro title={page.title} summary={page.summary} group={introGroup} />
 
   <div class="shell interior">
     <article class="interior__content">
@@ -400,6 +404,42 @@ const memberAreaSteps = [
                   <span><strong>{notice.title}</strong><small>{notice.summary}</small></span>
                   <Icon name="arrow-right" size={18} />
                 </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "videos" && (
+          <section class="video-gallery" aria-labelledby="video-gallery-heading">
+            <div class="content-heading">
+              <h2 id="video-gallery-heading">Recorded AOS programmes</h2>
+              <p>
+                These recordings are embedded from the society YouTube channel and open there for full-screen viewing or sharing.
+              </p>
+            </div>
+            <div class="video-gallery__grid">
+              {videoRecordings.map((video) => (
+                <article class="video-card">
+                  <div class="video-card__frame">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    />
+                  </div>
+                  <div class="video-card__body">
+                    <p>{video.event} · {video.date}</p>
+                    <h3>{video.title}</h3>
+                    <small>{video.summary}</small>
+                    <a class="text-link" href={video.url} target="_blank" rel="noreferrer">
+                      Watch on YouTube <Icon name="external" size={16} />
+                    </a>
+                  </div>
+                </article>
               ))}
             </div>
           </section>

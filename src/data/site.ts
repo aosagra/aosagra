@@ -33,6 +33,7 @@ export type PageKind =
   | "form"
   | "login"
   | "member-area"
+  | "videos"
   | "downloads"
   | "notices"
   | "past-leadership"
@@ -125,6 +126,25 @@ export const archivedPresidentMessage = {
 };
 
 export const galleryImages = [...galleryContent].sort((a, b) => a.order - b.order);
+
+export const videoRecordings = [
+  {
+    id: "ogEZM8QZFEs",
+    title: "11 July Osteoporosis Lecture by International Speakers",
+    event: "Osteoporosis & Sarcopenia Symposium",
+    date: "11 July 2026",
+    summary: "Lecture recording from the AOS osteoporosis and sarcopenia academic programme.",
+    url: "https://youtu.be/ogEZM8QZFEs"
+  },
+  {
+    id: "LAbCehT1joc",
+    title: "Agra Orthopaedic Society 11 July Osteoporosis Symposium",
+    event: "Osteoporosis & Sarcopenia Symposium",
+    date: "11 July 2026",
+    summary: "Symposium recording from the 11 July AOS academic programme.",
+    url: "https://youtu.be/LAbCehT1joc"
+  }
+];
 
 const comingSoon = (
   slug: string,
@@ -497,17 +517,14 @@ const basePages: ContentPage[] = [
     slug: "video-gallery",
     title: "Video Gallery",
     group: "AOS Connect",
-    summary: "Selected AOS recordings and video resources.",
+    summary: "Selected AOS recordings and video resources, including the 11 July 2026 osteoporosis symposium videos.",
+    kind: "videos",
     status: "ready",
     sections: [
       {
-        title: "AOS video links",
+        title: "About these recordings",
         paragraphs: [
-          "Video material currently remains on the society’s YouTube channels. The links below open in a new tab."
-        ],
-        bullets: [
-          "https://www.youtube.com/watch?v=paw4xbg6krE",
-          "https://youtu.be/v04cD9xavPk"
+          "AOS video material is hosted on YouTube and embedded here for easier member access. Recordings are shared as academic resources and remain subject to the source channel’s availability."
         ]
       }
     ]
