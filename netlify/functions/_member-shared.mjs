@@ -215,7 +215,7 @@ function assertMemberAccessConfig() {
   }
 
   if (missing.length) {
-    throw statusError(500, "Member access is not configured.", { missing });
+    throw statusError(500, "Private member access is being connected by the AOS office.", { missing });
   }
 }
 

@@ -50,6 +50,7 @@ const groupNavigation = directGroupNavigation ?? mainNavigation.find(
   (group) => group.label === groupLabelByLegacyGroup[page.group]
 );
 const introGroup = groupNavigation?.label ?? groupLabelByLegacyGroup[page.group] ?? page.group;
+const linkAttrs = (href: string) => href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
 const showComingSoon = false;
 const memberAreaActions: {
   icon: "users" | "book" | "mail";
@@ -532,6 +533,8 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
               const wrap = portal.querySelector("[data-member-directory-wrap]");
               const tbody = portal.querySelector("[data-member-directory-body]");
               const search = portal.querySelector("[data-member-search]");
+              const pendingMemberAccessMessage =
+                "Private member access is ready in the website, but the access-code list is still being connected by the AOS office.";
               let members = [];
 
               async function api(path, options = {}) {
@@ -562,6 +565,13 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
                 if (!node) return;
                 node.textContent = text;
                 node.dataset.tone = tone;
+              }
+
+              function memberErrorText(error) {
+                const text = error?.message ?? "The member service is not available right now.";
+                return text.includes("not configured") || text.includes("being connected")
+                  ? pendingMemberAccessMessage
+                  : text;
               }
 
               function showPrivate(show) {
@@ -672,7 +682,7 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
                 } catch (error) {
                   members = [];
                   wrap.hidden = true;
-                  setStatus(message, error.message, "danger");
+                  setStatus(message, memberErrorText(error), "danger");
                 }
               }
 
@@ -690,7 +700,7 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
                   setStatus(loginStatus, "");
                   await loadDirectory();
                 } catch (error) {
-                  setStatus(loginStatus, error.message, "danger");
+                  setStatus(loginStatus, memberErrorText(error), "danger");
                 }
               });
 
@@ -885,7 +895,7 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
         {groupNavigation?.items
           .filter((item) => item.href !== groupNavigation.href && item.href !== "/contact/")
           .map((item) => (
-          <a class:list={[{ active: canonicalPath === item.href }]} href={item.href}>{item.label}</a>
+          <a class:list={[{ active: canonicalPath === item.href }]} href={item.href} {...linkAttrs(item.href)}>{item.label}</a>
           ))}
       </div>
       <div class="aside-contact">

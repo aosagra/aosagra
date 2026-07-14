@@ -651,6 +651,7 @@ const basePages: ContentPage[] = [
         title: "Professional resources",
         bullets: [
           "Indian Orthopaedic Association — https://www.ioaindia.org",
+          "Agra Orthopaedic Society Facebook — https://www.facebook.com/profile.php?id=100066359897312",
           "World Health Organization — https://www.who.int",
           "National Health Portal of India — https://www.nhp.gov.in"
         ]
@@ -670,6 +671,17 @@ const basePages: ContentPage[] = [
           "This section is being developed as a public service. It will explain common orthopaedic concerns, prevention, first-aid principles, and signs that should prompt timely professional assessment.",
           "General information cannot replace examination or individual medical advice. For urgent injury, severe pain, weakness, numbness, deformity, or loss of function, seek qualified medical care promptly."
         ]
+      },
+      {
+        title: "Daily Hindi public-awareness posts",
+        paragraphs: [
+          "AOS will use its Facebook page for regular Hindi public-awareness posts on common orthopaedic problems. The aim is to share one clear, practical topic at a time for patients and families in Agra.",
+          "Suggested themes include osteoporosis, knee arthritis, back pain, fracture first aid, sports injury prevention, senior-citizen falls, road-safety trauma prevention, posture, safe exercise, and when to seek urgent orthopaedic care."
+        ],
+        bullets: [
+          "Follow the AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312",
+          "Hindi awareness archive — https://aosagra.com/hindi-public-awareness/"
+        ]
       }
     ]
   },
@@ -682,7 +694,33 @@ const basePages: ContentPage[] = [
   comingSoon("fracture-first-aid", "Fracture First Aid", "Public Awareness", "Safe first steps after a suspected fracture are being prepared for public use."),
   comingSoon("road-safety-trauma-prevention", "Road Safety & Trauma Prevention", "Public Awareness", "Locally relevant injury-prevention information is being prepared."),
   comingSoon("senior-fall-prevention", "Senior Citizen Fall Prevention", "Public Awareness", "A practical home, health, and mobility checklist for reducing falls is being prepared."),
-  comingSoon("hindi-public-awareness", "हिंदी स्वास्थ्य जागरूकता", "Public Awareness", "हड्डी, जोड़, चोट और चलने-फिरने के स्वास्थ्य पर सरल हिंदी सामग्री तैयार की जा रही है।"),
+  {
+    slug: "hindi-public-awareness",
+    title: "हिंदी स्वास्थ्य जागरूकता",
+    group: "Public Awareness",
+    summary: "हड्डी, जोड़, चोट और चलने-फिरने के स्वास्थ्य पर सरल हिंदी सामग्री और फेसबुक पोस्ट योजना।",
+    status: "ready",
+    sections: [
+      {
+        title: "AOS Facebook awareness series",
+        paragraphs: [
+          "यह पेज AOS की हिंदी जन-जागरूकता सामग्री के लिए बनाया गया है। फेसबुक पर रोज़ाना या नियमित रूप से एक सरल विषय साझा किया जा सकता है, ताकि आम लोग हड्डी और जोड़ से जुड़ी समस्याओं को बेहतर समझ सकें।",
+          "हर पोस्ट में सामान्य जानकारी, बचाव के उपाय, सावधानी के संकेत और समय पर डॉक्टर से सलाह लेने की बात शामिल रखी जानी चाहिए। यह सामग्री व्यक्तिगत जांच या डॉक्टर की सलाह का विकल्प नहीं है।"
+        ],
+        bullets: [
+          "AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312",
+          "ऑस्टियोपोरोसिस और हड्डियों की कमजोरी",
+          "घुटनों का दर्द और आर्थराइटिस",
+          "कमर दर्द और सही posture",
+          "फ्रैक्चर होने पर प्राथमिक सावधानी",
+          "बुजुर्गों में गिरने से बचाव",
+          "सड़क दुर्घटना और trauma prevention",
+          "बच्चों में clubfoot awareness",
+          "खेल-कूद में चोट से बचाव"
+        ]
+      }
+    ]
+  },
   comingSoon("media-coverage", "Media Coverage", "AOS Connect", "Verified media references are being reviewed for the archive."),
   comingSoon("publications-digital-archive", "Publications & Digital Archive", "Academics", "Publications and historic digital material are being catalogued."),
   comingSoon("research-public-health", "Research & Public Health", "Academics", "Society research and public-health initiatives will be documented here."),

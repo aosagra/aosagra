@@ -49,6 +49,8 @@
     "href": "/public-awareness/",
     "items": [
       { "label": "Public Awareness", "href": "/public-awareness/" },
+      { "label": "Hindi Awareness", "href": "/hindi-public-awareness/" },
+      { "label": "AOS Facebook", "href": "https://www.facebook.com/profile.php?id=100066359897312" },
       { "label": "Useful Links", "href": "/useful-links/" },
       { "label": "Video Gallery", "href": "/video-gallery/" }
     ]
