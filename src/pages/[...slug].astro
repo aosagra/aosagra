@@ -414,8 +414,65 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
             <div class="content-heading">
               <h2 id="member-area-heading">Member services, started carefully</h2>
               <p>
-                The first public version of the AOS member area is now open for verified updates. Directory information remains consent-led and is not published as an open public directory.
+                The AOS member area is being opened behind member access. Directory information remains consent-led and is not published as an open public directory for general website visitors.
               </p>
+            </div>
+
+            <div class="member-portal" data-member-portal>
+              <section class="member-portal__login" data-member-login-panel aria-labelledby="member-login-heading">
+                <span class="member-area__icon"><Icon name="shield" size={24} /></span>
+                <div>
+                  <p class="section-context">Private member access</p>
+                  <h3 id="member-login-heading">AOS Digital Directory</h3>
+                  <p>
+                    Enter the member access code to view the internal AOS directory. Contact details are not shown to ordinary site visitors.
+                  </p>
+                </div>
+                <form class="member-portal__form" data-member-login-form>
+                  <label>
+                    <span>Member access code</span>
+                    <input name="accessCode" type="password" autocomplete="current-password" required />
+                  </label>
+                  <button class="button button--primary" type="submit">Open member area</button>
+                </form>
+                <p class="member-portal__status" data-member-login-status role="status" aria-live="polite"></p>
+              </section>
+
+              <section class="member-portal__private" data-member-private hidden aria-labelledby="member-directory-heading">
+                <div class="member-portal__bar">
+                  <div>
+                    <p class="section-context">Members only</p>
+                    <h3 id="member-directory-heading">AOS Digital Directory</h3>
+                    <span data-member-count>Directory loading…</span>
+                  </div>
+                  <button class="button button--light" type="button" data-member-logout>Logout</button>
+                </div>
+
+                <div class="member-portal__tools">
+                  <label>
+                    <span>Search directory</span>
+                    <input type="search" placeholder="Search by name, city, hospital, interest…" data-member-search />
+                  </label>
+                  <a class="button button--gold" href="https://forms.gle/9G18h7ZcSaoSEbkV8" target="_blank" rel="noreferrer">Update my profile</a>
+                </div>
+
+                <div class="member-portal__message" data-member-directory-message role="status" aria-live="polite"></div>
+
+                <div class="member-directory-wrap" data-member-directory-wrap hidden>
+                  <table class="member-directory">
+                    <caption>AOS member directory visible only after member access</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Member</th>
+                        <th scope="col">Practice</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Professional details</th>
+                      </tr>
+                    </thead>
+                    <tbody data-member-directory-body></tbody>
+                  </table>
+                </div>
+              </section>
             </div>
 
             <div class="member-area__actions">
@@ -450,10 +507,215 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
             <div class="member-area__note">
               <Icon name="check" size={21} />
               <p>
-                Member achievements and activities can be submitted now. Only reviewed, approved, and appropriately consented material will be considered for public website updates.
+                Member achievements and activities can be submitted now. Profile corrections should be submitted through the directory form until direct Google Sheet or private database syncing is configured.
               </p>
             </div>
           </section>
+        )
+      }
+
+      {
+        page.kind === "member-area" && (
+          <script is:inline>
+            (() => {
+              const portal = document.querySelector("[data-member-portal]");
+
+              if (!portal) return;
+
+              const loginPanel = portal.querySelector("[data-member-login-panel]");
+              const privatePanel = portal.querySelector("[data-member-private]");
+              const loginForm = portal.querySelector("[data-member-login-form]");
+              const loginStatus = portal.querySelector("[data-member-login-status]");
+              const logoutButton = portal.querySelector("[data-member-logout]");
+              const countLabel = portal.querySelector("[data-member-count]");
+              const message = portal.querySelector("[data-member-directory-message]");
+              const wrap = portal.querySelector("[data-member-directory-wrap]");
+              const tbody = portal.querySelector("[data-member-directory-body]");
+              const search = portal.querySelector("[data-member-search]");
+              let members = [];
+
+              async function api(path, options = {}) {
+                const response = await fetch(path, {
+                  credentials: "same-origin",
+                  ...options,
+                  headers: {
+                    "content-type": "application/json",
+                    ...(options.headers ?? {})
+                  }
+                });
+                let body;
+
+                try {
+                  body = await response.json();
+                } catch {
+                  body = { error: "The member service did not return JSON." };
+                }
+
+                if (!response.ok) {
+                  throw new Error(body.error ?? "Request failed.");
+                }
+
+                return body;
+              }
+
+              function setStatus(node, text, tone = "neutral") {
+                if (!node) return;
+                node.textContent = text;
+                node.dataset.tone = tone;
+              }
+
+              function showPrivate(show) {
+                loginPanel.hidden = show;
+                privatePanel.hidden = !show;
+              }
+
+              function addLine(parent, text) {
+                if (!text) return;
+                const span = document.createElement("span");
+                span.textContent = text;
+                parent.append(span);
+              }
+
+              function addContact(parent, label, value, href) {
+                if (!value) return;
+                const item = document.createElement(href ? "a" : "span");
+                item.textContent = `${label}: ${value}`;
+                if (href) item.href = href;
+                parent.append(item);
+              }
+
+              function renderDirectory(list) {
+                tbody.innerHTML = "";
+
+                list.forEach((member) => {
+                  const row = document.createElement("tr");
+                  const memberCell = document.createElement("th");
+                  const practiceCell = document.createElement("td");
+                  const contactCell = document.createElement("td");
+                  const detailsCell = document.createElement("td");
+                  const contactStack = document.createElement("div");
+                  const detailStack = document.createElement("div");
+
+                  memberCell.scope = "row";
+                  memberCell.textContent = member.name;
+                  contactStack.className = "member-directory__stack";
+                  detailStack.className = "member-directory__stack";
+
+                  practiceCell.textContent = [member.hospital, member.city].filter(Boolean).join(" · ") || "Not listed";
+                  addContact(contactStack, "Mobile", member.mobile, member.mobile ? `tel:${member.mobile.replace(/\\s+/g, "")}` : "");
+                  addContact(contactStack, "WhatsApp", member.whatsapp, member.whatsapp ? `tel:${member.whatsapp.replace(/\\s+/g, "")}` : "");
+                  addContact(contactStack, "Email", member.email, member.email ? `mailto:${member.email}` : "");
+                  addLine(detailStack, member.qualification);
+                  addLine(detailStack, member.appointment);
+                  addLine(detailStack, member.interest);
+                  addLine(detailStack, member.executivePost);
+
+                  if (!contactStack.children.length) addLine(contactStack, "Contact not shared");
+                  if (!detailStack.children.length) addLine(detailStack, "Details not listed");
+
+                  contactCell.append(contactStack);
+                  detailsCell.append(detailStack);
+                  row.append(memberCell, practiceCell, contactCell, detailsCell);
+                  tbody.append(row);
+                });
+
+                wrap.hidden = list.length === 0;
+                setStatus(message, list.length ? "" : "No members match this search.", list.length ? "neutral" : "warning");
+              }
+
+              function filterDirectory() {
+                const query = (search.value ?? "").trim().toLowerCase();
+                const filtered = query
+                  ? members.filter((member) =>
+                      [
+                        member.name,
+                        member.city,
+                        member.hospital,
+                        member.qualification,
+                        member.appointment,
+                        member.interest,
+                        member.executivePost
+                      ]
+                        .filter(Boolean)
+                        .join(" ")
+                        .toLowerCase()
+                        .includes(query)
+                    )
+                  : members;
+
+                renderDirectory(filtered);
+              }
+
+              async function loadDirectory() {
+                showPrivate(true);
+                setStatus(message, "Loading member directory…");
+
+                try {
+                  const result = await api("/.netlify/functions/member-directory");
+
+                  if (!result.configured) {
+                    members = [];
+                    countLabel.textContent = "Directory data is ready for secure connection.";
+                    wrap.hidden = true;
+                    setStatus(
+                      message,
+                      "Member login is working. The private directory source has not been connected on Netlify yet; members can use the update form meanwhile.",
+                      "warning"
+                    );
+                    return;
+                  }
+
+                  members = result.members ?? [];
+                  countLabel.textContent = `${result.count ?? members.length} member records available${result.updatedAt ? ` · Updated ${result.updatedAt}` : ""}`;
+                  setStatus(message, "");
+                  filterDirectory();
+                } catch (error) {
+                  members = [];
+                  wrap.hidden = true;
+                  setStatus(message, error.message, "danger");
+                }
+              }
+
+              loginForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const form = new FormData(loginForm);
+                setStatus(loginStatus, "Checking access code…");
+
+                try {
+                  await api("/.netlify/functions/member-login", {
+                    method: "POST",
+                    body: JSON.stringify({ accessCode: form.get("accessCode") })
+                  });
+                  loginForm.reset();
+                  setStatus(loginStatus, "");
+                  await loadDirectory();
+                } catch (error) {
+                  setStatus(loginStatus, error.message, "danger");
+                }
+              });
+
+              logoutButton.addEventListener("click", async () => {
+                await api("/.netlify/functions/member-logout", { method: "POST" });
+                members = [];
+                tbody.innerHTML = "";
+                wrap.hidden = true;
+                showPrivate(false);
+                setStatus(loginStatus, "Logged out.", "success");
+              });
+
+              search.addEventListener("input", filterDirectory);
+
+              api("/.netlify/functions/member-session")
+                .then((result) => {
+                  if (result.authenticated) {
+                    loadDirectory();
+                  }
+                })
+                .catch(() => {
+                  showPrivate(false);
+                });
+            })();
+          </script>
         )
       }
 

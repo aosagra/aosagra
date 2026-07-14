@@ -39,8 +39,8 @@
 /apply-for-membership/ /membership/ 302
 /membership-enquiry/ /membership/ 302
 /membership-categories/ /membership/ 302
-/member-directory/ /membership/ 302
-/member-login/ /membership/ 302
+/member-directory/ /member-area/ 302
+/member-login/ /member-area/ 302
 
 # Unpublished news, downloads, and public topics
 /aos-connect/ /latest-notices/ 302
