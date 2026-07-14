@@ -26,8 +26,8 @@
   --gold-light: #e4c36e;
   --success: #1f6d55;
   --success: oklch(0.49 0.09 164);
-  --font-body: "Overpass Variable", "Overpass", system-ui, sans-serif;
-  --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  --font-body: "Hind", system-ui, sans-serif;
+  --font-display: "Martel", Georgia, serif;
   --shadow-compact: 0 4px 8px rgb(8 60 80 / 0.08);
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -37,21 +37,6 @@
   --z-sticky: 40;
   --z-modal-backdrop: 50;
   --z-modal: 60;
-}
-
-html[data-font="civic"] {
-  --font-body: "Libre Franklin Variable", "Libre Franklin", system-ui, sans-serif;
-  --font-display: "Libre Caslon Text", Georgia, serif;
-}
-
-html[data-font="agra"] {
-  --font-body: "Hind", system-ui, sans-serif;
-  --font-display: "Martel", Georgia, serif;
-}
-
-html[data-font="contemporary"] {
-  --font-body: "Manrope Variable", "Manrope", system-ui, sans-serif;
-  --font-display: "Literata Variable", "Literata", Georgia, serif;
 }
 
 *,
@@ -123,23 +108,10 @@ h2,
 h3 {
   color: var(--navy);
   font-family: var(--font-display);
-  font-weight: 650;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-  text-wrap: balance;
-}
-
-html[data-font="agra"] h1,
-html[data-font="agra"] h2,
-html[data-font="agra"] h3 {
+  font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.15;
-}
-
-html[data-font="civic"] h1,
-html[data-font="civic"] h2,
-html[data-font="civic"] h3 {
-  letter-spacing: -0.018em;
+  text-wrap: balance;
 }
 
 p {
@@ -186,73 +158,9 @@ p {
   background: var(--white);
   border-radius: var(--radius-sm);
   color: var(--navy);
-  font-weight: 750;
+  font-weight: 700;
   transform: translateY(-160%);
   transition: transform 160ms var(--ease-out);
-}
-
-.font-preview-toolbar {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: var(--z-modal);
-  max-width: calc(100vw - 32px);
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px;
-  border: 1px solid rgb(255 255 255 / 0.2);
-  border-radius: var(--radius-md);
-  background: var(--navy-deep);
-  color: white;
-}
-
-.font-preview-toolbar__label {
-  padding-inline: 7px 3px;
-  color: var(--gold-light);
-  font-size: 0.72rem;
-  font-weight: 760;
-  white-space: nowrap;
-}
-
-.font-preview-toolbar__options {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.font-preview-toolbar button,
-.font-preview-toolbar a {
-  min-height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 10px;
-  border: 0;
-  border-radius: var(--radius-sm);
-  background: transparent;
-  color: rgb(255 255 255 / 0.76);
-  font-size: 0.72rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.font-preview-toolbar button[aria-pressed="true"] {
-  background: white;
-  color: var(--navy-deep);
-}
-
-.font-preview-toolbar > a {
-  border: 1px solid rgb(255 255 255 / 0.24);
-  color: white;
-}
-
-.font-preview-toolbar .font-preview-toolbar__close {
-  width: 38px;
-  padding: 0;
-  color: white;
-  font-size: 1.2rem;
 }
 
 .skip-link:focus {
@@ -269,7 +177,7 @@ p {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   font-size: 0.925rem;
-  font-weight: 760;
+  font-weight: 700;
   line-height: 1.2;
   text-align: center;
   transition:
@@ -313,7 +221,7 @@ p {
   gap: 7px;
   color: var(--blue-strong);
   font-size: 0.94rem;
-  font-weight: 760;
+  font-weight: 700;
   line-height: 1.3;
   text-decoration: underline;
   text-decoration-color: transparent;
@@ -364,12 +272,12 @@ p {
 
 .announcement__date {
   color: #e4c36e;
-  font-weight: 780;
+  font-weight: 700;
 }
 
 .announcement a {
   min-height: 39px;
-  font-weight: 720;
+  font-weight: 700;
 }
 
 .masthead {
@@ -405,7 +313,7 @@ p {
   display: block;
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2vw, 1.55rem);
-  font-weight: 720;
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.03;
   text-wrap: balance;
@@ -501,7 +409,7 @@ p {
   border-bottom: 2px solid transparent;
   color: var(--ink);
   font-size: 0.82rem;
-  font-weight: 710;
+  font-weight: 700;
   line-height: 1.2;
   white-space: nowrap;
   cursor: pointer;
@@ -566,7 +474,7 @@ p {
   background: var(--blue-soft);
   color: var(--navy);
   font-size: 0.83rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .nav-popover__links {
@@ -584,7 +492,7 @@ p {
   border-radius: 6px;
   color: var(--ink-soft);
   font-size: 0.79rem;
-  font-weight: 630;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -616,7 +524,7 @@ p {
   padding: 10px 4px;
   border-bottom: 1px solid var(--line);
   color: var(--navy);
-  font-weight: 720;
+  font-weight: 700;
   list-style: none;
 }
 
@@ -639,12 +547,12 @@ p {
   border-bottom-color: rgb(8 60 80 / 0.1);
   color: var(--ink-soft);
   font-size: 0.88rem;
-  font-weight: 610;
+  font-weight: 600;
 }
 
 .mobile-nav .mobile-nav__overview {
   color: var(--navy);
-  font-weight: 780;
+  font-weight: 700;
 }
 
 .mobile-nav .mobile-nav__join {
@@ -687,7 +595,7 @@ p {
 .search-panel__head p {
   color: var(--gold-ink);
   font-size: 0.72rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .search-panel__head h2 {
@@ -745,14 +653,14 @@ p {
 
 .search-field button {
   min-width: 52px;
-  min-height: 40px;
+  min-height: 44px;
   padding: 7px 9px;
   border: 0;
   border-radius: var(--radius-sm);
   background: var(--blue-soft);
   color: var(--blue-strong);
   font-size: 0.72rem;
-  font-weight: 760;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -763,7 +671,7 @@ p {
 .search-panel__meta > p:first-child {
   color: var(--ink-soft);
   font-size: 0.7rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .search-results {
@@ -794,7 +702,7 @@ p {
 .search-result small {
   color: var(--gold-ink);
   font-size: 0.66rem;
-  font-weight: 740;
+  font-weight: 700;
 }
 
 .search-result strong {
@@ -843,7 +751,7 @@ p {
   margin-top: 17px;
   color: var(--blue-strong);
   font-size: 0.83rem;
-  font-weight: 760;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -884,14 +792,14 @@ p {
 .hero__identity {
   color: var(--gold-light);
   font-size: 0.82rem;
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: 0.035em;
 }
 
 .section-context {
   color: var(--gold-ink);
   font-size: 0.82rem;
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: 0.035em;
 }
 
@@ -987,7 +895,7 @@ p {
   display: block;
   margin-bottom: 3px;
   color: var(--white);
-  font-weight: 780;
+  font-weight: 700;
 }
 
 .section {
@@ -1081,7 +989,7 @@ p {
 .event-date span {
   margin-top: 5px;
   font-size: 0.65rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .event-date--past {
@@ -1111,7 +1019,7 @@ p {
   margin-top: 11px;
   color: var(--blue-strong);
   font-size: 0.73rem;
-  font-weight: 690;
+  font-weight: 600;
 }
 
 .event-row > .text-link {
@@ -1136,7 +1044,7 @@ p {
 
 .past-event-note a {
   color: var(--blue-strong);
-  font-weight: 720;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1320,7 +1228,7 @@ p {
 .leader p {
   color: #e4c36e;
   font-size: 0.77rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .leader h3 {
@@ -1393,7 +1301,7 @@ p {
   gap: 9px;
   color: var(--ink-soft);
   font-size: 0.84rem;
-  font-weight: 640;
+  font-weight: 600;
 }
 
 .feature-panel__points svg {
@@ -1480,7 +1388,7 @@ p {
 .legacy-band__inner > p {
   color: #e4c36e;
   font-size: 0.82rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .legacy-band h2 {
@@ -1517,7 +1425,7 @@ p {
 .notice-list time {
   color: var(--blue-strong);
   font-size: 0.79rem;
-  font-weight: 780;
+  font-weight: 700;
 }
 
 .notice-list strong,
@@ -1665,7 +1573,7 @@ p {
   color: var(--white);
   font-family: var(--font-body);
   font-size: 0.76rem;
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: 0.03em;
 }
 
@@ -1708,7 +1616,7 @@ p {
 .site-footer__affiliations > div:first-child p {
   color: var(--white);
   font-size: 0.76rem;
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: 0.03em;
 }
 
@@ -1738,7 +1646,7 @@ p {
   margin-left: 5px;
   color: rgb(255 255 255 / 0.82);
   font-size: 0.75rem;
-  font-weight: 680;
+  font-weight: 600;
 }
 
 .site-footer__base {
@@ -1783,7 +1691,7 @@ p {
   margin-bottom: 22px;
   color: rgb(255 255 255 / 0.67);
   font-size: 0.76rem;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .breadcrumbs a {
@@ -1948,7 +1856,7 @@ p {
   background: var(--blue-soft);
   color: var(--ink-soft);
   font-size: 0.78rem;
-  font-weight: 630;
+  font-weight: 600;
 }
 
 .archive-note svg {
@@ -1959,7 +1867,7 @@ p {
 
 .archive-note a {
   color: var(--blue-strong);
-  font-weight: 760;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1994,7 +1902,7 @@ p {
 .archive-table thead th {
   color: var(--ink-soft);
   font-size: 0.7rem;
-  font-weight: 780;
+  font-weight: 700;
 }
 
 .archive-table tbody th {
@@ -2181,7 +2089,7 @@ p {
 .archive-reference p {
   color: var(--gold-ink);
   font-size: 0.72rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .archive-reference h2 {
@@ -2210,25 +2118,25 @@ p {
   margin-bottom: 10px;
   color: var(--ink-soft);
   font-size: 0.72rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .aside-panel a {
-  min-height: 41px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   padding: 8px 9px;
   border-radius: 6px;
   color: var(--ink-soft);
   font-size: 0.78rem;
-  font-weight: 640;
+  font-weight: 600;
   line-height: 1.3;
 }
 
 .aside-panel a.active {
   background: var(--blue-soft);
   color: var(--navy);
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .aside-contact {
@@ -2299,7 +2207,7 @@ p {
   margin-bottom: 2px;
   color: rgb(255 255 255 / 0.58);
   font-size: 0.68rem;
-  font-weight: 680;
+  font-weight: 600;
 }
 
 .contact-direct {
@@ -2344,7 +2252,7 @@ p {
 .login-panel label > span {
   color: var(--navy);
   font-size: 0.76rem;
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .form-panel input,
@@ -2397,11 +2305,11 @@ p {
   background: #e4f3ed;
   color: #185741;
   font-size: 0.82rem;
-  font-weight: 620;
+  font-weight: 600;
 }
 
 .form-response a {
-  font-weight: 780;
+  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -2560,7 +2468,7 @@ p {
 .not-found__inner > p:first-child {
   color: #e4c36e;
   font-size: 0.9rem;
-  font-weight: 780;
+  font-weight: 700;
 }
 
 .not-found h1 {
@@ -2626,7 +2534,7 @@ p {
   background: rgb(255 255 255 / 0.06);
   color: #e4c36e;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.045em;
 }
 
@@ -2636,7 +2544,7 @@ p {
   color: var(--white);
   font-size: clamp(3.45rem, 6.4vw, 5.8rem);
   letter-spacing: -0.035em;
-  line-height: 0.94;
+  line-height: 1.06;
 }
 
 .home-hero__lead {
@@ -2710,7 +2618,7 @@ p {
   color: var(--white);
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .home-hero__taj {
@@ -2779,14 +2687,14 @@ p {
 .next-moment__card time strong {
   font-family: var(--font-display);
   font-size: clamp(4.6rem, 8vw, 6rem);
-  font-weight: 680;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 0.8;
 }
 
 .next-moment__card time span {
   font-size: 0.83rem;
-  font-weight: 820;
+  font-weight: 700;
   letter-spacing: 0.035em;
 }
 
@@ -2795,7 +2703,7 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .next-moment__card svg {
@@ -2807,7 +2715,7 @@ p {
   max-width: 23ch;
   color: rgb(6 47 63 / 0.72);
   font-size: 0.73rem;
-  font-weight: 720;
+  font-weight: 700;
   line-height: 1.35;
 }
 
@@ -2887,7 +2795,7 @@ p {
   color: var(--navy);
   font-family: var(--font-display);
   font-size: 1.3rem;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.2;
 }
@@ -2957,7 +2865,7 @@ p {
   background: rgb(6 47 63 / 0.82);
   color: var(--white);
   font-size: 0.72rem;
-  font-weight: 740;
+  font-weight: 700;
 }
 
 .leadership-signal {
@@ -3021,7 +2929,7 @@ p {
 .leadership-strip strong {
   font-family: var(--font-display);
   font-size: 1.08rem;
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -3029,7 +2937,7 @@ p {
   margin-top: 4px;
   color: rgb(255 255 255 / 0.72);
   font-size: 0.72rem;
-  font-weight: 720;
+  font-weight: 700;
 }
 
 .member-cta--home {
@@ -3314,26 +3222,6 @@ p {
 }
 
 @media (max-width: 760px) {
-  .font-preview-toolbar {
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto 38px;
-  }
-
-  .font-preview-toolbar__options {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .font-preview-toolbar__options button {
-    min-width: 0;
-    padding-inline: 5px;
-  }
-
   .shell {
     width: min(100% - 28px, 680px);
   }

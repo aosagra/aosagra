@@ -29,7 +29,7 @@ npm install
 npm run dev
 ```
 
-Typography review is available at `/type-lab/`. Add `?fontlab=1` to any page to open the font switcher; the optional `font` values are `source`, `civic`, `agra`, and `contemporary`.
+Typography review is available locally at `/type-lab/`. The public site loads only the approved Martel + Hind pairing; the other options remain isolated to the design-reference page.
 
 Build and verify:
 

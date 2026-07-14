@@ -1,6 +1,10 @@
 ---
-import "@fontsource-variable/overpass/index.css";
-import "@fontsource-variable/source-serif-4/index.css";
+import "@fontsource/martel/400.css";
+import "@fontsource/martel/600.css";
+import "@fontsource/martel/700.css";
+import "@fontsource/hind/400.css";
+import "@fontsource/hind/600.css";
+import "@fontsource/hind/700.css";
 
 const fallbackTypes = [
   { id: "home", label: "Homepage", description: "Hero, homepage doors, and homepage photo-story copy." },
@@ -33,7 +37,7 @@ const fallbackTypes = [
         <div>
           <p>Static-site control room</p>
           <h1 id="admin-title">Update the society website without touching WordPress.</h1>
-          <span>Edits are saved to the site repository and published by Netlify after the next deploy.</span>
+          <span class="admin-hero__summary">Edits are saved to the site repository and published by Netlify after the next deploy.</span>
         </div>
       </section>
 
@@ -363,8 +367,8 @@ const fallbackTypes = [
     --admin-muted: #5d6e76;
     --admin-danger: #9d2c2c;
     --admin-success: #246b54;
-    --font-body: "Overpass Variable", "Overpass", system-ui, sans-serif;
-    --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+    --font-body: "Hind", system-ui, sans-serif;
+    --font-display: "Martel", Georgia, serif;
   }
 
   * {
@@ -477,7 +481,7 @@ const fallbackTypes = [
     margin: 0;
     color: var(--admin-gold);
     font-size: 0.78rem;
-    font-weight: 820;
+    font-weight: 700;
     letter-spacing: 0.05em;
   }
 
@@ -487,12 +491,12 @@ const fallbackTypes = [
     color: white;
     font-family: var(--font-display);
     font-size: clamp(2.7rem, 6vw, 5.8rem);
-    font-weight: 650;
+    font-weight: 600;
     letter-spacing: -0.03em;
-    line-height: 0.96;
+    line-height: 1.1;
   }
 
-  .admin-hero span {
+  .admin-hero__summary {
     display: block;
     max-width: 680px;
     margin-top: 18px;
@@ -503,8 +507,7 @@ const fallbackTypes = [
   .admin-card {
     border: 1px solid var(--admin-line);
     border-radius: 18px;
-    background: rgb(255 255 255 / 0.86);
-    box-shadow: 0 18px 44px rgb(8 60 80 / 0.08);
+    background: white;
   }
 
   .login-card {
@@ -512,7 +515,7 @@ const fallbackTypes = [
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
     gap: 26px;
-    margin: -46px auto 0;
+    margin: 18px auto 0;
     padding: clamp(24px, 4vw, 38px);
     position: relative;
     z-index: 2;
@@ -523,9 +526,9 @@ const fallbackTypes = [
     color: var(--admin-navy);
     font-family: var(--font-display);
     font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 650;
+    font-weight: 600;
     letter-spacing: -0.025em;
-    line-height: 1.05;
+    line-height: 1.15;
   }
 
   .admin-card p:not(.admin-kicker) {
@@ -545,7 +548,7 @@ const fallbackTypes = [
     gap: 7px;
     color: var(--admin-muted);
     font-size: 0.82rem;
-    font-weight: 760;
+    font-weight: 700;
   }
 
   input,
@@ -634,14 +637,14 @@ const fallbackTypes = [
 
   .admin-button,
   .ghost-button {
-    min-height: 43px;
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     padding: 10px 15px;
     border-radius: 12px;
-    font-weight: 820;
+    font-weight: 700;
     transition:
       background-color 160ms ease,
       border-color 160ms ease,
@@ -804,7 +807,7 @@ const fallbackTypes = [
     .admin-hero h1 {
       font-size: clamp(2rem, 10.5vw, 3rem);
       letter-spacing: -0.025em;
-      line-height: 1.04;
+      line-height: 1.12;
     }
 
     .brand-plaque {

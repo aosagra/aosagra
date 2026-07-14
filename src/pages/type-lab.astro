@@ -1,10 +1,17 @@
 ---
+import "@fontsource-variable/overpass/index.css";
+import "@fontsource-variable/source-serif-4/index.css";
+import "@fontsource/libre-caslon-text/400.css";
+import "@fontsource/libre-caslon-text/700.css";
+import "@fontsource-variable/libre-franklin/wght.css";
+import "@fontsource-variable/literata/wght.css";
+import "@fontsource-variable/manrope/wght.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const options = [
   {
     id: "source",
-    name: "Current",
+    name: "Previous",
     display: "Source Serif 4",
     body: "Overpass",
     description: "Clear, scholarly, and dependable. It serves the content well, but its personality is deliberately quiet."
@@ -18,7 +25,7 @@ const options = [
   },
   {
     id: "agra",
-    name: "Agra",
+    name: "Agra · Current",
     display: "Martel",
     body: "Hind",
     description: "Rooted, dignified, and Devanagari-ready. It gives AOS a more specific Indian institutional voice.",
@@ -45,7 +52,7 @@ const options = [
       <p>Typography lab · design tool</p>
       <h1>Which voice belongs to AOS?</h1>
       <span>
-        Compare the same institutional language in four complete type systems. Use “Open on homepage” to walk through the real site with that pairing.
+        Compare the same institutional language in four complete type systems. Agra is now the approved production voice; the others remain here as local design references.
       </span>
     </div>
   </section>
@@ -78,7 +85,7 @@ const options = [
 
           <footer>
             <p>{option.description}</p>
-            <a href={`/?font=${option.id}&fontlab=1`}>Open on homepage</a>
+            <span class="type-specimen__status">{option.recommended ? "Production default" : "Reference option"}</span>
           </footer>
         </article>
       ))
@@ -254,10 +261,10 @@ const options = [
     line-height: 1.55;
   }
 
-  .type-specimen > footer a {
+  .type-specimen__status {
     color: var(--blue-strong);
     font-size: 0.8rem;
-    font-weight: 760;
+    font-weight: 700;
   }
 
   @media (max-width: 760px) {

@@ -1,20 +1,12 @@
 ---
-import "@fontsource-variable/overpass/index.css";
-import "@fontsource-variable/source-serif-4/index.css";
-import "@fontsource/libre-caslon-text/400.css";
-import "@fontsource/libre-caslon-text/700.css";
-import "@fontsource-variable/libre-franklin/wght.css";
 import "@fontsource/martel/400.css";
 import "@fontsource/martel/600.css";
 import "@fontsource/martel/700.css";
 import "@fontsource/hind/400.css";
 import "@fontsource/hind/600.css";
 import "@fontsource/hind/700.css";
-import "@fontsource-variable/literata/wght.css";
-import "@fontsource-variable/manrope/wght.css";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
-import FontPreviewToolbar from "../components/FontPreviewToolbar.astro";
 import Header from "../components/Header.astro";
 import { organization } from "../data/site";
 
@@ -79,13 +71,6 @@ const structuredData = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
     <title>{pageTitle}</title>
-    <script is:inline>
-      (() => {
-        const allowed = new Set(["source", "civic", "agra", "contemporary"]);
-        const requested = new URLSearchParams(window.location.search).get("font");
-        document.documentElement.dataset.font = allowed.has(requested ?? "") ? requested : "source";
-      })();
-    </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
@@ -95,6 +80,5 @@ const structuredData = {
       <slot />
     </main>
     <Footer />
-    <FontPreviewToolbar />
   </body>
 </html>

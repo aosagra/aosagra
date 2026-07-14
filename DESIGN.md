@@ -30,13 +30,13 @@ Gold is reserved for the primary membership action and small points of emphasis.
 
 ## Type
 
-- Display and editorial headings: Source Serif 4
-- Interface, navigation, and body copy: Overpass
+- Display and editorial headings: Martel
+- Interface, navigation, and body copy: Hind
 - Body measure: no more than 72 characters
 - Display tracking never tighter than `-0.035em`
-- The current pairing remains the production default until a replacement is approved.
-- Compare typography at `/type-lab/`. On any page, add `?fontlab=1&font=source|civic|agra|contemporary` to open the preview controls.
-- The “Agra” candidate uses Martel + Hind and is the preferred locally rooted, Devanagari-ready direction.
+- Martel + Hind is the approved production pairing: locally rooted, dignified, and Devanagari-ready.
+- Compare typography locally at `/type-lab/`; alternative pairings are isolated to that design-reference page and are not loaded by the public site.
+- Source Serif 4 + Overpass remains available in the lab for comparison or rollback.
 
 ## Shape and motion
 
