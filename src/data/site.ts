@@ -26,6 +26,7 @@ export type PageSection = {
 export type PageKind =
   | "standard"
   | "leadership"
+  | "committees"
   | "events"
   | "past-events"
   | "gallery"
@@ -160,6 +161,166 @@ export const currentExecutive2026 = [
   { name: "Dr Atul Srivastava", role: "Special Invitee / Advisor", group: "Special Invitees / Advisors" },
   { name: "Dr Dev Rajan Agarwal", role: "Designation to be updated", group: "Designation to be updated" },
   { name: "Dr Shubham Khandelwal", role: "Designation to be updated", group: "Designation to be updated" }
+];
+
+export const aosCorePlanningGroup = [
+  { name: "Dr Ashok Vij", role: "Patron / Senior Adviser" },
+  { name: "Dr Atul Srivastava", role: "Past President, UPOA / Senior Adviser" },
+  { name: "Dr Sanjay Dhawan", role: "Past President, UPOA / Senior Adviser" },
+  { name: "Dr D. V. Sharma", role: "Senior Adviser" },
+  { name: "Dr Ravi Sabharwal", role: "Senior Adviser / Scientific Planning" },
+  { name: "Dr Sanjay Prakash", role: "Senior Adviser" },
+  { name: "Dr Manvendra Sharma", role: "Financial Guidance / Financial Planning" },
+  { name: "Dr Atul Kulshreshtha", role: "President, AOS" },
+  { name: "Dr Sanjay Chaturvedi", role: "Secretary, AOS" },
+  { name: "Dr Sanjeev Vohra", role: "Treasurer, AOS" },
+  { name: "Dr Ashwani Sadana", role: "Joint Secretary, AOS" },
+  { name: "Dr Rajeev Gupta", role: "Joint Secretary, AOS" },
+  { name: "Dr Kartik Pruthi", role: "Scientific Secretary, AOS" },
+  { name: "Dr Amrit Goyal", role: "Senior Member / Academic Planning" },
+  { name: "Dr Anupam Gupta", role: "Senior Member / Past Secretary" },
+  { name: "Dr Atul Agarwal", role: "Senior Member" },
+  { name: "Dr Pramod Gupta", role: "Senior Member" },
+  { name: "Dr Arun Kapoor", role: "Senior Member / Administrative Planning" },
+  { name: "Dr Rajat Kapoor", role: "Senior Member / Academic Planning" },
+  { name: "Dr Amit Agrawal", role: "Senior Member / Membership Drive" },
+  { name: "Dr Brijesh Sharma", role: "Senior Member" },
+  { name: "Dr Rajeev Goyal", role: "Senior Member" },
+  { name: "Dr Manoj Sharma", role: "Senior Member" }
+];
+
+export const aosCommittees = [
+  {
+    title: "Constitution Committee",
+    purpose: "Review the existing AOS Constitution and prepare proposed amendments for the appropriate society forum.",
+    chair: "Dr Ashok Vij",
+    deliverable: "Clause-wise Constitution Amendment Report",
+    members: [
+      "Dr Ashok Vij",
+      "Dr Manoj Sharma",
+      "Dr Atul Srivastava",
+      "Dr Atul Agarwal",
+      "Dr Ashwani Sadana",
+      "Dr Brijesh Sharma",
+      "Dr Rajat Kapoor",
+      "President, AOS",
+      "Secretary, AOS"
+    ]
+  },
+  {
+    title: "Finance Committee",
+    purpose: "Guide financial planning, budgeting, grants, audit, bank matters, compliance, and transparent reporting.",
+    chair: "Dr D. V. Sharma",
+    deliverable: "Finance Status and Financial Policy Note",
+    members: [
+      "Dr D. V. Sharma",
+      "Dr Ashok Vij",
+      "Dr Manvendra Sharma",
+      "Dr Sanjay Prakash",
+      "Dr Arun Kapoor",
+      "President, AOS",
+      "Secretary, AOS",
+      "Treasurer, AOS",
+      "Joint Treasurer, AOS"
+    ]
+  },
+  {
+    title: "Scientific Committee",
+    purpose: "Plan CMEs, GBMs, journal clubs, case discussions, practical teaching formats, faculty balance, and academic documentation.",
+    chair: "Dr Ravi Sabharwal",
+    deliverable: "Six-month Academic Calendar and Academic Activity Format",
+    members: [
+      "Dr Ravi Sabharwal",
+      "Dr Sanjay Dhawan",
+      "Dr Amrit Goyal",
+      "Dr Arun Gupta",
+      "Dr Gaurav Rajpal",
+      "Dr Rajat Kapoor",
+      "President, AOS",
+      "Secretary, AOS",
+      "Dr Ashwani Sadana",
+      "Dr Brijesh Sharma",
+      "Dr R. K. Shakun, HOD Orthopaedics, SN Medical College",
+      "Scientific Secretary, AOS"
+    ]
+  },
+  {
+    title: "Academic Infrastructure / Education Fund Committee",
+    purpose: "Explore long-term academic infrastructure, education fund concepts, skill/virtual lab possibilities, and digital academic resources.",
+    chair: "Dr Ashok Vij",
+    deliverable: "Concept Note on AOS Academic Infrastructure / Education Fund",
+    members: [
+      "Dr Ashok Vij",
+      "Dr Sanjay Dhawan",
+      "Dr Atul Srivastava",
+      "Dr Brijesh Sharma",
+      "Dr Ashwani Sadana",
+      "HOD Orthopaedics, SN Medical College",
+      "President, AOS",
+      "Secretary, AOS"
+    ]
+  },
+  {
+    title: "Membership Drive Committee",
+    purpose: "Update the AOS directory, verify member details, identify eligible new members, and support a consent-led member data system.",
+    chair: "HOD, Department of Orthopaedics, SN Medical College",
+    deliverable: "Membership Verification Status Report",
+    members: [
+      "Dr Sanjay Dhawan",
+      "HOD, Department of Orthopaedics, SN Medical College",
+      "Dr Amit Agrawal",
+      "Dr Vivek Mittal",
+      "Other Executive Members as decided by EBM"
+    ]
+  },
+  {
+    title: "PG Activity Committee",
+    purpose: "Coordinate postgraduate teaching, paper and case presentations, faculty discussion, rotation between institutions, and certificates.",
+    chair: "HOD Orthopaedics, SN Medical College and HOD Orthopaedics, F. H. Medical College",
+    deliverable: "First PG Activity Plan and PG Presentation Format",
+    members: [
+      "HOD, Department of Orthopaedics, SN Medical College",
+      "HOD, Department of Orthopaedics, F. H. Medical College",
+      "Dr Imran Sajid",
+      "Scientific Secretary, AOS"
+    ]
+  },
+  {
+    title: "Social Welfare Committee",
+    purpose: "Plan public awareness, outreach, bone and joint health education, trauma prevention, and community-facing AOS activity.",
+    chair: "Dr D. V. Sharma",
+    deliverable: "Quarterly Social Welfare and Public Awareness Plan",
+    members: [
+      "Dr D. V. Sharma",
+      "Dr Mukesh Goyal",
+      "Dr Rajeev Gupta",
+      "Dr Anupam Gupta",
+      "Dr Atul Agarwal",
+      "Dr Yogesh Bindal",
+      "Dr Brijesh Sharma",
+      "Dr Vineet",
+      "Dr Vivek Mittal",
+      "Dr Pramod Gupta"
+    ]
+  }
+];
+
+export const aosCommitteeWorkstreams = [
+  {
+    title: "Sponsorship, Venue and Educational Grant Policy",
+    owner: "Finance Committee with relevant members",
+    summary: "Prepare a transparent policy note for educational grants, venue planning, documentation, and financial propriety."
+  },
+  {
+    title: "Administrative Handover and Digital Records",
+    owner: "Secretary's office with Joint Secretaries and relevant members",
+    summary: "Organise AOS records, handover documents, minutes, registers, website records, and digital archive formats."
+  },
+  {
+    title: "Legal and Compliance Records",
+    owner: "Secretary and Treasurer",
+    summary: "Maintain society registration, audit, tax, compliance, and legal records in a controlled physical and digital archive."
+  }
 ];
 
 export const archivedPresidentMessage = {
@@ -347,7 +508,15 @@ const basePages: ContentPage[] = [
     kind: "archive-roster",
     status: "ready"
   },
-  comingSoon("committees", "Committees", "About AOS", "Committee roles and current membership will be published here after society review."),
+  {
+    slug: "committees",
+    title: "AOS Committees",
+    group: "About AOS",
+    summary:
+      "Current AOS advisory and working committees, published with names, roles, purposes, and reporting responsibilities.",
+    kind: "committees",
+    status: "ready"
+  },
   comingSoon("president-message", "President’s Message", "About AOS", "A message from current President Dr Atul Kulshreshtha will be published here."),
   {
     slug: "president-message-2025-2026",

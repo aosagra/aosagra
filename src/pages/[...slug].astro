@@ -6,6 +6,9 @@ import Icon from "../components/Icon.astro";
 import PageIntro from "../components/PageIntro.astro";
 import {
   publicPages,
+  aosCommitteeWorkstreams,
+  aosCommittees,
+  aosCorePlanningGroup,
   archivedPresidentMessage,
   currentExecutive2026,
   executiveBody2025,
@@ -51,6 +54,7 @@ const groupNavigation = directGroupNavigation ?? mainNavigation.find(
 );
 const introGroup = groupNavigation?.label ?? groupLabelByLegacyGroup[page.group] ?? page.group;
 const linkAttrs = (href: string) => href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
+const idFor = (value: string) => value.toLowerCase().replaceAll("&", "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const showComingSoon = false;
 const memberAreaActions: {
   icon: "users" | "book" | "mail";
@@ -224,6 +228,99 @@ const publicAwarenessTopics = [
                 </section>
               ))}
             </div>
+          </section>
+        )
+      }
+
+      {
+        page.kind === "committees" && (
+          <section class="committees-page" aria-labelledby="committees-heading">
+            <div class="content-heading">
+              <h2 id="committees-heading">Working committees and advisory groups</h2>
+              <p>
+                The committees below support AOS academic planning, governance review, membership verification, public awareness, and institutional records. They prepare reports and recommendations for the appropriate AOS forum.
+              </p>
+            </div>
+
+            <div class="archive-note">
+              <Icon name="users" size={20} />
+              <p>Public committee roster · Names and working responsibilities only</p>
+            </div>
+
+            <div class="committee-principles" aria-label="Committee working principles">
+              <article>
+                <strong>Advisory working role</strong>
+                <span>Committees prepare reports and recommendations; final decisions remain with the competent AOS forum.</span>
+              </article>
+              <article>
+                <strong>Report discipline</strong>
+                <span>First reports are expected within the planned reporting cycle so they can be consolidated before GBM discussion.</span>
+              </article>
+              <article>
+                <strong>Chairmanship rule</strong>
+                <span>Unless otherwise specified, the first named member acts as Chairman. PG activity has institutional co-chairpersons.</span>
+              </article>
+            </div>
+
+            <section class="committee-core" aria-labelledby="core-planning-group">
+              <div class="executive-group__head">
+                <h3 id="core-planning-group">AOS Core Planning & Advisory Group</h3>
+                <span>{aosCorePlanningGroup.length} members</span>
+              </div>
+              <div class="committee-core__list">
+                {aosCorePlanningGroup.map((member) => (
+                  <article>
+                    <strong>{member.name}</strong>
+                    <span>{member.role}</span>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <div class="committee-list" aria-label="AOS committees">
+              {aosCommittees.map((committee) => (
+                <section class="committee-panel" aria-labelledby={idFor(committee.title)}>
+                  <div class="committee-panel__head">
+                    <div>
+                      <h3 id={idFor(committee.title)}>{committee.title}</h3>
+                      <p>{committee.purpose}</p>
+                    </div>
+                    <span>{committee.members.length} {committee.members.length === 1 ? "member" : "members"}</span>
+                  </div>
+                  <dl class="committee-panel__meta">
+                    <div>
+                      <dt>Chair / lead</dt>
+                      <dd>{committee.chair}</dd>
+                    </div>
+                    <div>
+                      <dt>Deliverable</dt>
+                      <dd>{committee.deliverable}</dd>
+                    </div>
+                  </dl>
+                  <ol class="committee-members">
+                    {committee.members.map((member) => <li>{member}</li>)}
+                  </ol>
+                </section>
+              ))}
+            </div>
+
+            <section class="committee-workstreams" aria-labelledby="committee-workstreams">
+              <div class="content-heading">
+                <h2 id="committee-workstreams">Related workstreams</h2>
+                <p>
+                  These areas are recorded as committee-linked work and are kept on the website at a high level. Detailed records remain for internal society use.
+                </p>
+              </div>
+              <div class="committee-workstreams__list">
+                {aosCommitteeWorkstreams.map((workstream) => (
+                  <article>
+                    <h3>{workstream.title}</h3>
+                    <p>{workstream.summary}</p>
+                    <span>{workstream.owner}</span>
+                  </article>
+                ))}
+              </div>
+            </section>
           </section>
         )
       }
