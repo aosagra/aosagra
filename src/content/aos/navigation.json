@@ -50,6 +50,10 @@
     "items": [
       { "label": "Public Awareness", "href": "/public-awareness/" },
       { "label": "Hindi Awareness", "href": "/hindi-public-awareness/" },
+      { "label": "Knee Pain & Arthritis", "href": "/knee-pain-arthritis/" },
+      { "label": "Shoulder Problems", "href": "/shoulder-problems/" },
+      { "label": "Night Leg Cramps", "href": "/night-leg-cramps/" },
+      { "label": "OrthoInfo Links", "href": "/trusted-orthoinfo-links/" },
       { "label": "AOS Facebook", "href": "https://www.facebook.com/profile.php?id=100066359897312" },
       { "label": "Useful Links", "href": "/useful-links/" },
       { "label": "Video Gallery", "href": "/video-gallery/" }

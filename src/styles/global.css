@@ -1923,6 +1923,78 @@ p {
   text-underline-offset: 3px;
 }
 
+.awareness-index {
+  max-width: 860px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.awareness-index__links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.awareness-index__links a {
+  min-height: 156px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 18px 20px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.awareness-index__links a:nth-child(odd) {
+  padding-right: 24px;
+  border-right: 1px solid var(--line);
+}
+
+.awareness-index__links a:nth-child(even) {
+  padding-left: 24px;
+}
+
+.awareness-index__links small,
+.awareness-index__links strong,
+.awareness-index__links em {
+  display: block;
+}
+
+.awareness-index__links small {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.awareness-index__links strong {
+  margin-top: 8px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.awareness-index__links em {
+  max-width: 33ch;
+  margin-top: 9px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.awareness-index__links svg {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  color: var(--blue-strong);
+  transition: transform 180ms var(--ease-out);
+}
+
 .archive-note {
   display: flex;
   align-items: flex-start;
@@ -3711,7 +3783,15 @@ p {
     background: var(--blue-soft);
   }
 
+  .awareness-index__links a:hover {
+    background: var(--blue-soft);
+  }
+
   .archive-index__links a:hover > svg {
+    transform: translateX(3px);
+  }
+
+  .awareness-index__links a:hover svg {
     transform: translateX(3px);
   }
 
@@ -3959,6 +4039,18 @@ p {
 
   .announcement a {
     display: none;
+  }
+
+  .awareness-index__links {
+    grid-template-columns: 1fr;
+  }
+
+  .awareness-index__links a,
+  .awareness-index__links a:nth-child(odd),
+  .awareness-index__links a:nth-child(even) {
+    min-height: 0;
+    padding: 18px 0;
+    border-right: 0;
   }
 
   .brand-lockup {

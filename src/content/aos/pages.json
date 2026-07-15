@@ -81,14 +81,31 @@
         ]
       },
       {
+        "title": "Current awareness library",
+        "paragraphs": [
+          "The first AOS public-awareness pages are being organised around common patient questions: knee osteoarthritis, shoulder pain myths, and night leg cramps.",
+          "These pages support Facebook posts with slightly fuller explanations, warning signs, and practical next steps."
+        ],
+        "bullets": [
+          "Knee pain and osteoarthritis — /knee-pain-arthritis/",
+          "Shoulder pain myth-buster series — /shoulder-problems/",
+          "Night leg cramps — /night-leg-cramps/",
+          "Trusted OrthoInfo links — /trusted-orthoinfo-links/",
+          "Hindi awareness archive — /hindi-public-awareness/",
+          "Follow the AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312"
+        ]
+      },
+      {
         "title": "Daily Hindi public-awareness posts",
         "paragraphs": [
           "AOS will use its Facebook page for regular Hindi public-awareness posts on common orthopaedic problems. The aim is to share one clear, practical topic at a time for patients and families in Agra.",
           "Suggested themes include osteoporosis, knee arthritis, back pain, fracture first aid, sports injury prevention, senior-citizen falls, road-safety trauma prevention, posture, safe exercise, and when to seek urgent orthopaedic care."
         ],
         "bullets": [
-          "Follow the AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312",
-          "Hindi awareness archive — https://aosagra.com/hindi-public-awareness/"
+          "Monday: knee pain and osteoarthritis",
+          "Wednesday: shoulder myth-buster",
+          "Friday: practical self-care, cramps, stretching, fall prevention, or posture",
+          "Sunday: simple patient question or doctor’s note"
         ]
       }
     ]

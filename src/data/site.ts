@@ -651,6 +651,7 @@ const basePages: ContentPage[] = [
         title: "Professional resources",
         bullets: [
           "Indian Orthopaedic Association — https://www.ioaindia.org",
+          "AAOS OrthoInfo Patient Education — https://www.orthoinfo.org/",
           "Agra Orthopaedic Society Facebook — https://www.facebook.com/profile.php?id=100066359897312",
           "World Health Organization — https://www.who.int",
           "National Health Portal of India — https://www.nhp.gov.in"
@@ -673,22 +674,282 @@ const basePages: ContentPage[] = [
         ]
       },
       {
+        title: "Current awareness library",
+        paragraphs: [
+          "The first AOS public-awareness pages are being organised around common patient questions: knee osteoarthritis, shoulder pain myths, and night leg cramps.",
+          "These pages support Facebook posts with slightly fuller explanations, warning signs, and practical next steps."
+        ],
+        bullets: [
+          "Knee pain and osteoarthritis — /knee-pain-arthritis/",
+          "Shoulder pain myth-buster series — /shoulder-problems/",
+          "Night leg cramps — /night-leg-cramps/",
+          "Hindi awareness archive — /hindi-public-awareness/",
+          "Trusted OrthoInfo links — /trusted-orthoinfo-links/",
+          "Follow the AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312"
+        ]
+      },
+      {
         title: "Daily Hindi public-awareness posts",
         paragraphs: [
           "AOS will use its Facebook page for regular Hindi public-awareness posts on common orthopaedic problems. The aim is to share one clear, practical topic at a time for patients and families in Agra.",
           "Suggested themes include osteoporosis, knee arthritis, back pain, fracture first aid, sports injury prevention, senior-citizen falls, road-safety trauma prevention, posture, safe exercise, and when to seek urgent orthopaedic care."
         ],
         bullets: [
-          "Follow the AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312",
-          "Hindi awareness archive — https://aosagra.com/hindi-public-awareness/"
+          "Monday: knee pain and osteoarthritis",
+          "Wednesday: shoulder myth-buster",
+          "Friday: practical self-care, cramps, stretching, fall prevention, or posture",
+          "Sunday: simple patient question or doctor’s note"
         ]
       }
     ]
   },
   comingSoon("bone-joint-health", "Bone & Joint Health", "Public Awareness", "Practical guidance on movement, strength, nutrition, injury prevention, and timely care is being prepared."),
   comingSoon("osteoporosis", "Osteoporosis", "Public Awareness", "A patient-friendly guide to bone health, risk, screening, falls, and fracture prevention is being prepared."),
-  comingSoon("knee-pain-arthritis", "Knee Pain & Arthritis", "Public Awareness", "Balanced information on common causes, activity, red flags, and treatment pathways is being prepared."),
-  comingSoon("shoulder-problems", "Shoulder Problems", "Public Awareness", "A clear guide to common shoulder symptoms and when to seek assessment is being prepared."),
+  {
+    slug: "knee-pain-arthritis",
+    title: "Knee Pain & Arthritis",
+    group: "Public Awareness",
+    summary: "Patient-friendly guidance on knee osteoarthritis, movement, X-rays, weight, warning signs, and treatment decisions.",
+    status: "ready",
+    sections: [
+      {
+        title: "Osteoarthritis is not simply old age",
+        paragraphs: [
+          "Knee osteoarthritis is common with increasing age, but pain and disability should not be dismissed as just getting old.",
+          "Osteoarthritis affects the whole joint: cartilage, bone, joint lining, muscles and surrounding tissues. Symptoms may include pain while walking or climbing stairs, stiffness after rest, swelling, reduced movement and loss of confidence in the knee.",
+          "Early attention to weight, muscle strength, activity pattern and correct diagnosis can often improve function considerably. A painful knee deserves assessment, not resignation."
+        ]
+      },
+      {
+        title: "Movement is usually part of treatment",
+        paragraphs: [
+          "Many people stop moving because the knee hurts. Prolonged inactivity can weaken the muscles that protect the joint and may make ordinary activity even harder.",
+          "The aim is not painful over-exertion. Suitable regular activity may include walking within tolerance, cycling, swimming or prescribed strengthening exercises. The correct exercise depends on symptoms, balance, general health and the condition of the joint.",
+          "A useful rule is simple: exercise should challenge the muscles without causing a major and lasting increase in pain or swelling."
+        ]
+      },
+      {
+        title: "Weight and knee pain",
+        paragraphs: [
+          "Body weight is not a moral issue, and patients should never be blamed. It is, however, an important mechanical and metabolic factor in knee osteoarthritis.",
+          "Even modest, sustainable weight reduction may reduce stress on the knees and improve walking, sleep and exercise tolerance. Crash diets rarely solve a long-term joint problem.",
+          "Small improvements maintained for months matter more than dramatic promises."
+        ],
+        bullets: [
+          "Realistic nutrition changes",
+          "Regular low-impact activity",
+          "Strengthening of thigh and hip muscles",
+          "Treatment of pain that prevents exercise"
+        ]
+      },
+      {
+        title: "An X-ray does not decide your pain",
+        paragraphs: [
+          "Two people can have similar knee X-rays and very different symptoms. One may walk comfortably; the other may struggle.",
+          "Treatment should be based on the complete picture: pain pattern, swelling, movement, muscle strength, alignment, walking ability, sleep, work and personal goals. An X-ray is useful, but the patient is more important than the picture."
+        ]
+      },
+      {
+        title: "When should knee pain be examined?",
+        paragraphs: [
+          "Not every painful knee is osteoarthritis. Correct diagnosis comes before correct treatment."
+        ],
+        bullets: [
+          "Pain is persistent or repeatedly associated with swelling",
+          "Pain affects sleep, walking, stairs or routine activity",
+          "The knee feels unstable, locks, or cannot bear weight",
+          "There is fever, redness, sudden severe swelling, injury, numbness, weakness, deformity, or rapidly worsening symptoms"
+        ]
+      },
+      {
+        title: "Knee replacement is not the first step",
+        paragraphs: [
+          "Most patients with knee osteoarthritis do not begin with surgery. Treatment usually progresses through education, activity modification, exercise, weight management, medicines when appropriate, and selected procedures.",
+          "Knee replacement is considered when severe pain and disability continue despite reasonable non-operative treatment and the joint damage matches the symptoms. The right decision is individual, informed and shared."
+        ]
+      },
+      {
+        title: "Reliable reference links",
+        bullets: [
+          "AAOS OrthoInfo: Arthritis of the Knee — https://www.orthoinfo.org/diseases--conditions/arthritis-of-the-knee/",
+          "AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "shoulder-problems",
+    title: "Shoulder Problems",
+    group: "Public Awareness",
+    summary: "A Hindi myth-buster style series on shoulder pain, frozen shoulder, rotator cuff problems, MRI, and safe exercise.",
+    status: "ready",
+    sections: [
+      {
+        title: "Shoulder pain myth-buster series",
+        paragraphs: [
+          "Shoulder pain has many causes. Every shoulder pain is not frozen shoulder, every pain near the shoulder is not necessarily from the shoulder, and every MRI finding does not automatically mean surgery.",
+          "The AOS shoulder series is being built in simple Hindi for public awareness, with emphasis on clinical diagnosis, safe exercise, and avoiding unnecessary fear."
+        ]
+      },
+      {
+        title: "Topics ready for Facebook and website use",
+        bullets: [
+          "हर shoulder pain frozen shoulder नहीं होता",
+          "Shoulder pain: गर्दन से या shoulder से?",
+          "Frozen shoulder क्या है?",
+          "Frozen shoulder exercises: कब करें, कब नहीं",
+          "Safe exercises in frozen shoulder",
+          "MRI in shoulder pain: कब जरूरी है?",
+          "Rotator cuff क्या है?",
+          "हर rotator cuff tear में surgery जरूरी नहीं"
+        ]
+      },
+      {
+        title: "Future topics",
+        bullets: [
+          "Biceps tendon pain",
+          "Shoulder instability or dislocation",
+          "Shoulder arthritis",
+          "Calcific tendinitis",
+          "Sports and gym injuries",
+          "Shoulder replacement"
+        ]
+      },
+      {
+        title: "When shoulder pain should be assessed",
+        paragraphs: [
+          "Shoulder stiffness, weakness, pain after injury, repeated dislocation, night pain, diabetes-associated stiffness, or pain travelling from the neck to the arm should be assessed properly. Treatment depends on the cause, not on the name of the pain alone."
+        ]
+      },
+      {
+        title: "Reliable reference links",
+        bullets: [
+          "AAOS OrthoInfo: Frozen Shoulder — https://www.orthoinfo.org/diseases--conditions/frozen-shoulder/",
+          "AAOS OrthoInfo: Rotator Cuff Tears — https://www.orthoinfo.org/diseases--conditions/rotator-cuff-tears/",
+          "AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "night-leg-cramps",
+    title: "Night Leg Cramps",
+    group: "Public Awareness",
+    summary: "रात में पिंडली या पैर में अकड़न, तुरंत राहत, बचाव और डॉक्टर से कब मिलें.",
+    status: "ready",
+    sections: [
+      {
+        title: "रात में पैरों में अकड़न क्यों होती है?",
+        paragraphs: [
+          "कई मरीज बताते हैं कि रात में अचानक पिंडली या पैर में तेज खिंचाव हो जाता है. नींद खुल जाती है, पैर कड़ा सा महसूस होता है और दर्द कुछ मिनटों तक रह सकता है.",
+          "यह समस्या आम है, लेकिन बार-बार हो, नींद खराब करे, या दूसरे लक्षणों के साथ हो तो इसे नजरअंदाज नहीं करना चाहिए."
+        ]
+      },
+      {
+        title: "संभावित कारण",
+        bullets: [
+          "मांसपेशियों की थकान या कमजोरी",
+          "पानी की कमी",
+          "लंबे समय तक खड़े रहना या बैठे रहना",
+          "बढ़ती उम्र में मांसपेशियों की flexibility कम होना",
+          "कुछ दवाइयों का असर",
+          "कभी-कभी electrolyte या vitamin imbalance",
+          "Diabetes, thyroid, nerve या circulation से जुड़ी समस्या"
+        ]
+      },
+      {
+        title: "तुरंत राहत",
+        bullets: [
+          "पैर सीधा करें और पंजे को धीरे से अपनी ओर खींचें",
+          "हल्की मालिश करें",
+          "थोड़ा चलें या पैर हिलाएं",
+          "गुनगुने पानी से सेक या warm bath मदद कर सकता है"
+        ]
+      },
+      {
+        title: "बचाव कैसे करें",
+        bullets: [
+          "पर्याप्त पानी पिएं",
+          "सोने से पहले calf stretching करें",
+          "नियमित हल्का व्यायाम करें",
+          "संतुलित आहार लें",
+          "बहुत tight या असुविधाजनक footwear से बचें"
+        ]
+      },
+      {
+        title: "कब डॉक्टर से मिलें?",
+        paragraphs: [
+          "बार-बार होने वाले cramps को केवल साधारण खिंचाव मानकर न टालें. सही कारण समझना जरूरी है."
+        ],
+        bullets: [
+          "Cramps बार-बार हों या नींद खराब कर रहे हों",
+          "Cramps 10 मिनट से अधिक रहें",
+          "पैर में सूजन, सुन्नपन, कमजोरी या चलने में दिक्कत हो",
+          "दर्द लंबे समय तक बना रहे या symptoms तेजी से बढ़ें"
+        ]
+      },
+      {
+        title: "Reliable reference links",
+        bullets: [
+          "NHS: Leg cramps — https://www.nhs.uk/conditions/leg-cramps/",
+          "AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "trusted-orthoinfo-links",
+    title: "Trusted OrthoInfo Links",
+    group: "Public Awareness",
+    summary: "Curated AAOS OrthoInfo patient-education links for deeper reading after AOS public-awareness posts.",
+    status: "ready",
+    sections: [
+      {
+        title: "How AOS will use OrthoInfo",
+        paragraphs: [
+          "AOS public-awareness pages will remain original, locally written patient education. OrthoInfo links are included for deeper reading from a respected orthopaedic reference.",
+          "AAOS OrthoInfo material should be linked as a reference rather than copied, altered, or republished on the AOS website without permission."
+        ]
+      },
+      {
+        title: "Knee pain and arthritis",
+        bullets: [
+          "AAOS OrthoInfo: Arthritis of the Knee — https://www.orthoinfo.org/diseases--conditions/arthritis-of-the-knee/",
+          "AAOS OrthoInfo: Total Knee Replacement — https://www.orthoinfo.org/treatment/total-knee-replacement/",
+          "AOS page: Knee Pain & Arthritis — /knee-pain-arthritis/"
+        ]
+      },
+      {
+        title: "Shoulder pain",
+        bullets: [
+          "AAOS OrthoInfo: Frozen Shoulder — https://www.orthoinfo.org/diseases--conditions/frozen-shoulder/",
+          "AAOS OrthoInfo: Rotator Cuff Tears — https://www.orthoinfo.org/diseases--conditions/rotator-cuff-tears/",
+          "AAOS OrthoInfo: Rotator Cuff and Shoulder Conditioning Program — https://www.orthoinfo.org/recovery/rotator-cuff-and-shoulder-conditioning-program/",
+          "AOS page: Shoulder Problems — /shoulder-problems/"
+        ]
+      },
+      {
+        title: "Bone health, back pain, and fractures",
+        bullets: [
+          "AAOS OrthoInfo: Low Back Pain — https://www.orthoinfo.org/diseases--conditions/low-back-pain/",
+          "AAOS OrthoInfo: Neck Pain — https://www.orthoinfo.org/diseases--conditions/neck-pain/",
+          "AAOS OrthoInfo: Fractures (Broken Bones) — https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "AAOS OrthoInfo: Care of Casts and Splints — https://www.orthoinfo.org/recovery/care-of-casts-and-splints/"
+        ]
+      },
+      {
+        title: "For future AOS posts",
+        paragraphs: [
+          "Each new AOS awareness topic can follow the same pattern: a short AOS explanation in simple language, a clear safety note, and one or two OrthoInfo links for deeper reading."
+        ],
+        bullets: [
+          "Use OrthoInfo as a reference backbone, not as copied website text.",
+          "Translate and localise AOS content in Dr Sanjay Chaturvedi's voice.",
+          "Add the OrthoInfo link below the AOS post or website page as further reading."
+        ]
+      }
+    ]
+  },
   comingSoon("spine-back-pain", "Spine & Back Pain", "Public Awareness", "Evidence-informed information on back care and warning signs is being prepared."),
   comingSoon("sports-injuries", "Sports Injuries", "Public Awareness", "Prevention, early care, recovery principles, and return-to-sport guidance are being prepared."),
   comingSoon("fracture-first-aid", "Fracture First Aid", "Public Awareness", "Safe first steps after a suspected fracture are being prepared for public use."),

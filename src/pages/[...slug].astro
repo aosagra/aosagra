@@ -100,6 +100,38 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
     members: currentExecutive2026.filter((member) => member.group === group)
   }))
   .filter((entry) => entry.members.length > 0);
+const publicAwarenessTopics = [
+  {
+    title: "Knee Pain & Arthritis",
+    label: "Osteoarthritis series",
+    copy: "Movement, X-rays, warning signs, weight, and treatment decisions in plain patient language.",
+    href: "/knee-pain-arthritis/"
+  },
+  {
+    title: "Shoulder Problems",
+    label: "Myth-buster series",
+    copy: "Frozen shoulder, cervical pain, rotator cuff tears, MRI decisions, and safe exercise.",
+    href: "/shoulder-problems/"
+  },
+  {
+    title: "Night Leg Cramps",
+    label: "Practical self-care",
+    copy: "रात में पिंडली या पैर की अकड़न, राहत, बचाव और कब doctor review जरूरी है.",
+    href: "/night-leg-cramps/"
+  },
+  {
+    title: "Trusted OrthoInfo Links",
+    label: "Further reading",
+    copy: "Curated AAOS OrthoInfo links grouped by common public-awareness topics.",
+    href: "/trusted-orthoinfo-links/"
+  },
+  {
+    title: "Hindi Awareness",
+    label: "Facebook archive",
+    copy: "A place to organise Hindi patient-awareness topics before and after Facebook posting.",
+    href: "/hindi-public-awareness/"
+  }
+];
 ---
 
 <BaseLayout title={page.title} description={page.summary} canonicalPath={canonicalPath} image={page.image}>
@@ -829,12 +861,13 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
             {section.bullets && (
               <ul>
                 {section.bullets.map((bullet) => {
-                  const rawUrl = bullet.match(/https?:\/\/\S+$/)?.[0];
+                  const rawUrl = bullet.match(/(?:https?:\/\/\S+|\/[^\s]+\/?)$/)?.[0];
                   const label = rawUrl ? bullet.replace(` — ${rawUrl}`, "") : bullet;
+                  const attrs = rawUrl?.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
                   return (
                     <li>
                       <Icon name="check" size={17} />
-                      {rawUrl ? <a href={rawUrl} target="_blank" rel="noreferrer">{label} <Icon name="external" size={15} /></a> : label}
+                      {rawUrl ? <a href={rawUrl} {...attrs}>{label} <Icon name={rawUrl.startsWith("http") ? "external" : "arrow-right"} size={15} /></a> : label}
                     </li>
                   );
                 })}
@@ -842,6 +875,31 @@ const currentExecutiveGroups = currentExecutiveGroupOrder
             )}
           </section>
         ))
+      }
+
+      {
+        page.slug === "public-awareness" && (
+          <section class="awareness-index" aria-labelledby="awareness-index-heading">
+            <div class="content-heading">
+              <h2 id="awareness-index-heading">Public-awareness topic pages</h2>
+              <p>
+                These pages can support daily Facebook posts and give visitors a clear place to read the main points again.
+              </p>
+            </div>
+            <div class="awareness-index__links">
+              {publicAwarenessTopics.map((topic) => (
+                <a href={topic.href}>
+                  <span>
+                    <small>{topic.label}</small>
+                    <strong>{topic.title}</strong>
+                    <em>{topic.copy}</em>
+                  </span>
+                  <Icon name="arrow-right" size={18} />
+                </a>
+              ))}
+            </div>
+          </section>
+        )
       }
 
       {
