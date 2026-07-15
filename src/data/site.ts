@@ -970,8 +970,20 @@ const basePages: ContentPage[] = [
         ],
         bullets: [
           "AOS Facebook page — https://www.facebook.com/profile.php?id=100066359897312",
+          "Public Awareness overview — /public-awareness/",
+          "घुटनों का दर्द और आर्थराइटिस — /knee-pain-arthritis/",
+          "कंधे का दर्द, frozen shoulder और rotator cuff — /shoulder-problems/",
+          "रात में पैरों में अकड़न — /night-leg-cramps/",
+          "भरोसेमंद OrthoInfo links — /trusted-orthoinfo-links/"
+        ]
+      },
+      {
+        title: "अगले विषय जिनके पेज तैयार किए जाएंगे",
+        paragraphs: [
+          "इन विषयों पर भी AOS हिंदी में सरल patient-awareness material तैयार करेगा। जैसे-जैसे सामग्री final होगी, यहां अलग पेज और Facebook post links जोड़े जाएंगे।"
+        ],
+        bullets: [
           "ऑस्टियोपोरोसिस और हड्डियों की कमजोरी",
-          "घुटनों का दर्द और आर्थराइटिस",
           "कमर दर्द और सही posture",
           "फ्रैक्चर होने पर प्राथमिक सावधानी",
           "बुजुर्गों में गिरने से बचाव",
