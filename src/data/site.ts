@@ -33,6 +33,7 @@ export type PageKind =
   | "form"
   | "login"
   | "member-area"
+  | "public-directory"
   | "videos"
   | "downloads"
   | "notices"
@@ -558,6 +559,23 @@ const basePages: ContentPage[] = [
           "Opportunities to present, teach, collaborate, and serve on society initiatives.",
           "Connection with peers, senior colleagues, and postgraduate trainees.",
           "Recognition of appropriate member achievements and contributions."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "find-orthopaedic-surgeon",
+    title: "Find an Orthopaedic Surgeon in Agra",
+    group: "Membership",
+    summary: "A public AOS listing of orthopaedic surgeons practicing in Agra, with private member contact details kept off the open website.",
+    kind: "public-directory",
+    status: "ready",
+    sections: [
+      {
+        title: "Public professional listing",
+        paragraphs: [
+          "This public directory helps patients and visitors identify orthopaedic surgeons practicing in Agra from the current AOS digital directory records.",
+          "Phone numbers, email addresses, photographs, family details, and member-only information are not shown here. For corrections or missing listings, please contact AOS or update the member directory form."
         ]
       }
     ]

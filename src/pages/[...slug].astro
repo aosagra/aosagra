@@ -548,6 +548,57 @@ const publicAwarenessTopics = [
       }
 
       {
+        page.kind === "public-directory" && (
+          <section class="public-directory" data-public-directory aria-labelledby="public-directory-heading">
+            <div class="content-heading">
+              <h2 id="public-directory-heading">Orthopaedic surgeons practicing in Agra</h2>
+              <p>
+                Search the public AOS listing by name, hospital or clinic, qualification, designation, or area of orthopaedic interest.
+              </p>
+            </div>
+
+            <div class="public-directory__notice">
+              <Icon name="shield" size={22} />
+              <p>
+                This is a public professional listing only. Personal phone numbers, email addresses, photographs, and member-only directory details remain private unless separately approved for public release.
+              </p>
+            </div>
+
+            <div class="public-directory__tools">
+              <label>
+                <span>Search public directory</span>
+                <input type="search" placeholder="Search by name, clinic, hospital, qualification…" data-public-directory-search />
+              </label>
+              <span data-public-directory-count>Loading public directory…</span>
+            </div>
+
+            <div class="member-portal__message" data-public-directory-message role="status" aria-live="polite"></div>
+
+            <div class="member-directory-wrap" data-public-directory-wrap hidden>
+              <table class="member-directory public-directory__table">
+                <caption>Public AOS listing of orthopaedic surgeons practicing in Agra</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Surgeon</th>
+                    <th scope="col">Practice</th>
+                    <th scope="col">Professional details</th>
+                    <th scope="col">Interest</th>
+                  </tr>
+                </thead>
+                <tbody data-public-directory-body></tbody>
+              </table>
+            </div>
+
+            <div class="public-directory__actions">
+              <a class="button button--primary" href="/member-area/">Members: open private directory</a>
+              <a class="button button--outline" href="https://forms.gle/9G18h7ZcSaoSEbkV8" target="_blank" rel="noreferrer">Update directory record</a>
+              <a class="button button--light" href="/contact/">Send correction to AOS</a>
+            </div>
+          </section>
+        )
+      }
+
+      {
         page.kind === "member-area" && (
           <script is:inline>
             (() => {
@@ -756,6 +807,122 @@ const publicAwarenessTopics = [
                 .catch(() => {
                   showPrivate(false);
                 });
+            })();
+          </script>
+        )
+      }
+
+      {
+        page.kind === "public-directory" && (
+          <script is:inline>
+            (() => {
+              const directory = document.querySelector("[data-public-directory]");
+
+              if (!directory) return;
+
+              const search = directory.querySelector("[data-public-directory-search]");
+              const count = directory.querySelector("[data-public-directory-count]");
+              const message = directory.querySelector("[data-public-directory-message]");
+              const wrap = directory.querySelector("[data-public-directory-wrap]");
+              const tbody = directory.querySelector("[data-public-directory-body]");
+              let surgeons = [];
+
+              function setMessage(text, tone = "neutral") {
+                message.textContent = text;
+                message.dataset.tone = tone;
+              }
+
+              function addLine(parent, text) {
+                if (!text) return;
+                const span = document.createElement("span");
+                span.textContent = text;
+                parent.append(span);
+              }
+
+              function renderRows(list) {
+                tbody.innerHTML = "";
+
+                list.forEach((surgeon) => {
+                  const row = document.createElement("tr");
+                  const nameCell = document.createElement("th");
+                  const practiceCell = document.createElement("td");
+                  const detailCell = document.createElement("td");
+                  const interestCell = document.createElement("td");
+                  const details = document.createElement("div");
+
+                  nameCell.scope = "row";
+                  nameCell.textContent = surgeon.name;
+                  details.className = "member-directory__stack";
+
+                  practiceCell.textContent = [surgeon.hospital, surgeon.city].filter(Boolean).join(" · ") || "Agra";
+                  addLine(details, surgeon.qualification);
+                  addLine(details, surgeon.appointment);
+                  if (!details.children.length) addLine(details, "Details not listed");
+                  detailCell.append(details);
+                  interestCell.textContent = surgeon.interest || "Not listed";
+
+                  row.append(nameCell, practiceCell, detailCell, interestCell);
+                  tbody.append(row);
+                });
+
+                wrap.hidden = list.length === 0;
+                setMessage(list.length ? "" : "No surgeon matches this search.", list.length ? "neutral" : "warning");
+              }
+
+              function filterRows() {
+                const query = (search.value ?? "").trim().toLowerCase();
+                const filtered = query
+                  ? surgeons.filter((surgeon) =>
+                      [
+                        surgeon.name,
+                        surgeon.city,
+                        surgeon.hospital,
+                        surgeon.qualification,
+                        surgeon.appointment,
+                        surgeon.interest
+                      ]
+                        .filter(Boolean)
+                        .join(" ")
+                        .toLowerCase()
+                        .includes(query)
+                    )
+                  : surgeons;
+
+                renderRows(filtered);
+              }
+
+              async function loadPublicDirectory() {
+                try {
+                  const response = await fetch("/.netlify/functions/public-directory", {
+                    credentials: "same-origin"
+                  });
+                  const result = await response.json();
+
+                  if (!response.ok) {
+                    throw new Error(result.error ?? "Public directory is not available right now.");
+                  }
+
+                  if (!result.configured) {
+                    surgeons = [];
+                    count.textContent = "Directory source is being connected.";
+                    wrap.hidden = true;
+                    setMessage("The public directory source is being connected by the AOS office.", "warning");
+                    return;
+                  }
+
+                  surgeons = result.members ?? [];
+                  count.textContent = `${result.count ?? surgeons.length} Agra surgeon listings${result.updatedAt ? ` · Updated ${result.updatedAt}` : ""}`;
+                  filterRows();
+                } catch (error) {
+                  surgeons = [];
+                  count.textContent = "Directory unavailable";
+                  wrap.hidden = true;
+                  setMessage(error?.message ?? "Public directory is not available right now.", "danger");
+                }
+              }
+
+              search.addEventListener("input", filterRows);
+              loadPublicDirectory();
             })();
           </script>
         )

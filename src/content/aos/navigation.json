@@ -39,6 +39,7 @@
     "href": "/membership/",
     "items": [
       { "label": "Membership Overview", "href": "/membership/" },
+      { "label": "Find Surgeon", "href": "/find-orthopaedic-surgeon/" },
       { "label": "Benefits", "href": "/membership-benefits/" },
       { "label": "Member Area", "href": "/member-area/" },
       { "label": "Contact AOS", "href": "/contact/" }
@@ -49,6 +50,7 @@
     "href": "/public-awareness/",
     "items": [
       { "label": "Public Awareness", "href": "/public-awareness/" },
+      { "label": "Find Surgeon", "href": "/find-orthopaedic-surgeon/" },
       { "label": "Hindi Awareness", "href": "/hindi-public-awareness/" },
       { "label": "Knee Pain & Arthritis", "href": "/knee-pain-arthritis/" },
       { "label": "Shoulder Problems", "href": "/shoulder-problems/" },

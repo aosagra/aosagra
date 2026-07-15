@@ -244,9 +244,28 @@ export function verifyMemberAccessCode(accessCode) {
   return safeEqual(accessHash, sha256(process.env.AOS_MEMBER_ACCESS_CODE)) ? { id: "aos-member" } : null;
 }
 
+function readChunkedEnv(prefix) {
+  const parts = [];
+
+  for (let index = 1; ; index += 1) {
+    const value = process.env[`${prefix}_PART_${index}`];
+
+    if (!value) {
+      break;
+    }
+
+    parts.push(value.trim());
+  }
+
+  return parts.join("");
+}
+
 function readDirectorySource() {
-  if (process.env.AOS_MEMBER_DIRECTORY_JSON_BASE64) {
-    return Buffer.from(process.env.AOS_MEMBER_DIRECTORY_JSON_BASE64, "base64").toString("utf8");
+  const chunkedBase64 = readChunkedEnv("AOS_MEMBER_DIRECTORY_JSON_BASE64");
+  const directBase64 = process.env.AOS_MEMBER_DIRECTORY_JSON_BASE64?.trim();
+
+  if (chunkedBase64 || directBase64) {
+    return Buffer.from(chunkedBase64 || directBase64, "base64").toString("utf8");
   }
 
   return process.env.AOS_MEMBER_DIRECTORY_JSON ?? "";

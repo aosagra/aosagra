@@ -41,6 +41,10 @@
 /membership-categories/ /membership/ 302
 /member-directory/ /member-area/ 302
 /member-login/ /member-area/ 302
+/orthopedic-surgeon-agra/ /find-orthopaedic-surgeon/ 301
+/orthopaedic-surgeon-agra/ /find-orthopaedic-surgeon/ 301
+/find-orthopedic-surgeon/ /find-orthopaedic-surgeon/ 301
+/find-orthopaedic-surgeon-agra/ /find-orthopaedic-surgeon/ 301
 
 # Unpublished news, downloads, and public topics
 /aos-connect/ /latest-notices/ 302
