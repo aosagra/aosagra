@@ -462,7 +462,7 @@ const publicAwarenessTopics = [
         page.kind === "events" && (
           <section aria-labelledby="current-events">
             <div class="content-heading">
-              <h2 id="current-events">July 2026 programme</h2>
+              <h2 id="current-events">Current programme</h2>
               <p>Current dates published by the Agra Orthopaedic Society.</p>
             </div>
             <EventList />
@@ -540,7 +540,7 @@ const publicAwarenessTopics = [
             <div class="content-heading">
               <h2 id="member-area-heading">Member services, started carefully</h2>
               <p>
-                The AOS member area is being opened behind member access. Directory information remains consent-led and is not published as an open public directory for general website visitors.
+                The AOS member area is opening behind individual member access codes. Directory information remains consent-led and is not published as an open public directory for general website visitors.
               </p>
             </div>
 
@@ -551,7 +551,7 @@ const publicAwarenessTopics = [
                   <p class="section-context">Private member access</p>
                   <h3 id="member-login-heading">AOS Digital Directory</h3>
                   <p>
-                    Enter your individual AOS member access code to view the internal directory. Contact details are not shown to ordinary site visitors.
+                    Enter the individual AOS member access code issued by the Secretary to view the internal directory. Contact details are not shown to ordinary site visitors.
                   </p>
                 </div>
                 <form class="member-portal__form" data-member-login-form>
@@ -619,7 +619,7 @@ const publicAwarenessTopics = [
                 <span class="member-area__icon"><Icon name="shield" size={24} /></span>
                 <h3>Privacy first</h3>
                 <p>
-                  Member phone numbers, email addresses, photographs, family details, and directory records will stay off the public website until secure access, member consent, and society verification are complete.
+                  Member phone numbers, email addresses, photographs, family details, and directory records stay off the public website. They are shown only inside the member area according to member consent and society verification.
                 </p>
               </div>
               <div class="member-area__roadmap">
@@ -989,6 +989,12 @@ const publicAwarenessTopics = [
                   const response = await fetch("/.netlify/functions/public-directory", {
                     credentials: "same-origin"
                   });
+                  const contentType = response.headers.get("content-type") ?? "";
+
+                  if (!contentType.includes("application/json")) {
+                    throw new Error("The public directory service is not available in this preview. Please use the local preview server or try again after deployment.");
+                  }
+
                   const result = await response.json();
 
                   if (!response.ok) {
@@ -1026,7 +1032,66 @@ const publicAwarenessTopics = [
           <section aria-labelledby="downloads-heading">
             <div class="content-heading">
               <h2 id="downloads-heading">Available files</h2>
-              <p>Only source files found in the existing AOS archive are shown.</p>
+              <p>Approved public files and selected archive material available from the AOS website.</p>
+            </div>
+
+            <div class="content-heading content-heading--compact">
+              <h3>Agra Moves Better public-awareness resources</h3>
+              <p>Public handouts and teaching modules prepared for the 2026 community-awareness campaign.</p>
+            </div>
+            <div class="download-list">
+              <a href="/assets/documents/agra-moves-better/aos-strong-bones-public-handout.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Strong Bones - Strong Life</strong><small>PDF · Public handout</small></span>
+                <Icon name="download" size={20} />
+              </a>
+              <a href="/assets/documents/agra-moves-better/aos-posture-india-module-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Posture India</strong><small>PDF · Public-awareness module</small></span>
+                <Icon name="download" size={20} />
+              </a>
+              <a href="/assets/documents/agra-moves-better/aos-healthy-students-healthy-spine-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Healthy Students, Healthy Spine</strong><small>PDF · School programme module</small></span>
+                <Icon name="download" size={20} />
+              </a>
+              <a href="/assets/documents/agra-moves-better/aos-healthcare-ergonomics-programme-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Healthcare Ergonomics Programme</strong><small>PDF · Workplace awareness module</small></span>
+                <Icon name="download" size={20} />
+              </a>
+            </div>
+
+            <div class="content-heading content-heading--compact">
+              <h3>Agra Moves Better campaign records</h3>
+              <p>Public media and activity dossiers prepared for institutional reporting and partner circulation.</p>
+            </div>
+            <div class="download-list">
+              <a href="/assets/documents/agra-moves-better/aos-agra-moves-better-media-coverage-dossier-02-aug-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Media Coverage Dossier</strong><small>PDF · Launch coverage compiled through 2 August 2026</small></span>
+                <Icon name="download" size={20} />
+              </a>
+              <a href="/assets/documents/agra-moves-better/aos-agra-moves-better-daily-dossier-03-aug-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Daily Activity & Media Dossier</strong><small>PDF · 3 August 2026 media awareness and BMD screening record</small></span>
+                <Icon name="download" size={20} />
+              </a>
+              <a href="/assets/documents/agra-moves-better/aos-agra-moves-better-activity-dossier-06-aug-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Community Outreach Activity Dossier</strong><small>PDF · 6 August 2026 bone-health screening and awareness record</small></span>
+                <Icon name="download" size={20} />
+              </a>
+              <a href="/assets/documents/agra-moves-better/aos-agra-moves-better-dossier-07-aug-2026.pdf" download>
+                <span class="download-list__icon"><Icon name="file" size={22} /></span>
+                <span><strong>Radio & School Outreach Dossier</strong><small>PDF · 7 August 2026 Akashvani and G.L. Public School record</small></span>
+                <Icon name="download" size={20} />
+              </a>
+            </div>
+
+            <div class="content-heading content-heading--compact">
+              <h3>Archive material</h3>
+              <p>Older public files preserved from the website archive.</p>
             </div>
             <div class="download-list">
               <a href="/assets/documents/orthocon-2025.pdf" download>
@@ -1065,13 +1130,18 @@ const publicAwarenessTopics = [
               <p>Dates are ordered by the event date.</p>
             </div>
             <div class="notice-list notice-list--interior">
-              {notices.map((notice) => (
-                <a href={notice.href}>
-                  <time datetime={notice.datetime}>{notice.dateLabel}</time>
-                  <span><strong>{notice.title}</strong><small>{notice.summary}</small></span>
-                  <Icon name="arrow-right" size={18} />
-                </a>
-              ))}
+              {notices.map((notice) => {
+                const isExternal = notice.href.startsWith("http");
+                const attrs = isExternal ? { target: "_blank", rel: "noreferrer" } : {};
+
+                return (
+                  <a href={notice.href} {...attrs}>
+                    <time datetime={notice.datetime}>{notice.dateLabel}</time>
+                    <span><strong>{notice.title}</strong><small>{notice.summary}</small></span>
+                    <Icon name={isExternal ? "external" : "arrow-right"} size={18} />
+                  </a>
+                );
+              })}
             </div>
           </section>
         )

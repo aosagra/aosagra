@@ -1,22 +1,12 @@
 [
   {
-    "date": "16",
-    "month": "Jul",
+    "date": "02–09",
+    "month": "Aug",
     "year": "2026",
-    "datetime": "2026-07-16",
-    "title": "Inter-College PG Paper Presentation",
-    "description": "A platform for postgraduate residents to present clinical work and learn through peer review.",
-    "meta": "Agra · Postgraduate academic initiative",
-    "href": "/upcoming-events/#pg-paper-presentation"
-  },
-  {
-    "date": "18",
-    "month": "Jul",
-    "year": "2026",
-    "datetime": "2026-07-18",
-    "title": "Extended Executive Meeting",
-    "description": "The extended executive body meets to review current programmes and society priorities.",
-    "meta": "For invited AOS members",
-    "href": "/upcoming-events/#executive-meeting"
+    "datetime": "2026-08-02",
+    "title": "AOS Bone & Joint Week 2026",
+    "description": "AOS is observing Bone & Joint Week from 2 to 9 August 2026 through the Agra Moves Better campaign, with documented launch, GBM review, police wellness, media awareness, workplace ergonomics, community bone-health, radio and school-outreach activities across Agra.",
+    "meta": "Agra · Public awareness initiative",
+    "href": "/public-awareness/"
   }
 ]

@@ -1,5 +1,213 @@
 [
   {
+    "id": "community-bone-health-2026-awareness-session",
+    "src": "/assets/optimized/gallery/community-bone-health-august-2026/community-bone-health-2026-awareness-session.webp",
+    "alt": "Community participants attending an Agra Moves Better bone-health awareness session",
+    "caption": "6 August Community Bone-Health Outreach · Awareness session",
+    "featured": true,
+    "order": 0.001
+  },
+  {
+    "id": "community-bone-health-2026-group-session",
+    "src": "/assets/optimized/gallery/community-bone-health-august-2026/community-bone-health-2026-group-session.webp",
+    "alt": "AOS community outreach session with participants during the Agra Moves Better campaign",
+    "caption": "6 August Community Bone-Health Outreach · Community participation",
+    "featured": true,
+    "order": 0.002
+  },
+  {
+    "id": "community-bone-health-2026-bmd-camp",
+    "src": "/assets/optimized/gallery/community-bone-health-august-2026/community-bone-health-2026-bmd-camp.webp",
+    "alt": "AOS team supporting BMD screening during community bone-health outreach",
+    "caption": "6 August Community Bone-Health Outreach · BMD screening",
+    "featured": false,
+    "order": 0.003
+  },
+  {
+    "id": "community-bone-health-2026-screening",
+    "src": "/assets/optimized/gallery/community-bone-health-august-2026/community-bone-health-2026-screening.webp",
+    "alt": "Individual bone-health screening interaction during Agra Moves Better community outreach",
+    "caption": "6 August Community Bone-Health Outreach · Screening interaction",
+    "featured": false,
+    "order": 0.004
+  },
+  {
+    "id": "agra-moves-better-2026-launch-group",
+    "src": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-launch-group.webp",
+    "alt": "AOS members and founding partners displaying Agra Moves Better 2026 campaign material at the launch meeting",
+    "caption": "1 August Agra Moves Better Launch · Campaign launch group",
+    "featured": true,
+    "order": 0.01
+  },
+  {
+    "id": "agra-moves-better-2026-secretary-address",
+    "src": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-secretary-address.webp",
+    "alt": "AOS Secretary Dr Sanjay Chaturvedi addressing the Agra Moves Better 2026 launch meeting",
+    "caption": "1 August Agra Moves Better Launch · Secretary's address",
+    "featured": false,
+    "order": 0.02
+  },
+  {
+    "id": "agra-moves-better-2026-partner-address",
+    "src": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-partner-address.webp",
+    "alt": "A speaker addressing the Agra Moves Better 2026 Media NGO and Founding Partners Meet",
+    "caption": "1 August Agra Moves Better Launch · Partner address",
+    "featured": false,
+    "order": 0.03
+  },
+  {
+    "id": "agra-moves-better-2026-founding-partners",
+    "src": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-founding-partners.webp",
+    "alt": "Founding partners and AOS representatives holding Agra Moves Better 2026 campaign material",
+    "caption": "1 August Agra Moves Better Launch · Founding partners",
+    "featured": false,
+    "order": 0.04
+  },
+  {
+    "id": "agra-moves-better-2026-media-briefing",
+    "src": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-media-briefing.webp",
+    "alt": "AOS representative briefing media during the Agra Moves Better 2026 launch programme",
+    "caption": "1 August Agra Moves Better Launch · Media briefing",
+    "featured": true,
+    "order": 0.05
+  },
+  {
+    "id": "agra-moves-better-2026-interaction",
+    "src": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-interaction.webp",
+    "alt": "Interactive discussion during the Agra Moves Better 2026 launch and partners meeting",
+    "caption": "1 August Agra Moves Better Launch · Interactive discussion",
+    "featured": false,
+    "order": 0.06
+  },
+  {
+    "id": "gbm-august-2026-felicitation",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-felicitation.webp",
+    "alt": "AOS members during a felicitation moment at the 1 August 2026 General Body Meeting and Scientific Programme",
+    "caption": "1 August GBM & Scientific Programme · Felicitation moment",
+    "featured": false,
+    "order": 0.071
+  },
+  {
+    "id": "gbm-august-2026-office-bearers",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-office-bearers.webp",
+    "alt": "AOS office bearers and members at the 1 August 2026 General Body Meeting",
+    "caption": "1 August GBM & Scientific Programme · Office bearers and members",
+    "featured": false,
+    "order": 0.072
+  },
+  {
+    "id": "gbm-august-2026-cake-moment",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-cake-moment.webp",
+    "alt": "AOS members marking a fellowship moment during the 1 August 2026 General Body Meeting",
+    "caption": "1 August GBM & Scientific Programme · Fellowship moment",
+    "featured": false,
+    "order": 0.073
+  },
+  {
+    "id": "gbm-august-2026-hall-wide",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-hall-wide.webp",
+    "alt": "AOS members seated for the scientific session during the 1 August 2026 General Body Meeting",
+    "caption": "1 August GBM & Scientific Programme · Hall view",
+    "featured": false,
+    "order": 0.074
+  },
+  {
+    "id": "gbm-august-2026-scientific-session",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-scientific-session.webp",
+    "alt": "Scientific presentation during the AOS 1 August 2026 General Body Meeting",
+    "caption": "1 August GBM & Scientific Programme · Scientific session",
+    "featured": false,
+    "order": 0.075
+  },
+  {
+    "id": "gbm-august-2026-lecture-wide",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-lecture-wide.webp",
+    "alt": "Wide view of an academic lecture during the 1 August 2026 AOS programme",
+    "caption": "1 August GBM & Scientific Programme · Academic lecture",
+    "featured": false,
+    "order": 0.076
+  },
+  {
+    "id": "gbm-august-2026-desk-discussion",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-desk-discussion.webp",
+    "alt": "AOS members in discussion during the 1 August 2026 meeting",
+    "caption": "1 August GBM & Scientific Programme · Meeting discussion",
+    "featured": false,
+    "order": 0.077
+  },
+  {
+    "id": "gbm-august-2026-member-discussion",
+    "src": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-member-discussion.webp",
+    "alt": "AOS member discussion during the 1 August 2026 General Body Meeting",
+    "caption": "1 August GBM & Scientific Programme · Member discussion",
+    "featured": false,
+    "order": 0.078
+  },
+  {
+    "id": "police-ergonomics-2026-commissionerate-group",
+    "src": "/assets/optimized/gallery/police-ergonomics-august-2026/police-ergonomics-2026-commissionerate-group.webp",
+    "alt": "AOS and Agra Police participants at the 4 August 2026 Police Workplace Ergonomics programme",
+    "caption": "4 August Police Workplace Ergonomics · Commissionerate group",
+    "featured": false,
+    "order": 0.081
+  },
+  {
+    "id": "police-ergonomics-2026-felicitation",
+    "src": "/assets/optimized/gallery/police-ergonomics-august-2026/police-ergonomics-2026-felicitation.webp",
+    "alt": "Felicitation moment during the Agra Moves Better police ergonomics programme",
+    "caption": "4 August Police Workplace Ergonomics · Felicitation",
+    "featured": false,
+    "order": 0.082
+  },
+  {
+    "id": "police-ergonomics-2026-training-hall",
+    "src": "/assets/optimized/gallery/police-ergonomics-august-2026/police-ergonomics-2026-training-hall.webp",
+    "alt": "Police personnel attending the workplace ergonomics and CPR awareness programme at Police Lines Agra",
+    "caption": "4 August Police Workplace Ergonomics · Training hall",
+    "featured": false,
+    "order": 0.083
+  },
+  {
+    "id": "police-ergonomics-2026-campaign-display",
+    "src": "/assets/optimized/gallery/police-ergonomics-august-2026/police-ergonomics-2026-campaign-display.webp",
+    "alt": "Agra Moves Better 2026 display material at the Police Workplace Ergonomics programme",
+    "caption": "4 August Police Workplace Ergonomics · Campaign display",
+    "featured": false,
+    "order": 0.084
+  },
+  {
+    "id": "police-wellness-2026-consultation",
+    "src": "/assets/optimized/gallery/police-wellness-august-2026/police-wellness-2026-consultation.webp",
+    "alt": "AOS clinicians reviewing reports and advising police personnel during the Agra Moves Better police wellness camp",
+    "caption": "2 August Police Wellness Camp · Consultation and report review",
+    "featured": true,
+    "order": 0.1
+  },
+  {
+    "id": "police-wellness-2026-report-review",
+    "src": "/assets/optimized/gallery/police-wellness-august-2026/police-wellness-2026-report-review.webp",
+    "alt": "AOS team providing individual guidance during the Police Wellness and Family Health Camp at Police Lines Agra",
+    "caption": "2 August Police Wellness Camp · Individual health guidance",
+    "featured": true,
+    "order": 0.2
+  },
+  {
+    "id": "police-wellness-2026-counselling",
+    "src": "/assets/optimized/gallery/police-wellness-august-2026/police-wellness-2026-counselling.webp",
+    "alt": "AOS clinicians counselling participants during the Agra Moves Better police wellness initiative",
+    "caption": "2 August Police Wellness Camp · Preventive counselling",
+    "featured": true,
+    "order": 0.3
+  },
+  {
+    "id": "police-wellness-2026-media-coverage",
+    "src": "/assets/optimized/gallery/police-wellness-august-2026/police-wellness-2026-media-coverage.webp",
+    "alt": "Local media coverage of the AOS Agra Moves Better police wellness and family health camp",
+    "caption": "2 August Police Wellness Camp · Media coverage",
+    "featured": false,
+    "order": 0.4
+  },
+  {
     "id": "osteoporosis-sarcopenia-2026-084",
     "src": "/assets/optimized/gallery/osteoporosis-sarcopenia-july-2026/osteoporosis-sarcopenia-2026-084.webp",
     "alt": "AOS members and faculty at the Osteoporosis and Sarcopenia Symposium on 11 July 2026",
@@ -982,5 +1190,341 @@
     "caption": "Community and academic activity",
     "featured": false,
     "order": 123
+  },
+  {
+    "id": "pg-paper-presentation-2026-01",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-01.webp",
+    "alt": "Faculty and participants at the AOS inter-college PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Faculty and participants",
+    "featured": false,
+    "order": 146
+  },
+  {
+    "id": "pg-paper-presentation-2026-02",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-02.webp",
+    "alt": "AOS faculty and participants at FH Medical College, Agra",
+    "caption": "16 July PG Paper Presentation · Event faculty",
+    "featured": false,
+    "order": 147
+  },
+  {
+    "id": "pg-paper-presentation-2026-03",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-03.webp",
+    "alt": "Participant felicitation during the AOS PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Felicitation moment",
+    "featured": false,
+    "order": 148
+  },
+  {
+    "id": "pg-paper-presentation-2026-04",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-04.webp",
+    "alt": "Group photograph from the AOS postgraduate paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Group photograph",
+    "featured": false,
+    "order": 149
+  },
+  {
+    "id": "pg-paper-presentation-2026-05",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-05.webp",
+    "alt": "Faculty interaction during the AOS postgraduate paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Faculty interaction",
+    "featured": false,
+    "order": 150
+  },
+  {
+    "id": "pg-paper-presentation-2026-06",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-06.webp",
+    "alt": "AOS members and participants during the PG paper presentation programme",
+    "caption": "16 July PG Paper Presentation · Programme session",
+    "featured": false,
+    "order": 151
+  },
+  {
+    "id": "pg-paper-presentation-2026-07",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-07.webp",
+    "alt": "Presentation session during the AOS inter-college PG competition",
+    "caption": "16 July PG Paper Presentation · Presentation session",
+    "featured": false,
+    "order": 152
+  },
+  {
+    "id": "pg-paper-presentation-2026-08",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-08.webp",
+    "alt": "Faculty and participant photograph during the AOS PG academic programme",
+    "caption": "16 July PG Paper Presentation · Academic interaction",
+    "featured": false,
+    "order": 153
+  },
+  {
+    "id": "pg-paper-presentation-2026-09",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-09.webp",
+    "alt": "Faculty and participants at FH Medical College during the PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Faculty with participants",
+    "featured": false,
+    "order": 154
+  },
+  {
+    "id": "pg-paper-presentation-2026-10",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-10.webp",
+    "alt": "Certificate presentation during the AOS PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Certificate presentation",
+    "featured": false,
+    "order": 155
+  },
+  {
+    "id": "pg-paper-presentation-2026-11",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-11.webp",
+    "alt": "Participant being felicitated during the AOS postgraduate competition",
+    "caption": "16 July PG Paper Presentation · Participant felicitation",
+    "featured": false,
+    "order": 156
+  },
+  {
+    "id": "pg-paper-presentation-2026-12",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-12.webp",
+    "alt": "AOS faculty and organisers during the PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Faculty and organisers",
+    "featured": false,
+    "order": 157
+  },
+  {
+    "id": "pg-paper-presentation-2026-13",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-13.webp",
+    "alt": "Participants and faculty on stage during the AOS PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Stage photograph",
+    "featured": false,
+    "order": 158
+  },
+  {
+    "id": "pg-paper-presentation-2026-14",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-14.webp",
+    "alt": "Academic presentation and felicitation during the AOS PG programme",
+    "caption": "16 July PG Paper Presentation · Academic programme",
+    "featured": false,
+    "order": 159
+  },
+  {
+    "id": "pg-paper-presentation-2026-15",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-15.webp",
+    "alt": "Postgraduate participant receiving recognition during the AOS competition",
+    "caption": "16 July PG Paper Presentation · Recognition",
+    "featured": false,
+    "order": 160
+  },
+  {
+    "id": "pg-paper-presentation-2026-16",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-16.webp",
+    "alt": "AOS faculty and participant photograph from the 16 July PG competition",
+    "caption": "16 July PG Paper Presentation · Faculty and participant",
+    "featured": false,
+    "order": 161
+  },
+  {
+    "id": "pg-paper-presentation-2026-17",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-17.webp",
+    "alt": "Faculty and participants photographed at the AOS PG competition backdrop",
+    "caption": "16 July PG Paper Presentation · Competition backdrop",
+    "featured": false,
+    "order": 162
+  },
+  {
+    "id": "pg-paper-presentation-2026-18",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-18.webp",
+    "alt": "Group photograph at the AOS inter-college PG paper presentation event",
+    "caption": "16 July PG Paper Presentation · Participants and faculty",
+    "featured": false,
+    "order": 163
+  },
+  {
+    "id": "pg-paper-presentation-2026-19",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-19.webp",
+    "alt": "AOS faculty and participants at the first inter-college PG paper presentation competition",
+    "caption": "16 July PG Paper Presentation · Event photograph",
+    "featured": false,
+    "order": 164
+  },
+  {
+    "id": "pg-paper-presentation-2026-20",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-paper-presentation-2026-20.webp",
+    "alt": "Wide view of the AOS PG paper presentation competition at FH Medical College",
+    "caption": "16 July PG Paper Presentation · Venue view",
+    "featured": false,
+    "order": 165
+  },
+  {
+    "id": "pg-academic-series-2026-programme",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-academic-series-2026-programme.webp",
+    "alt": "Programme artwork for the AOS first inter-college postgraduate paper presentation competition",
+    "caption": "16 July PG Academic Series · Programme artwork",
+    "featured": false,
+    "order": 166
+  },
+  {
+    "id": "pg-academic-series-2026-certificate",
+    "src": "/assets/optimized/gallery/pg-academic-series-july-2026/pg-academic-series-2026-certificate.webp",
+    "alt": "AOS first inter-college postgraduate paper presentation competition certificate artwork",
+    "caption": "16 July PG Academic Series · Certificate artwork",
+    "featured": false,
+    "order": 167
+  },
+  {
+    "id": "executive-meeting-2026-wide",
+    "src": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-wide.webp",
+    "alt": "AOS Executive Committee Meeting on 18 July 2026 at Fairfield by Marriott, Agra",
+    "caption": "18 July Executive Meeting · Meeting in session",
+    "featured": false,
+    "order": 126
+  },
+  {
+    "id": "executive-meeting-2026-discussion",
+    "src": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-discussion.webp",
+    "alt": "AOS members during the 18 July 2026 Executive Committee Meeting",
+    "caption": "18 July Executive Meeting · Executive discussion",
+    "featured": false,
+    "order": 127
+  },
+  {
+    "id": "executive-meeting-2026-academic-session",
+    "src": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-academic-session.webp",
+    "alt": "Academic presentation during the AOS Executive Committee Meeting on 18 July 2026",
+    "caption": "18 July Executive Meeting · Academic presentation",
+    "featured": false,
+    "order": 128
+  },
+  {
+    "id": "executive-meeting-2026-felicitation",
+    "src": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-felicitation.webp",
+    "alt": "Felicitation moment during the AOS Executive Committee Meeting on 18 July 2026",
+    "caption": "18 July Executive Meeting · Felicitation moment",
+    "featured": false,
+    "order": 129
+  },
+  {
+    "id": "executive-meeting-2026-members",
+    "src": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-members.webp",
+    "alt": "AOS members and guests at the 18 July 2026 Executive Committee Meeting",
+    "caption": "18 July Executive Meeting · AOS members and guests",
+    "featured": false,
+    "order": 130
+  },
+  {
+    "id": "executive-meeting-2026-group",
+    "src": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-group.webp",
+    "alt": "Group photograph from the AOS Executive Committee Meeting on 18 July 2026",
+    "caption": "18 July Executive Meeting · Group photograph",
+    "featured": false,
+    "order": 131
+  },
+  {
+    "id": "installation-ceremony-2026-invitation",
+    "src": "/assets/optimized/gallery/installation-ceremony-2026/installation-ceremony-2026-invitation.webp",
+    "alt": "AOS installation ceremony invitation for office bearers 2026-27",
+    "caption": "27 May Installation Ceremony · Invitation",
+    "featured": false,
+    "order": 132
+  },
+  {
+    "id": "installation-ceremony-2026-stage",
+    "src": "/assets/optimized/gallery/installation-ceremony-2026/installation-ceremony-2026-stage.webp",
+    "alt": "AOS installation ceremony stage artwork for office bearers 2026-27",
+    "caption": "27 May Installation Ceremony · Stage backdrop",
+    "featured": false,
+    "order": 133
+  },
+  {
+    "id": "installation-ceremony-2026-office-bearers",
+    "src": "/assets/optimized/gallery/installation-ceremony-2026/installation-ceremony-2026-office-bearers.webp",
+    "alt": "AOS office bearers and members at the 2026-27 installation ceremony",
+    "caption": "27 May Installation Ceremony · Office bearers",
+    "featured": false,
+    "order": 134
+  },
+  {
+    "id": "clubfoot-awareness-2026-poster",
+    "src": "/assets/optimized/gallery/clubfoot-awareness-june-2026/clubfoot-awareness-2026-poster.webp",
+    "alt": "AOS World Clubfoot Day awareness meet poster",
+    "caption": "3 June Clubfoot Awareness · Programme poster",
+    "featured": false,
+    "order": 135
+  },
+  {
+    "id": "clubfoot-awareness-2026-group",
+    "src": "/assets/optimized/gallery/clubfoot-awareness-june-2026/clubfoot-awareness-2026-group.webp",
+    "alt": "AOS members and invited specialists at the World Clubfoot Day awareness meet",
+    "caption": "3 June Clubfoot Awareness · Inter-specialty participation",
+    "featured": false,
+    "order": 136
+  },
+  {
+    "id": "clubfoot-awareness-2026-session",
+    "src": "/assets/optimized/gallery/clubfoot-awareness-june-2026/clubfoot-awareness-2026-session.webp",
+    "alt": "Clubfoot awareness session organised by Agra Orthopaedic Society",
+    "caption": "3 June Clubfoot Awareness · Session in progress",
+    "featured": false,
+    "order": 137
+  },
+  {
+    "id": "clubfoot-awareness-2026-press",
+    "src": "/assets/optimized/gallery/clubfoot-awareness-june-2026/clubfoot-awareness-2026-press.webp",
+    "alt": "Newspaper coverage of the AOS clubfoot awareness programme",
+    "caption": "3 June Clubfoot Awareness · Press coverage",
+    "featured": false,
+    "order": 138
+  },
+  {
+    "id": "yoga-day-2026-invitation",
+    "src": "/assets/optimized/gallery/yoga-day-june-2026/yoga-day-2026-invitation.webp",
+    "alt": "AOS International Yoga Day programme invitation for 21 June 2026",
+    "caption": "21 June Yoga Day · Programme invitation",
+    "featured": false,
+    "order": 139
+  },
+  {
+    "id": "extended-executive-2026-wide",
+    "src": "/assets/optimized/gallery/extended-executive-june-2026/extended-executive-2026-wide.webp",
+    "alt": "AOS first academic journal club cum extended executive meeting on 4 June 2026",
+    "caption": "4 June Extended Executive Meeting · Meeting hall",
+    "featured": false,
+    "order": 140
+  },
+  {
+    "id": "extended-executive-2026-academic",
+    "src": "/assets/optimized/gallery/extended-executive-june-2026/extended-executive-2026-academic.webp",
+    "alt": "Academic session during the AOS extended executive meeting on 4 June 2026",
+    "caption": "4 June Extended Executive Meeting · Academic session",
+    "featured": false,
+    "order": 141
+  },
+  {
+    "id": "extended-executive-2026-felicitation",
+    "src": "/assets/optimized/gallery/extended-executive-june-2026/extended-executive-2026-felicitation.webp",
+    "alt": "Felicitation during the AOS extended executive meeting on 4 June 2026",
+    "caption": "4 June Extended Executive Meeting · Felicitation",
+    "featured": false,
+    "order": 142
+  },
+  {
+    "id": "extended-executive-2026-speaker",
+    "src": "/assets/optimized/gallery/extended-executive-june-2026/extended-executive-2026-speaker.webp",
+    "alt": "Speaker at the AOS academic journal club on 4 June 2026",
+    "caption": "4 June Extended Executive Meeting · Speaker",
+    "featured": false,
+    "order": 143
+  },
+  {
+    "id": "extended-executive-2026-members",
+    "src": "/assets/optimized/gallery/extended-executive-june-2026/extended-executive-2026-members.webp",
+    "alt": "AOS members attending the extended executive meeting on 4 June 2026",
+    "caption": "4 June Extended Executive Meeting · Members attending",
+    "featured": false,
+    "order": 144
+  },
+  {
+    "id": "extended-executive-2026-discussion",
+    "src": "/assets/optimized/gallery/extended-executive-june-2026/extended-executive-2026-discussion.webp",
+    "alt": "AOS members in discussion during the extended executive meeting on 4 June 2026",
+    "caption": "4 June Extended Executive Meeting · Discussion",
+    "featured": false,
+    "order": 145
   }
 ]

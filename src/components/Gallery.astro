@@ -8,6 +8,7 @@ interface Props {
 
 const { limit } = Astro.props;
 const images = typeof limit === "number" ? galleryImages.slice(0, limit) : galleryImages;
+const agraMovesBetterAlbumUrl = "https://photos.app.goo.gl/UAuHjvHWGDvw2XKM7";
 const galleryGroups =
   typeof limit === "number"
     ? [
@@ -19,6 +20,48 @@ const galleryGroups =
         }
       ]
     : [
+        {
+          id: "community-bone-health-august-2026",
+          title: "6 August Community Bone-Health Outreach",
+          description: "Selected photographs from Agra Moves Better - 2026 community BMD screening, counselling and awareness outreach with local women’s and service organisations.",
+          images: images.filter((image) => image.src.includes("/community-bone-health-august-2026/"))
+        },
+        {
+          id: "agra-moves-better-august-2026",
+          title: "1 August Agra Moves Better Launch",
+          description: "Selected photographs from the Agra Moves Better - 2026 launch and Media, NGO & Founding Partners' Meet.",
+          images: images.filter((image) => image.src.includes("/agra-moves-better-august-2026/"))
+        },
+        {
+          id: "gbm-august-2026",
+          title: "1 August GBM & Scientific Programme",
+          description: "Photographs from the AOS General Body Meeting, scientific session, and Agra Moves Better/Bone & Joint Week planning discussion.",
+          images: images.filter((image) => image.src.includes("/gbm-august-2026/"))
+        },
+        {
+          id: "police-ergonomics-august-2026",
+          title: "4 August Police Workplace Ergonomics",
+          description: "Photographs from the National Bone & Joint Day CPR awareness and Police Workplace Ergonomics programme under Agra Moves Better - 2026.",
+          images: images.filter((image) => image.src.includes("/police-ergonomics-august-2026/"))
+        },
+        {
+          id: "police-wellness-august-2026",
+          title: "2 August Police Wellness & Family Health Camp",
+          description: "Photographs and media record from the Agra Moves Better - 2026 public-awareness camp at Police Lines.",
+          images: images.filter((image) => image.src.includes("/police-wellness-august-2026/"))
+        },
+        {
+          id: "executive-meeting-july-2026",
+          title: "18 July Executive Meeting",
+          description: "Photographs from the Executive Committee meeting and short academic session.",
+          images: images.filter((image) => image.src.includes("/executive-meeting-july-2026/"))
+        },
+        {
+          id: "pg-academic-series-2026",
+          title: "16 July PG Academic Series",
+          description: "Photographs and programme material from the first inter-college postgraduate paper presentation competition.",
+          images: images.filter((image) => image.src.includes("/pg-academic-series-july-2026/"))
+        },
         {
           id: "osteoporosis-sarcopenia-2026",
           title: "11 July Osteoporosis & Sarcopenia Symposium",
@@ -32,13 +75,48 @@ const galleryGroups =
           images: images.filter((image) => image.src.includes("/gbm-july-2026/"))
         },
         {
+          id: "yoga-day-june-2026",
+          title: "21 June Yoga Day Programme",
+          description: "Programme material from the AOS International Yoga Day activity.",
+          images: images.filter((image) => image.src.includes("/yoga-day-june-2026/"))
+        },
+        {
+          id: "extended-executive-june-2026",
+          title: "4 June Academic Journal Club & Extended Executive Meeting",
+          description: "Photographs from the first formal academic and extended executive meeting of the new cabinet.",
+          images: images.filter((image) => image.src.includes("/extended-executive-june-2026/"))
+        },
+        {
+          id: "clubfoot-awareness-june-2026",
+          title: "3 June Clubfoot Awareness Programme",
+          description: "Public-awareness photographs and material from World Clubfoot Day 2026.",
+          images: images.filter((image) => image.src.includes("/clubfoot-awareness-june-2026/"))
+        },
+        {
+          id: "installation-ceremony-2026",
+          title: "27 May Installation Ceremony",
+          description: "Selected material from the installation ceremony for AOS office bearers 2026-27.",
+          images: images.filter((image) => image.src.includes("/installation-ceremony-2026/"))
+        },
+        {
           id: "aos-archive",
           title: "AOS archive photographs",
           description: "Earlier AOS activity photographs preserved from the website archive.",
           images: images.filter(
             (image) =>
+              !image.src.includes("/community-bone-health-august-2026/") &&
+              !image.src.includes("/agra-moves-better-august-2026/") &&
+              !image.src.includes("/gbm-august-2026/") &&
+              !image.src.includes("/police-ergonomics-august-2026/") &&
+              !image.src.includes("/police-wellness-august-2026/") &&
               !image.src.includes("/osteoporosis-sarcopenia-july-2026/") &&
-              !image.src.includes("/gbm-july-2026/")
+              !image.src.includes("/pg-academic-series-july-2026/") &&
+              !image.src.includes("/executive-meeting-july-2026/") &&
+              !image.src.includes("/gbm-july-2026/") &&
+              !image.src.includes("/yoga-day-june-2026/") &&
+              !image.src.includes("/extended-executive-june-2026/") &&
+              !image.src.includes("/clubfoot-awareness-june-2026/") &&
+              !image.src.includes("/installation-ceremony-2026/")
           )
         }
       ].filter((group) => group.images.length > 0);
@@ -46,14 +124,32 @@ const galleryGroups =
 
 {
   typeof limit !== "number" && (
-    <nav class="gallery-jump" aria-label="Gallery groups">
-      {galleryGroups.map((group) => (
-        <a href={`#${group.id}`}>
-          <strong>{group.title}</strong>
-          <span>{group.images.length} photographs</span>
+    <>
+      <section class="gallery-live-album" id="agra-moves-better-live-album" aria-labelledby="agra-moves-better-live-album-heading">
+        <div class="gallery-live-album__icon">
+          <Icon name="image" size={23} />
+        </div>
+        <div>
+          <p>Live campaign album</p>
+          <h3 id="agra-moves-better-live-album-heading">Agra Moves Better 2026 photographs</h3>
+          <span>
+            New photographs from the ongoing Agra Moves Better campaign are being maintained in the shared AOS album.
+          </span>
+        </div>
+        <a class="text-link" href={agraMovesBetterAlbumUrl} target="_blank" rel="noreferrer">
+          Open live album <Icon name="external" size={16} />
         </a>
-      ))}
-    </nav>
+      </section>
+
+      <nav class="gallery-jump" aria-label="Gallery groups">
+        {galleryGroups.map((group) => (
+          <a href={`#${group.id}`}>
+            <strong>{group.title}</strong>
+            <span>{group.images.length} photographs</span>
+          </a>
+        ))}
+      </nav>
+    </>
   )
 }
 

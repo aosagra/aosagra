@@ -876,6 +876,18 @@ const basePages: ContentPage[] = [
         ]
       },
       {
+        title: "AOS Bone & Joint Week 2026",
+        paragraphs: [
+          "AOS will observe Bone & Joint Week from 2 August to 9 August 2026 under the IOA/UPOA public-awareness theme: One week, one activity, one community impact.",
+          "The final day-wise programme is being prepared. The aim is to make bone, joint, injury-prevention and healthy-ageing education visible and useful for the people of Agra."
+        ],
+        bullets: [
+          "4 August, National Bone & Joint Day, will be the principal AOS public-awareness programme.",
+          "Planned themes include school posture, osteoporosis and bone health, office ergonomics, fall prevention, road and workplace injury prevention, surgeon wellness, OT ergonomics, community exercise and healthy ageing.",
+          "AOS members may contribute as faculty, coordinators, volunteers, venue contacts, community mobilisers or documentation support."
+        ]
+      },
+      {
         title: "Daily Hindi public-awareness posts",
         paragraphs: [
           "AOS will use its Facebook page for regular Hindi public-awareness posts on common orthopaedic problems. The aim is to share one clear, practical topic at a time for patients and families in Agra.",

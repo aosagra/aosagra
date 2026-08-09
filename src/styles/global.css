@@ -1454,6 +1454,50 @@ p {
   margin-top: 22px;
 }
 
+.gallery-live-album {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--blue-soft);
+}
+
+.gallery-live-album__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--blue-strong);
+}
+
+.gallery-live-album p {
+  margin: 0 0 5px;
+  color: var(--gold-ink);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gallery-live-album h3 {
+  font-size: 1.4rem;
+}
+
+.gallery-live-album span {
+  display: block;
+  max-width: 68ch;
+  margin-top: 7px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
 .gallery-jump {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1841,6 +1885,20 @@ p {
   max-width: 72ch;
   margin-top: 12px;
   color: var(--ink-soft);
+}
+
+.content-heading--compact {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.content-heading--compact h3 {
+  font-size: 1.28rem;
+}
+
+.content-heading--compact p {
+  margin-top: 7px;
+  font-size: 0.9rem;
 }
 
 .coming-soon {
@@ -4618,6 +4676,16 @@ p {
     gap: 76px;
   }
 
+  .gallery-live-album {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: flex-start;
+  }
+
+  .gallery-live-album .text-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+
   .gallery-jump {
     grid-template-columns: 1fr;
   }
@@ -4753,6 +4821,14 @@ p {
 }
 
 @media (max-width: 480px) {
+  .gallery-live-album {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-live-album .text-link {
+    grid-column: 1;
+  }
+
   .masthead {
     min-height: 88px;
     gap: 8px;
