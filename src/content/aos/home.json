@@ -6,7 +6,51 @@
     "primaryCta": { "label": "See what is next", "href": "/upcoming-events/" },
     "secondaryCta": { "label": "Know the society", "href": "/about-aos/" },
     "image": "/assets/optimized/installation-1280.webp",
-    "imageAlt": "Agra Orthopaedic Society leadership and members at the installation ceremony"
+    "imageAlt": "Agra Orthopaedic Society leadership and members at the installation ceremony",
+    "slides": [
+      {
+        "image": "/assets/optimized/homepage/aos-formal-group-2026.webp",
+        "imageAlt": "AOS members in formal group photograph during a society gathering",
+        "label": "AOS together",
+        "caption": "Agra Orthopaedic Society"
+      },
+      {
+        "image": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-launch-group.webp",
+        "imageAlt": "AOS members and partners at the Agra Moves Better 2026 launch",
+        "label": "Agra Moves Better",
+        "caption": "Campaign launch group"
+      },
+      {
+        "image": "/assets/optimized/gallery/agra-moves-better-august-2026/agra-moves-better-2026-founding-partners.webp",
+        "imageAlt": "Founding partners and AOS representatives holding Agra Moves Better 2026 campaign material",
+        "label": "Agra Moves Better",
+        "caption": "Founding partners"
+      },
+      {
+        "image": "/assets/optimized/gallery/gbm-august-2026/gbm-august-2026-hall-wide.webp",
+        "imageAlt": "AOS members seated for the 1 August 2026 General Body Meeting and scientific session",
+        "label": "Academic activity",
+        "caption": "GBM and scientific programme"
+      },
+      {
+        "image": "/assets/optimized/gallery/executive-meeting-july-2026/executive-meeting-2026-wide.webp",
+        "imageAlt": "AOS executive members in a wide meeting-room discussion",
+        "label": "Society governance",
+        "caption": "Executive meeting"
+      },
+      {
+        "image": "/assets/optimized/gallery/police-ergonomics-august-2026/police-ergonomics-2026-commissionerate-group.webp",
+        "imageAlt": "AOS members with Agra Police officials during the police workplace ergonomics programme",
+        "label": "Public service",
+        "caption": "Police ergonomics outreach"
+      },
+      {
+        "image": "/assets/optimized/gallery/clubfoot-awareness-june-2026/clubfoot-awareness-2026-group.webp",
+        "imageAlt": "AOS members and participants in a group photograph during clubfoot awareness activity",
+        "label": "Community awareness",
+        "caption": "Clubfoot awareness"
+      }
+    ]
   },
   "pathways": [
     { "icon": "book", "title": "Learning", "href": "/academics/", "copy": "Academic dates, notices, teaching, and shared knowledge." },

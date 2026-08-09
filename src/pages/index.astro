@@ -6,6 +6,16 @@ import { events, galleryImages, home, leaders, organization, secretaryMessage } 
 
 const nextEvent = events[0];
 const featuredPhotos = galleryImages.filter((image) => image.featured).slice(0, 3);
+const heroSlides = home.hero.slides?.length
+  ? home.hero.slides
+  : [
+      {
+        image: home.hero.image,
+        imageAlt: home.hero.imageAlt,
+        label: "Rooted in Agra",
+        caption: organization.name
+      }
+    ];
 type PathwayIcon = "calendar" | "book" | "users" | "heart";
 const pathwayIconNames: PathwayIcon[] = ["book", "calendar", "users", "heart"];
 const isPathwayIcon = (value: string): value is PathwayIcon => pathwayIconNames.includes(value as PathwayIcon);
@@ -27,16 +37,121 @@ const pathways = home.pathways.map((item, index) => ({
           <a class="button button--light" href={home.hero.secondaryCta.href}>{home.hero.secondaryCta.label}</a>
         </div>
       </div>
-      <figure class="home-hero__media">
-        <img src={home.hero.image} width="1280" height="853" alt={home.hero.imageAlt} fetchpriority="high" />
+      <figure class="home-hero__media" data-home-hero-slider aria-label="Featured AOS photographs">
+        <div class="home-hero__slides">
+          {
+            heroSlides.map((slide, index) => (
+              <img
+                class:list={["home-hero__slide", { "is-active": index === 0 }]}
+                src={slide.image}
+                width="1280"
+                height="853"
+                alt={slide.imageAlt}
+                fetchpriority={index === 0 ? "high" : undefined}
+                loading={index === 0 ? "eager" : "lazy"}
+                aria-hidden={index === 0 ? "false" : "true"}
+                data-hero-slide
+              />
+            ))
+          }
+        </div>
         <figcaption>
-          <span>Rooted in Agra</span>
-          <strong>{organization.name}</strong>
+          <span data-hero-slide-label>{heroSlides[0].label}</span>
+          <strong data-hero-slide-caption>{heroSlides[0].caption}</strong>
         </figcaption>
+        <div class="home-hero__dots" aria-label="Choose homepage photograph">
+          {
+            heroSlides.map((slide, index) => (
+              <button
+                class="home-hero__dot"
+                type="button"
+                aria-label={`Show ${slide.caption}`}
+                aria-pressed={index === 0 ? "true" : "false"}
+                data-hero-dot={index}
+              />
+            ))
+          }
+        </div>
       </figure>
     </div>
     <TajMotif tone="white" class="home-hero__taj" />
   </section>
+
+  <script define:vars={{ heroSlides }}>
+    const heroSlider = document.querySelector("[data-home-hero-slider]");
+
+    if (heroSlider) {
+      const slides = [...heroSlider.querySelectorAll("[data-hero-slide]")];
+      const dots = [...heroSlider.querySelectorAll("[data-hero-dot]")];
+      const label = heroSlider.querySelector("[data-hero-slide-label]");
+      const caption = heroSlider.querySelector("[data-hero-slide-caption]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let currentSlide = 0;
+      let isPaused = false;
+      let timer = null;
+
+      const showSlide = (nextIndex) => {
+        currentSlide = (nextIndex + slides.length) % slides.length;
+
+        slides.forEach((slide, index) => {
+          const active = index === currentSlide;
+          slide.classList.toggle("is-active", active);
+          slide.setAttribute("aria-hidden", active ? "false" : "true");
+        });
+
+        dots.forEach((dot, index) => {
+          dot.setAttribute("aria-pressed", index === currentSlide ? "true" : "false");
+        });
+
+        if (label) {
+          label.textContent = heroSlides[currentSlide]?.label ?? "";
+        }
+
+        if (caption) {
+          caption.textContent = heroSlides[currentSlide]?.caption ?? "";
+        }
+      };
+
+      const startRotation = () => {
+        if (slides.length < 2 || reduceMotion) {
+          return;
+        }
+
+        window.clearInterval(timer);
+        timer = window.setInterval(() => {
+          if (!isPaused) {
+            showSlide(currentSlide + 1);
+          }
+        }, 7000);
+      };
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          showSlide(index);
+          startRotation();
+        });
+      });
+
+      heroSlider.addEventListener("mouseenter", () => {
+        isPaused = true;
+      });
+
+      heroSlider.addEventListener("mouseleave", () => {
+        isPaused = false;
+      });
+
+      heroSlider.addEventListener("focusin", () => {
+        isPaused = true;
+      });
+
+      heroSlider.addEventListener("focusout", () => {
+        isPaused = false;
+      });
+
+      showSlide(0);
+      startRotation();
+    }
+  </script>
 
   <section class="next-moment" aria-labelledby="next-moment-heading">
     <div class="shell next-moment__grid">
