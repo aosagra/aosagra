@@ -158,6 +158,12 @@ export function clearMemberSessionCookie(event) {
 }
 
 function readAccessCodesSource() {
+  const chunkedBase64 = readChunkedEnv("AOS_MEMBER_ACCESS_CODES_JSON_BASE64");
+
+  if (chunkedBase64) {
+    return Buffer.from(chunkedBase64, "base64").toString("utf8");
+  }
+
   if (process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64) {
     return Buffer.from(process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64, "base64").toString("utf8");
   }
@@ -203,6 +209,7 @@ function assertMemberAccessConfig() {
   if (
     !process.env.AOS_MEMBER_ACCESS_CODES_JSON &&
     !process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64 &&
+    !hasChunkedEnv("AOS_MEMBER_ACCESS_CODES_JSON_BASE64") &&
     !process.env.AOS_MEMBER_ACCESS_CODE &&
     !process.env.AOS_MEMBER_ACCESS_CODE_HASH
   ) {
@@ -245,6 +252,32 @@ export function verifyMemberAccessCode(accessCode) {
 }
 
 function readChunkedEnv(prefix) {
+  const countValue = process.env[`${prefix}_CHUNK_COUNT`];
+
+  if (countValue) {
+    const count = Number.parseInt(countValue, 10);
+
+    if (!Number.isInteger(count) || count < 1 || count > 999) {
+      throw statusError(500, `${prefix}_CHUNK_COUNT must be a number between 1 and 999.`);
+    }
+
+    const parts = [];
+
+    for (let index = 1; index <= count; index += 1) {
+      const paddedKey = `${prefix}_CHUNK_${String(index).padStart(3, "0")}`;
+      const plainKey = `${prefix}_CHUNK_${index}`;
+      const value = process.env[paddedKey] ?? process.env[plainKey];
+
+      if (!value) {
+        throw statusError(500, `${paddedKey} is missing from the AOS member environment configuration.`);
+      }
+
+      parts.push(value.trim());
+    }
+
+    return parts.join("");
+  }
+
   const parts = [];
 
   for (let index = 1; ; index += 1) {
@@ -258,6 +291,10 @@ function readChunkedEnv(prefix) {
   }
 
   return parts.join("");
+}
+
+function hasChunkedEnv(prefix) {
+  return Boolean(process.env[`${prefix}_CHUNK_COUNT`] || process.env[`${prefix}_PART_1`]);
 }
 
 function readDirectorySource() {
