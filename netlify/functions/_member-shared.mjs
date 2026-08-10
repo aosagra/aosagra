@@ -1,7 +1,12 @@
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
+import { connectLambda, getStore } from "@netlify/blobs";
 
 const COOKIE_NAME = "aos_member";
 const DEFAULT_SESSION_SECONDS = 12 * 60 * 60;
+const MEMBER_BLOB_STORE = "aos-member-portal";
+const MEMBER_DIRECTORY_KEY = "directory.json";
+const MEMBER_ACCESS_CODES_KEY = "access-codes.json";
+const blobCache = new Map();
 
 export function jsonResponse(statusCode, body, headers = {}) {
   return {
@@ -92,6 +97,18 @@ function memberSessionSecret() {
   return secret;
 }
 
+export function connectMemberBlobStore(event) {
+  if (process.env.AOS_MEMBER_BLOBS_ENABLED === "0") {
+    return;
+  }
+
+  try {
+    connectLambda(event);
+  } catch {
+    // Local builds and tests may not have Netlify's Lambda blob context.
+  }
+}
+
 function sign(value) {
   return createHmac("sha256", memberSessionSecret()).update(value).digest("base64url");
 }
@@ -157,7 +174,60 @@ export function clearMemberSessionCookie(event) {
   return memberSessionCookie(event, "", 0);
 }
 
-function readAccessCodesSource() {
+function memberBlobStoreName() {
+  return process.env.AOS_MEMBER_BLOBS_STORE || MEMBER_BLOB_STORE;
+}
+
+function canReadMemberBlobs() {
+  return Boolean(
+    process.env.AOS_MEMBER_BLOBS_ENABLED !== "0" &&
+      (globalThis.netlifyBlobsContext ||
+        process.env.NETLIFY_BLOBS_CONTEXT ||
+        (process.env.AOS_MEMBER_BLOBS_SITE_ID && process.env.AOS_MEMBER_BLOBS_TOKEN))
+  );
+}
+
+async function readMemberBlobText(key) {
+  if (!canReadMemberBlobs()) {
+    return "";
+  }
+
+  const storeName = memberBlobStoreName();
+  const cacheKey = `${storeName}:${key}`;
+
+  if (blobCache.has(cacheKey)) {
+    return blobCache.get(cacheKey);
+  }
+
+  const storeOptions = {
+    name: storeName,
+    consistency: "strong"
+  };
+
+  if (process.env.AOS_MEMBER_BLOBS_SITE_ID && process.env.AOS_MEMBER_BLOBS_TOKEN) {
+    storeOptions.siteID = process.env.AOS_MEMBER_BLOBS_SITE_ID;
+    storeOptions.token = process.env.AOS_MEMBER_BLOBS_TOKEN;
+  }
+
+  const value =
+    (await getStore(storeOptions).get(key, {
+      consistency: "strong",
+      type: "text"
+    })) ?? "";
+
+  blobCache.set(cacheKey, value);
+  return value;
+}
+
+async function readAccessCodesSource() {
+  const blobSource = await readMemberBlobText(
+    process.env.AOS_MEMBER_ACCESS_CODES_BLOB_KEY || MEMBER_ACCESS_CODES_KEY
+  );
+
+  if (blobSource) {
+    return blobSource;
+  }
+
   const chunkedBase64 = readChunkedEnv("AOS_MEMBER_ACCESS_CODES_JSON_BASE64");
 
   if (chunkedBase64) {
@@ -171,8 +241,8 @@ function readAccessCodesSource() {
   return process.env.AOS_MEMBER_ACCESS_CODES_JSON ?? "";
 }
 
-function configuredMemberCodes() {
-  const source = readAccessCodesSource();
+async function configuredMemberCodes() {
+  const source = await readAccessCodesSource();
 
   if (!source) {
     return [];
@@ -211,10 +281,11 @@ function assertMemberAccessConfig() {
     !process.env.AOS_MEMBER_ACCESS_CODES_JSON_BASE64 &&
     !hasChunkedEnv("AOS_MEMBER_ACCESS_CODES_JSON_BASE64") &&
     !process.env.AOS_MEMBER_ACCESS_CODE &&
-    !process.env.AOS_MEMBER_ACCESS_CODE_HASH
+    !process.env.AOS_MEMBER_ACCESS_CODE_HASH &&
+    !canReadMemberBlobs()
   ) {
     missing.push(
-      "AOS_MEMBER_ACCESS_CODES_JSON_BASE64, AOS_MEMBER_ACCESS_CODES_JSON, AOS_MEMBER_ACCESS_CODE, or AOS_MEMBER_ACCESS_CODE_HASH"
+      "AOS member Blob data, AOS_MEMBER_ACCESS_CODES_JSON_BASE64, AOS_MEMBER_ACCESS_CODES_JSON, AOS_MEMBER_ACCESS_CODE, or AOS_MEMBER_ACCESS_CODE_HASH"
     );
   }
   if (!process.env.AOS_MEMBER_SESSION_SECRET) {
@@ -226,13 +297,12 @@ function assertMemberAccessConfig() {
   }
 }
 
-export function verifyMemberAccessCode(accessCode) {
+export async function verifyMemberAccessCode(accessCode) {
   assertMemberAccessConfig();
 
   const accessHash = sha256(accessCode);
-  const memberCode = configuredMemberCodes().find(
-    (row) => row.active && safeEqual(accessHash, row.codeHash)
-  );
+  const memberCodes = await configuredMemberCodes();
+  const memberCode = memberCodes.find((row) => row.active && safeEqual(accessHash, row.codeHash));
 
   if (memberCode) {
     return {
@@ -242,10 +312,18 @@ export function verifyMemberAccessCode(accessCode) {
     };
   }
 
+  if (memberCodes.length) {
+    return null;
+  }
+
   const expectedHash = process.env.AOS_MEMBER_ACCESS_CODE_HASH?.trim().toLowerCase();
 
   if (expectedHash) {
     return safeEqual(accessHash, expectedHash) ? { id: "aos-member" } : null;
+  }
+
+  if (!process.env.AOS_MEMBER_ACCESS_CODE) {
+    throw statusError(500, "Private member access is being connected by the AOS office.");
   }
 
   return safeEqual(accessHash, sha256(process.env.AOS_MEMBER_ACCESS_CODE)) ? { id: "aos-member" } : null;
@@ -297,7 +375,15 @@ function hasChunkedEnv(prefix) {
   return Boolean(process.env[`${prefix}_CHUNK_COUNT`] || process.env[`${prefix}_PART_1`]);
 }
 
-function readDirectorySource() {
+async function readDirectorySource() {
+  const blobSource = await readMemberBlobText(
+    process.env.AOS_MEMBER_DIRECTORY_BLOB_KEY || MEMBER_DIRECTORY_KEY
+  );
+
+  if (blobSource) {
+    return blobSource;
+  }
+
   const chunkedBase64 = readChunkedEnv("AOS_MEMBER_DIRECTORY_JSON_BASE64");
   const directBase64 = process.env.AOS_MEMBER_DIRECTORY_JSON_BASE64?.trim();
 
@@ -394,8 +480,8 @@ function normalizeMember(row, index) {
   };
 }
 
-export function readMemberDirectory() {
-  const source = readDirectorySource();
+export async function readMemberDirectory() {
+  const source = await readDirectorySource();
 
   if (!source) {
     return {

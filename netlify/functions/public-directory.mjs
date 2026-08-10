@@ -1,4 +1,10 @@
-import { handleError, jsonResponse, readMemberDirectory, statusError } from "./_member-shared.mjs";
+import {
+  connectMemberBlobStore,
+  handleError,
+  jsonResponse,
+  readMemberDirectory,
+  statusError
+} from "./_member-shared.mjs";
 
 function isAgraPractice(member) {
   return String(member.city ?? "").trim().toLowerCase() === "agra";
@@ -22,7 +28,9 @@ export async function handler(event) {
       throw statusError(405, "Use GET to read the public directory.");
     }
 
-    const directory = readMemberDirectory();
+    connectMemberBlobStore(event);
+
+    const directory = await readMemberDirectory();
     const members = directory.members.filter(isAgraPractice).map(publicMember);
 
     return jsonResponse(200, {

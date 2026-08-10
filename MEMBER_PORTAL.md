@@ -5,16 +5,30 @@ The member portal is served from `/member-area/`.
 ## Privacy rule
 
 Do not commit the member directory spreadsheet or generated directory JSON into this repository.
-The directory is private member information and must be supplied through Netlify environment variables.
+The directory is private member information and must be supplied through Netlify Blobs or, for emergency fallback only, through server-side Netlify environment variables.
+
+## Primary live data store
+
+The live member portal reads from the Netlify Blob store named `aos-member-portal`.
+
+Expected Blob keys:
+
+- `directory.json`
+- `access-codes.json`
+
+The Blob store is read only by Netlify Functions. The public website HTML does not include member records or access-code hashes.
 
 ## Required Netlify environment variables
 
-- `AOS_MEMBER_ACCESS_CODES_JSON_BASE64`, `AOS_MEMBER_ACCESS_CODES_JSON`, `AOS_MEMBER_ACCESS_CODE`, or `AOS_MEMBER_ACCESS_CODE_HASH`
 - `AOS_MEMBER_SESSION_SECRET`
-- `AOS_MEMBER_DIRECTORY_JSON` or `AOS_MEMBER_DIRECTORY_JSON_BASE64`
 
 `AOS_MEMBER_SESSION_SECRET` should be a long random value of at least 24 characters.
-Use the individual member-code list when possible. The single access-code variables are retained only as a fallback.
+Use the individual member-code list in the Blob store when possible. The single access-code variables are retained only as an emergency fallback.
+
+Optional fallback variables:
+
+- `AOS_MEMBER_ACCESS_CODES_JSON_BASE64`, `AOS_MEMBER_ACCESS_CODES_JSON`, `AOS_MEMBER_ACCESS_CODE`, or `AOS_MEMBER_ACCESS_CODE_HASH`
+- `AOS_MEMBER_DIRECTORY_JSON` or `AOS_MEMBER_DIRECTORY_JSON_BASE64`
 
 ## Individual member access-code JSON shape
 

@@ -1,4 +1,5 @@
 import {
+  connectMemberBlobStore,
   handleError,
   jsonResponse,
   readMemberDirectory,
@@ -13,8 +14,9 @@ export async function handler(event) {
     }
 
     requireMemberSession(event);
+    connectMemberBlobStore(event);
 
-    const directory = readMemberDirectory();
+    const directory = await readMemberDirectory();
 
     return jsonResponse(200, {
       ok: true,

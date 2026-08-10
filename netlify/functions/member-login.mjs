@@ -1,4 +1,5 @@
 import {
+  connectMemberBlobStore,
   createMemberSession,
   handleError,
   jsonResponse,
@@ -16,7 +17,9 @@ export async function handler(event) {
 
     const { accessCode = "" } = await readJsonBody(event);
 
-    const member = verifyMemberAccessCode(accessCode);
+    connectMemberBlobStore(event);
+
+    const member = await verifyMemberAccessCode(accessCode);
 
     if (!member) {
       throw statusError(401, "The member access code is incorrect.");

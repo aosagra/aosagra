@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "local-preview": "node tools/local-preview.mjs",
     "check": "astro check",
-    "audit": "node tools/audit-site.mjs"
+    "audit": "node tools/audit-site.mjs",
+    "upload-member-blobs": "node tools/upload-member-blobs.mjs"
   },
   "dependencies": {
     "@fontsource-variable/libre-franklin": "^5.2.8",
@@ -20,6 +21,7 @@
     "@fontsource/hind": "^5.2.8",
     "@fontsource/libre-caslon-text": "^5.2.7",
     "@fontsource/martel": "^5.2.8",
+    "@netlify/blobs": "^10.7.12",
     "astro": "latest"
   },
   "devDependencies": {
