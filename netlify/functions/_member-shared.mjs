@@ -199,20 +199,21 @@ async function readMemberBlobText(key) {
     return blobCache.get(cacheKey);
   }
 
+  const hasExplicitBlobCredentials =
+    process.env.AOS_MEMBER_BLOBS_SITE_ID && process.env.AOS_MEMBER_BLOBS_TOKEN;
   const storeOptions = {
-    name: storeName,
-    consistency: "strong"
+    name: storeName
   };
 
-  if (process.env.AOS_MEMBER_BLOBS_SITE_ID && process.env.AOS_MEMBER_BLOBS_TOKEN) {
+  if (hasExplicitBlobCredentials) {
     storeOptions.siteID = process.env.AOS_MEMBER_BLOBS_SITE_ID;
     storeOptions.token = process.env.AOS_MEMBER_BLOBS_TOKEN;
   }
 
   const value =
-    (await getStore(storeOptions).get(key, {
-      consistency: "strong",
-      type: "text"
+    (await getStore(hasExplicitBlobCredentials ? storeOptions : storeName).get(key, {
+      type: "text",
+      ...(hasExplicitBlobCredentials ? { consistency: "strong" } : {})
     })) ?? "";
 
   blobCache.set(cacheKey, value);
