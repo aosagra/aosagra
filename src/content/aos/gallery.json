@@ -1,5 +1,117 @@
 [
   {
+    "id": "agra-moves-better-closing-2026-group",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-group.webp",
+    "alt": "AOS members and partners at the Agra Moves Better 2026 closing ceremony",
+    "caption": "30 August Agra Moves Better Closing · Group photograph",
+    "featured": true,
+    "order": 1e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-dais",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-dais.webp",
+    "alt": "Dignitaries on the dais during the Agra Moves Better 2026 closing ceremony",
+    "caption": "30 August Agra Moves Better Closing · Dais and programme",
+    "featured": false,
+    "order": 2e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-recognition",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-recognition.webp",
+    "alt": "Recognition moment during the Agra Moves Better 2026 closing ceremony",
+    "caption": "30 August Agra Moves Better Closing · Recognition moment",
+    "featured": false,
+    "order": 3e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-partners",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-partners.webp",
+    "alt": "AOS and community partners during the Agra Moves Better closing ceremony",
+    "caption": "30 August Agra Moves Better Closing · Community partners",
+    "featured": false,
+    "order": 4e-05
+  },
+  {
+    "id": "multi-site-bone-health-2026-snmc",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-snmc.webp",
+    "alt": "AOS bone-health outreach at S.N. Medical College during Agra Moves Better 2026",
+    "caption": "27 August Four-Site Outreach · S.N. Medical College",
+    "featured": true,
+    "order": 0.00011
+  },
+  {
+    "id": "multi-site-bone-health-2026-cancer-care",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-cancer-care.webp",
+    "alt": "AOS musculoskeletal awareness programme at Purushottam Das Savitri Devi Cancer Care and Research Centre",
+    "caption": "27 August Four-Site Outreach · Cancer-care awareness",
+    "featured": false,
+    "order": 0.00012
+  },
+  {
+    "id": "multi-site-bone-health-2026-school",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-school.webp",
+    "alt": "School bone-health awareness activity during the 27 August AOS four-site outreach",
+    "caption": "27 August Four-Site Outreach · School programme",
+    "featured": false,
+    "order": 0.00013
+  },
+  {
+    "id": "multi-site-bone-health-2026-community",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-community.webp",
+    "alt": "Community bone-health screening and counselling during the 27 August AOS outreach",
+    "caption": "27 August Four-Site Outreach · Community screening",
+    "featured": false,
+    "order": 0.00014
+  },
+  {
+    "id": "air-force-awareness-2026-programme",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-awareness-2026-programme.webp",
+    "alt": "Programme poster for the Indian Air Force health awareness activity under Agra Moves Better 2026",
+    "caption": "25 August Air Force & Airport Outreach · Programme material",
+    "featured": false,
+    "order": 0.00021
+  },
+  {
+    "id": "air-force-awareness-2026-bmd",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-awareness-2026-bmd.webp",
+    "alt": "BMD screening activity during the AOS Air Force and Airport awareness programme",
+    "caption": "25 August Air Force & Airport Outreach · BMD screening",
+    "featured": true,
+    "order": 0.00022
+  },
+  {
+    "id": "air-force-awareness-2026-session",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-awareness-2026-session.webp",
+    "alt": "Awareness session during the AOS Air Force and Airport workplace programme",
+    "caption": "25 August Air Force & Airport Outreach · Awareness session",
+    "featured": false,
+    "order": 0.00023
+  },
+  {
+    "id": "air-force-awareness-2026-airport",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-awareness-2026-airport.webp",
+    "alt": "Agra Airport workplace ergonomics and CPR awareness activity under Agra Moves Better 2026",
+    "caption": "25 August Air Force & Airport Outreach · Airport activity",
+    "featured": false,
+    "order": 0.00024
+  },
+  {
+    "id": "school-bone-health-2026-session",
+    "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-session.webp",
+    "alt": "Students and teachers during the AOS school and women’s bone-health programme",
+    "caption": "24 August School & Women’s Bone-Health · Awareness session",
+    "featured": false,
+    "order": 0.00031
+  },
+  {
+    "id": "school-bone-health-2026-guidance",
+    "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-guidance.webp",
+    "alt": "AOS bone-health guidance during the 24 August school awareness activity",
+    "caption": "24 August School & Women’s Bone-Health · Bone-health guidance",
+    "featured": false,
+    "order": 0.00032
+  },
+  {
     "id": "community-bone-health-2026-awareness-session",
     "src": "/assets/optimized/gallery/community-bone-health-august-2026/community-bone-health-2026-awareness-session.webp",
     "alt": "Community participants attending an Agra Moves Better bone-health awareness session",

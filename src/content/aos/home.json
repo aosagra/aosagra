@@ -3,8 +3,14 @@
     "kicker": "Agra Orthopaedic Society · Since 1979",
     "title": "A city of learning. A society of care.",
     "lead": "AOS Agra brings orthopaedic surgeons, teachers, trainees, and the community together through education, ethics, and service.",
-    "primaryCta": { "label": "See what is next", "href": "/upcoming-events/" },
-    "secondaryCta": { "label": "Know the society", "href": "/about-aos/" },
+    "primaryCta": {
+      "label": "See what is next",
+      "href": "/upcoming-events/"
+    },
+    "secondaryCta": {
+      "label": "Know the society",
+      "href": "/about-aos/"
+    },
     "image": "/assets/optimized/installation-1280.webp",
     "imageAlt": "Agra Orthopaedic Society leadership and members at the installation ceremony",
     "slides": [
@@ -49,14 +55,52 @@
         "imageAlt": "AOS members and participants in a group photograph during clubfoot awareness activity",
         "label": "Community awareness",
         "caption": "Clubfoot awareness"
+      },
+      {
+        "image": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-group.webp",
+        "imageAlt": "AOS members and partners at the Agra Moves Better 2026 closing ceremony",
+        "label": "Agra Moves Better",
+        "caption": "Closing ceremony"
+      },
+      {
+        "image": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-awareness-2026-bmd.webp",
+        "imageAlt": "AOS BMD screening and awareness activity during the Air Force and Airport outreach",
+        "label": "Public service",
+        "caption": "Air Force and Airport outreach"
+      },
+      {
+        "image": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-snmc.webp",
+        "imageAlt": "AOS bone-health awareness during the 27 August four-site outreach",
+        "label": "Bone health",
+        "caption": "Four-site outreach"
       }
     ]
   },
   "pathways": [
-    { "icon": "book", "title": "Learning", "href": "/academics/", "copy": "Academic dates, notices, teaching, and shared knowledge." },
-    { "icon": "calendar", "title": "Events", "href": "/upcoming-events/", "copy": "The next society programmes and the verified archive." },
-    { "icon": "users", "title": "Membership", "href": "/membership/", "copy": "Join Agra’s professional orthopaedic community." },
-    { "icon": "heart", "title": "Public awareness", "href": "/public-awareness/", "copy": "Responsible bone, joint, injury, and mobility guidance." }
+    {
+      "icon": "book",
+      "title": "Learning",
+      "href": "/academics/",
+      "copy": "Academic dates, notices, teaching, and shared knowledge."
+    },
+    {
+      "icon": "calendar",
+      "title": "Events",
+      "href": "/upcoming-events/",
+      "copy": "The next society programmes and the verified archive."
+    },
+    {
+      "icon": "users",
+      "title": "Membership",
+      "href": "/membership/",
+      "copy": "Join Agra’s professional orthopaedic community."
+    },
+    {
+      "icon": "heart",
+      "title": "Public awareness",
+      "href": "/public-awareness/",
+      "copy": "Responsible bone, joint, injury, and mobility guidance."
+    }
   ],
   "photoStory": {
     "title": "The society is carried by people in rooms together.",

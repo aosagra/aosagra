@@ -21,6 +21,30 @@ const galleryGroups =
       ]
     : [
         {
+          id: "agra-moves-better-closing-august-2026",
+          title: "30 August Agra Moves Better Closing",
+          description: "Selected photographs from the Agra Moves Better - 2026 closing ceremony and partner recognition programme.",
+          images: images.filter((image) => image.src.includes("/agra-moves-better-closing-august-2026/"))
+        },
+        {
+          id: "multi-site-bone-health-august-2026",
+          title: "27 August Four-Site Bone-Health Outreach",
+          description: "Selected photographs from the medical college, cancer-care, school and community BMD awareness outreach.",
+          images: images.filter((image) => image.src.includes("/multi-site-bone-health-august-2026/"))
+        },
+        {
+          id: "air-force-airport-awareness-august-2026",
+          title: "25 August Air Force & Airport Outreach",
+          description: "Selected photographs and programme material from the Air Force Station Agra and Agra Airport BMD, ergonomics and CPR awareness activity.",
+          images: images.filter((image) => image.src.includes("/air-force-airport-awareness-august-2026/"))
+        },
+        {
+          id: "school-bone-health-august-2026",
+          title: "24 August School & Women’s Bone-Health",
+          description: "Selected photographs from the Chandrawati Kanya Vidyalaya school and women’s bone-health awareness programme.",
+          images: images.filter((image) => image.src.includes("/school-bone-health-august-2026/"))
+        },
+        {
           id: "community-bone-health-august-2026",
           title: "6 August Community Bone-Health Outreach",
           description: "Selected photographs from Agra Moves Better - 2026 community BMD screening, counselling and awareness outreach with local women’s and service organisations.",
@@ -104,6 +128,10 @@ const galleryGroups =
           description: "Earlier AOS activity photographs preserved from the website archive.",
           images: images.filter(
             (image) =>
+              !image.src.includes("/agra-moves-better-closing-august-2026/") &&
+              !image.src.includes("/multi-site-bone-health-august-2026/") &&
+              !image.src.includes("/air-force-airport-awareness-august-2026/") &&
+              !image.src.includes("/school-bone-health-august-2026/") &&
               !image.src.includes("/community-bone-health-august-2026/") &&
               !image.src.includes("/agra-moves-better-august-2026/") &&
               !image.src.includes("/gbm-august-2026/") &&
