@@ -21,10 +21,28 @@ const galleryGroups =
       ]
     : [
         {
+          id: "aos-foundation-day-november-2026",
+          title: "1 November AOS Foundation Day",
+          description: "Selected photographs from the scientific programme, Memorial Orations, Foundation Day ceremony, Lifetime Achievement Awards and fellowship.",
+          images: images.filter((image) => image.src.includes("/aos-foundation-day-november-2026/"))
+        },
+        {
+          id: "aos-ai-workshop-october-2026",
+          title: "25 October Hands-on AI Workshop",
+          description: "Photographs from the practical AI workshop for orthopaedicians conducted with Dr Anubha Karol and supported by Sun Pharma.",
+          images: images.filter((image) => image.src.includes("/aos-ai-workshop-october-2026/"))
+        },
+        {
           id: "agra-moves-better-closing-august-2026",
           title: "30 August Agra Moves Better Closing",
           description: "Selected photographs from the Agra Moves Better - 2026 closing ceremony and partner recognition programme.",
           images: images.filter((image) => image.src.includes("/agra-moves-better-closing-august-2026/"))
+        },
+        {
+          id: "agra-moves-better-media-coverage-august-2026",
+          title: "Agra Moves Better Media Coverage & Newspaper Cuttings",
+          description: "Selected newspaper cuttings, press coverage and approved campaign graphics kept separately from programme photographs.",
+          images: images.filter((image) => image.src.includes("/agra-moves-better-media-coverage-august-2026/"))
         },
         {
           id: "multi-site-bone-health-august-2026",
@@ -39,10 +57,22 @@ const galleryGroups =
           images: images.filter((image) => image.src.includes("/air-force-airport-awareness-august-2026/"))
         },
         {
+          id: "sports-jail-community-outreach-august-2026",
+          title: "22-23 August Sports, District Jail & Community Outreach",
+          description: "Selected photographs from the Prakhar Badminton Academy, District Jail Agra and community BMD outreach activities.",
+          images: images.filter((image) => image.src.includes("/sports-jail-community-outreach-august-2026/"))
+        },
+        {
           id: "school-bone-health-august-2026",
           title: "24 August School & Women’s Bone-Health",
           description: "Selected photographs from the Chandrawati Kanya Vidyalaya school and women’s bone-health awareness programme.",
           images: images.filter((image) => image.src.includes("/school-bone-health-august-2026/"))
+        },
+        {
+          id: "independence-day-workplace-outreach-august-2026",
+          title: "15-21 August Independence Day & Workplace Outreach",
+          description: "Selected photographs from the Independence Day, transport, workplace, hospital and women’s bone-health outreach cluster.",
+          images: images.filter((image) => image.src.includes("/independence-day-workplace-outreach-august-2026/"))
         },
         {
           id: "community-bone-health-august-2026",
@@ -128,10 +158,15 @@ const galleryGroups =
           description: "Earlier AOS activity photographs preserved from the website archive.",
           images: images.filter(
             (image) =>
+              !image.src.includes("/aos-foundation-day-november-2026/") &&
+              !image.src.includes("/aos-ai-workshop-october-2026/") &&
               !image.src.includes("/agra-moves-better-closing-august-2026/") &&
+              !image.src.includes("/agra-moves-better-media-coverage-august-2026/") &&
               !image.src.includes("/multi-site-bone-health-august-2026/") &&
               !image.src.includes("/air-force-airport-awareness-august-2026/") &&
+              !image.src.includes("/sports-jail-community-outreach-august-2026/") &&
               !image.src.includes("/school-bone-health-august-2026/") &&
+              !image.src.includes("/independence-day-workplace-outreach-august-2026/") &&
               !image.src.includes("/community-bone-health-august-2026/") &&
               !image.src.includes("/agra-moves-better-august-2026/") &&
               !image.src.includes("/gbm-august-2026/") &&

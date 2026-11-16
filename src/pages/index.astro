@@ -153,25 +153,49 @@ const pathways = home.pathways.map((item, index) => ({
     }
   </script>
 
-  <section class="next-moment" aria-labelledby="next-moment-heading">
-    <div class="shell next-moment__grid">
-      <div>
-        <p class="section-context">Next at AOS</p>
-        <h2 id="next-moment-heading">{nextEvent.title}</h2>
-        <p>{nextEvent.description}</p>
-      </div>
-      <a class="next-moment__card" href={nextEvent.href}>
-        <time datetime={nextEvent.datetime}>
-          <strong>{nextEvent.date}</strong>
-          <span>{nextEvent.month} {nextEvent.year}</span>
-        </time>
-        <span>
-          <small>{nextEvent.meta}</small>
-          View programme <Icon name="arrow-right" size={17} />
-        </span>
-      </a>
-    </div>
-  </section>
+  {
+    nextEvent ? (
+      <section class="next-moment" aria-labelledby="next-moment-heading">
+        <div class="shell next-moment__grid">
+          <div>
+            <p class="section-context">Next at AOS</p>
+            <h2 id="next-moment-heading">{nextEvent.title}</h2>
+            <p>{nextEvent.description}</p>
+          </div>
+          <a class="next-moment__card" href={nextEvent.href}>
+            <time datetime={nextEvent.datetime}>
+              <strong>{nextEvent.date}</strong>
+              <span>{nextEvent.month} {nextEvent.year}</span>
+            </time>
+            <span>
+              <small>{nextEvent.meta}</small>
+              View programme <Icon name="arrow-right" size={17} />
+            </span>
+          </a>
+        </div>
+      </section>
+    ) : (
+      <section class="next-moment" aria-labelledby="next-moment-heading">
+        <div class="shell next-moment__grid">
+          <div>
+            <p class="section-context">Next at AOS</p>
+            <h2 id="next-moment-heading">Next programme being prepared</h2>
+            <p>The next AOS academic or society programme will be published after its date and details are confirmed.</p>
+          </div>
+          <a class="next-moment__card" href="/latest-notices/">
+            <div class="event-date" aria-hidden="true">
+              <strong>Next</strong>
+              <span>Update</span>
+            </div>
+            <span>
+              <small>Confirmed announcements and programme updates</small>
+              Latest notices <Icon name="arrow-right" size={17} />
+            </span>
+          </a>
+        </div>
+      </section>
+    )
+  }
 
   <section class="secretary-highlight" aria-labelledby="secretary-highlight-heading">
     <div class="shell secretary-highlight__inner">

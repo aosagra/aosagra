@@ -1,30 +1,23 @@
 [
   {
-    "datetime": "2026-09-12",
-    "dateLabel": "12 Sep",
-    "title": "College / physiotherapy awareness activity",
-    "summary": "September public-awareness activity planned around mobility, fall prevention and rehabilitation; final institution and circular to be confirmed.",
-    "href": "/public-awareness/"
-  },
-  {
-    "datetime": "2026-09-26",
-    "dateLabel": "26 Sep",
-    "title": "AOS September GBM-CME",
-    "summary": "September GBM-CME being prepared with Torrent Pharma educational support; speaker, topic, venue and final circular are under finalisation.",
-    "href": "/events-cme/#aos-september-gbm-cme-26-september-2026"
-  },
-  {
     "datetime": "2026-10-03",
-    "dateLabel": "3 Oct",
-    "title": "AOS Rheumatoid Arthritis CME",
-    "summary": "3 October Rheumatoid Arthritis CME finalized with Hetero Healthcare educational support; detailed circular will follow.",
-    "href": "/events-cme/#aos-rheumatoid-arthritis-cme-3-october-2026"
+    "dateLabel": "Programme update",
+    "title": "Rheumatoid Arthritis CME postponed",
+    "summary": "The academic programme earlier proposed for 3 October will not be held on that date. It has been postponed to November 2026; the revised date and programme will be communicated after finalisation.",
+    "href": "/latest-notices/"
   },
   {
     "datetime": "2026-10-25",
     "dateLabel": "25 Oct",
-    "title": "AOS Foundation Day Symposium 2026",
-    "summary": "Foundation Day symposium planned on bone health, trauma care, functional recovery and AOS legacy recognition.",
-    "href": "/events-cme/#aos-foundation-day-symposium-2026"
+    "title": "AOS Hands-on AI Workshop completed",
+    "summary": "AOS completed its practical AI workshop for orthopaedicians at Fairfield by Marriott, Agra, with Dr Anubha Karol as faculty and a reported attendance of 67 doctors.",
+    "href": "/past-events/#aos-hands-on-ai-workshop-25-october-2026"
+  },
+  {
+    "datetime": "2026-11-01",
+    "dateLabel": "Programme completed",
+    "title": "AOS Foundation Day 2026",
+    "summary": "AOS Foundation Day was held at Courtyard by Marriott, Agra, with orthopaedic trauma sessions, Memorial Orations by Dr C. S. Yadav and Dr Ashok Vij, and Lifetime Achievement Awards for Dr R. K. Goyal and Dr Ravi Sabharwal.",
+    "href": "/aos-foundation-day-2026/"
   }
 ]

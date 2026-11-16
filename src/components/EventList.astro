@@ -11,21 +11,38 @@ const { compact = false } = Astro.props;
 
 <div class:list={["event-list", { "event-list--compact": compact }]}>
   {
-    events.map((event) => (
-      <article class="event-row" id={event.href.split("#")[1]}>
-        <time datetime={event.datetime} class="event-date">
-          <strong>{event.date}</strong>
-          <span>{event.month} {event.year}</span>
-        </time>
-        <div class="event-row__content">
-          <h3>{event.title}</h3>
-          <p>{event.description}</p>
-          <span class="event-row__meta"><Icon name="map-pin" size={16} /> {event.meta}</span>
+    events.length > 0 ? (
+      events.map((event) => (
+        <article class="event-row" id={event.href.split("#")[1]}>
+          <time datetime={event.datetime} class="event-date">
+            <strong>{event.date}</strong>
+            <span>{event.month} {event.year}</span>
+          </time>
+          <div class="event-row__content">
+            <h3>{event.title}</h3>
+            <p>{event.description}</p>
+            <span class="event-row__meta"><Icon name="map-pin" size={16} /> {event.meta}</span>
+          </div>
+          <a class="text-link" href="/contact/">
+            Contact AOS <Icon name="arrow-right" size={17} />
+          </a>
+        </article>
+      ))
+    ) : (
+      <article class="event-row">
+        <div class="event-date" aria-hidden="true">
+          <strong>Next</strong>
+          <span>Update</span>
         </div>
-        <a class="text-link" href="/contact/">
-          Contact AOS <Icon name="arrow-right" size={17} />
+        <div class="event-row__content">
+          <h3>Next programme being prepared</h3>
+          <p>The next AOS academic or society programme will be published after its date and details are confirmed.</p>
+          <span class="event-row__meta"><Icon name="calendar" size={16} /> Please check Latest Notices for updates.</span>
+        </div>
+        <a class="text-link" href="/latest-notices/">
+          Latest notices <Icon name="arrow-right" size={17} />
         </a>
       </article>
-    ))
+    )
   }
 </div>

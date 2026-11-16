@@ -637,6 +637,106 @@ const basePages: ContentPage[] = [
     status: "ready"
   },
   {
+    slug: "aos-foundation-day-2026",
+    title: "AOS Foundation Day 2026",
+    group: "Events & CME",
+    summary: "Programme archive of the scientific sessions, Memorial Orations, Foundation Day ceremony and Lifetime Achievement Awards held on Sunday, 1 November 2026.",
+    status: "ready",
+    sections: [
+      {
+        title: "Programme information",
+        paragraphs: [
+          "Agra Orthopaedic Society held AOS Foundation Day 2026 at Courtyard by Marriott, Agra, on Sunday, 1 November 2026.",
+          "Around 50 members and invited faculty attended the evening, which combined scientific discussion on Advances and Challenges in Orthopaedic Trauma with two Memorial Orations, the Foundation Day ceremony, Lifetime Achievement Awards, and fellowship. Dr Harish Chandra was Patron of the programme."
+        ],
+        bullets: [
+          "5:00-6:00 PM: Registration and high tea.",
+          "6:00-7:05 PM: Scientific Session I - Orthopaedic Trauma.",
+          "7:05-7:45 PM: Prof. K. P. Srivastava and Prof. K. K. Pruthi Memorial Orations.",
+          "7:45-8:00 PM: AOS Foundation Day Ceremony and Lifetime Achievement Awards.",
+          "8:00-9:00 PM: Scientific Session II - Orthopaedic Trauma.",
+          "9:00 PM onwards: Dinner and fellowship."
+        ]
+      },
+      {
+        title: "Scientific Session I - Orthopaedic Trauma",
+        bullets: [
+          "6:00-6:15 PM: Anatomy of an Illusion: Precision, Perception & the Perfect Knee - Dr Rajiv Sharma.",
+          "6:15-6:25 PM: Proximal Humerus Complex Fractures - Dr Vivek Trikha.",
+          "6:25-6:35 PM: Demystifying Elbow Instability - Dr Ajit Tiwari.",
+          "6:35-6:45 PM: Terrible Triad: Case-Based Discussion - Dr Anup Agrawal.",
+          "6:45-6:55 PM: Radial Head Fracture: When to Fix, When to Replace - Dr Ajit Tiwari.",
+          "6:55-7:05 PM: Interactive discussion with all faculty."
+        ]
+      },
+      {
+        title: "Memorial Orations",
+        paragraphs: [
+          "Each Memorial Oration includes the introduction of the speaker, remembrance of the distinguished orthopaedic personality, the oration and presentation of a commemorative memento by the AOS President."
+        ],
+        bullets: [
+          "7:05-7:25 PM: Prof. K. P. Srivastava Memorial Oration - Dr C. S. Yadav.",
+          "7:25-7:45 PM: Prof. K. K. Pruthi Memorial Oration - Dr Ashok Vij."
+        ]
+      },
+      {
+        title: "Programme leadership",
+        bullets: [
+          "Scientific Session I: Chairperson Dr D. V. Sharma; Co-chairpersons Dr R. S. Yadav and Dr Brijesh Sharma.",
+          "Prof. K. P. Srivastava Memorial Oration chair panel: Dr Atul Kulshrestha, Dr Sanjay Chaturvedi, Dr Atul Srivastava and Dr Sanjiv Vohra.",
+          "Prof. K. K. Pruthi Memorial Oration chair panel: Dr Atul Kulshrestha, Dr Sanjay Chaturvedi, Dr Kartik Pruthi and Dr Sanjiv Vohra.",
+          "Scientific Session II: Chairperson Dr Sanjay Prakash; Co-chairpersons Dr Rajendra Shakunt and Dr Amit Agarwal."
+        ]
+      },
+      {
+        title: "Foundation Day Ceremony & Lifetime Achievement Awards",
+        paragraphs: [
+          "Dr Atul Kulshrestha welcomed the gathering, Dr Anuj Gupta presented the history of AOS, and Dr Sanjay Chaturvedi delivered the vote of thanks. Lifetime Achievement Award recipients received citations and shawls; Memorial Oration speakers received citations and gifts; and scientific faculty received certificates and gifts."
+        ],
+        bullets: [
+          "AOS Lifetime Achievement Award 2026 - Dr R. K. Goyal.",
+          "AOS Lifetime Achievement Award 2026 - Dr Ravi Sabharwal.",
+          "Dr Lalit Pathak read the citation for Dr R. K. Goyal.",
+          "Dr Amrit Goyal read the citation for Dr Ravi Sabharwal."
+        ]
+      },
+      {
+        title: "Scientific Session II - Orthopaedic Trauma",
+        bullets: [
+          "8:00-8:10 PM: Neglected Intracapsular Neck Fracture in the Paediatric Age Group - Dr Raghvendra Tripathi, Kanpur.",
+          "8:10-8:20 PM: Definitive Management of Acetabular Fractures - Dr Vivek Trikha.",
+          "8:20-8:30 PM: Distal Femur: Current Concepts - Dr Vivek Trikha.",
+          "8:30-8:40 PM: Ankle Fractures: Case-Based Discussion - Dr Manoj Mittal.",
+          "8:40-8:50 PM: Posterolateral Tibial Plateau: Tips & Tricks - Dr Anup Agrawal.",
+          "8:50-9:00 PM: Interactive discussion with all faculty."
+        ]
+      },
+      {
+        title: "Organising team",
+        bullets: [
+          "Dr Atul Kulshrestha - President, AOS.",
+          "Dr Sanjay Chaturvedi - Secretary, AOS.",
+          "Dr Sanjiv Vohra - Treasurer, AOS.",
+          "Dr Sanjay Dhawan - Scientific Committee In-charge.",
+          "Dr Rajiv Goyal and Dr Kartik Pruthi - Scientific Secretaries and Scientific Coordinators."
+        ]
+      },
+      {
+        title: "Photographs and media coverage",
+        paragraphs: [
+          "The event was covered in the local press, including Amar Ujala, Dainik Jagran, Hindustan, Dainik Bhaskar and Shyopur Express. Selected programme photographs are available in the AOS website gallery."
+        ],
+        bullets: [
+          "View selected Foundation Day photographs — /gallery/#aos-foundation-day-november-2026",
+          "Foundation Day video report — https://youtu.be/8sLX8TJT2Gk",
+          "Full AOS Foundation Day photo album — https://drive.google.com/drive/folders/1VxkC4UJR5_VmEQWlw6IfgV9_W6PY1BZZ?usp=sharing",
+          "Hindustan Varta report — https://www.hindustanvarta.in/2026/11/blog-post_155.html",
+          "AOS Facebook coverage — https://www.facebook.com/share/p/1HVfL4u78J/"
+        ]
+      }
+    ]
+  },
+  {
     slug: "upcoming-events",
     title: "Upcoming Events",
     group: "Events & CME",

@@ -1,5 +1,49 @@
 [
   {
+    "date": "01",
+    "month": "Nov",
+    "year": "2026",
+    "datetime": "2026-11-01",
+    "title": "AOS Foundation Day 2026",
+    "description": "Around 50 members and invited faculty attended AOS Foundation Day 2026. The programme included two scientific sessions on Advances and Challenges in Orthopaedic Trauma, the Prof. K. P. Srivastava Memorial Oration by Dr C. S. Yadav, the Prof. K. K. Pruthi Memorial Oration by Dr Ashok Vij, and the Foundation Day ceremony. AOS Lifetime Achievement Awards 2026 were presented to Dr R. K. Goyal and Dr Ravi Sabharwal, followed by dinner and fellowship.",
+    "meta": "Courtyard by Marriott, Agra · Patron: Dr Harish Chandra · Approximately 50 attendees",
+    "href": "/aos-foundation-day-2026/",
+    "id": "aos-foundation-day-2026"
+  },
+  {
+    "date": "25",
+    "month": "Oct",
+    "year": "2026",
+    "datetime": "2026-10-25",
+    "title": "Hands-on AI Workshop for Orthopaedicians",
+    "description": "AOS conducted a practical, interactive AI workshop for orthopaedicians with Dr Anubha Karol, Medical Writer and Consultant, as faculty. Members worked on their laptops through modules covering ChatGPT, Gemini and Perplexity, focused learning with NotebookLM, scientific presentations, daily clinical workflows, and research and publication tools. Sun Pharma reported participation by 67 doctors.",
+    "meta": "Fairfield by Marriott, Sanjay Place, Agra · Educational initiative supported by Sun Pharma",
+    "href": "/gallery/#aos-ai-workshop-october-2026",
+    "id": "aos-hands-on-ai-workshop-25-october-2026"
+  },
+  {
+    "date": "10",
+    "month": "Oct",
+    "year": "2026",
+    "datetime": "2026-10-10",
+    "title": "Executive Body Meeting with Scientific Session",
+    "description": "AOS held an Executive Body Meeting preceded by a scientific session supported by MSN. Dr Devanshu Mohaniya presented Tapentadol in Pain Management and Rejulox-T in Tendinopathy, with the session chaired by Dr Anil Sharma. The Executive subsequently reviewed society administration, forthcoming academic activity, public-awareness work, the digital directory and website, and preparations for AOS Foundation Day.",
+    "meta": "Holiday Inn, Agra · Scientific session followed by Executive Body Meeting",
+    "href": "/past-events/#executive-body-meeting-10-october-2026",
+    "id": "executive-body-meeting-10-october-2026"
+  },
+  {
+    "date": "26",
+    "month": "Sep",
+    "year": "2026",
+    "datetime": "2026-09-26",
+    "title": "CME cum General Body Meeting",
+    "description": "AOS held its September CME cum General Body Meeting at Holiday Inn, Agra, with 28 members and delegates recorded in the attendance register. The scientific programme covered a product talk, lateral-end clavicle fracture fixation, infected total knee replacement and operative management of a malunited calcaneal fracture. The General Body confirmed the previous minutes, reviewed society work and Agra Moves Better - 2026, recognised contributing members and academic achievements, and confirmed forthcoming programmes.",
+    "meta": "Holiday Inn, Agra · Scientific session and General Body Meeting · Educational Grant support from Torrent Pharmaceuticals",
+    "href": "/past-events/#aos-september-gbm-cme-26-september-2026",
+    "id": "aos-september-gbm-cme-26-september-2026"
+  },
+  {
     "date": "30",
     "month": "Aug",
     "year": "2026",
@@ -51,7 +95,7 @@
     "title": "Sports, District Jail & Community Bone-Health Outreach",
     "description": "The later-August campaign expanded through sports-injury prevention, District Jail bone-health awareness and community BMD screening. Records include Prakhar Badminton Academy on 22 August, District Jail Agra on 23 August and Om Medical Complex community screening on 23 August.",
     "meta": "Agra · Sports injury prevention, District Jail outreach and community BMD screening",
-    "href": "/public-awareness/",
+    "href": "/gallery/#sports-jail-community-outreach-august-2026",
     "id": "sports-district-jail-community-outreach-august-2026"
   },
   {
@@ -62,7 +106,7 @@
     "title": "Independence Day, Workplace & Women’s Bone-Health Cluster",
     "description": "AOS continued Agra Moves Better - 2026 through hospital ergonomics, Independence Day public outreach, road-safety and CPR awareness, sports-injury prevention, senior-citizen fall-prevention activity, workplace posture sessions and women’s bone-health programmes across participating hospitals, Khel Gaon, UPSRTC, Ashok Auto Sales, Ashok Cosmos Mall and F.H. Medical College.",
     "meta": "Agra · Healthcare ergonomics, road safety, senior health, sports and workplace awareness",
-    "href": "/public-awareness/",
+    "href": "/gallery/#independence-day-workplace-outreach-august-2026",
     "id": "independence-day-workplace-womens-bone-health-cluster-2026"
   },
   {
@@ -117,7 +161,7 @@
     "title": "Agra Moves Better Media Awareness & BMD Screening Record",
     "description": "The 3 August campaign record documented public-health messaging through supplied Hindi print coverage on road trauma, police occupational musculoskeletal health and early joint-care, alongside hospital-based BMD screening through two deployed machines at multiple hospitals in Agra.",
     "meta": "Agra · Media awareness, road-safety messaging and preventive BMD screening",
-    "href": "/public-awareness/",
+    "href": "/gallery/#agra-moves-better-media-coverage-august-2026",
     "id": "agra-moves-better-media-bmd-screening-record-2026"
   },
   {

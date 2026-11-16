@@ -25,19 +25,23 @@ const initialAnnouncement = announcementEvents[0];
 ---
 
 <header class="site-header">
-  <div class="announcement" data-announcement>
-    <div class="shell announcement__inner">
-      <p>
-        <time class="announcement__date" datetime={initialAnnouncement.datetime} data-announcement-date>
-          {initialAnnouncement.dateLabel}
-        </time>
-        <span data-announcement-title>{initialAnnouncement.title}</span>
-      </p>
-      <a href={initialAnnouncement.href} data-announcement-link>
-        View programme <Icon name="arrow-right" size={16} />
-      </a>
-    </div>
-  </div>
+  {
+    initialAnnouncement && (
+      <div class="announcement" data-announcement>
+        <div class="shell announcement__inner">
+          <p>
+            <time class="announcement__date" datetime={initialAnnouncement.datetime} data-announcement-date>
+              {initialAnnouncement.dateLabel}
+            </time>
+            <span data-announcement-title>{initialAnnouncement.title}</span>
+          </p>
+          <a href={initialAnnouncement.href} data-announcement-link>
+            View programme <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+      </div>
+    )
+  }
 
   <div class="shell masthead">
     <BrandLockup />

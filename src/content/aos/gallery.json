@@ -1,5 +1,77 @@
 [
   {
+    "id": "aos-foundation-day-2026-group",
+    "src": "/assets/optimized/gallery/aos-foundation-day-november-2026/aos-foundation-day-2026-group.webp",
+    "alt": "AOS members and invited faculty at the conclusion of Foundation Day 2026",
+    "caption": "1 November AOS Foundation Day · Members and faculty",
+    "featured": true,
+    "order": -0.00009
+  },
+  {
+    "id": "aos-foundation-day-2026-scientific-session",
+    "src": "/assets/optimized/gallery/aos-foundation-day-november-2026/aos-foundation-day-2026-scientific-session.webp",
+    "alt": "Faculty presentation during the AOS Foundation Day scientific programme",
+    "caption": "1 November AOS Foundation Day · Scientific programme",
+    "featured": false,
+    "order": -0.00008
+  },
+  {
+    "id": "aos-foundation-day-2026-oration",
+    "src": "/assets/optimized/gallery/aos-foundation-day-november-2026/aos-foundation-day-2026-oration.webp",
+    "alt": "History and legacy presentation during the AOS Foundation Day ceremony",
+    "caption": "1 November AOS Foundation Day · AOS history and legacy",
+    "featured": false,
+    "order": -0.00007
+  },
+  {
+    "id": "aos-foundation-day-2026-secretary-address",
+    "src": "/assets/optimized/gallery/aos-foundation-day-november-2026/aos-foundation-day-2026-secretary-address.webp",
+    "alt": "AOS Secretary addressing members during the Foundation Day ceremony",
+    "caption": "1 November AOS Foundation Day · Secretary's address",
+    "featured": false,
+    "order": -0.00006
+  },
+  {
+    "id": "aos-foundation-day-2026-recognition",
+    "src": "/assets/optimized/gallery/aos-foundation-day-november-2026/aos-foundation-day-2026-recognition.webp",
+    "alt": "Certificate and memento presentation during AOS Foundation Day",
+    "caption": "1 November AOS Foundation Day · Faculty recognition",
+    "featured": false,
+    "order": -0.00005
+  },
+  {
+    "id": "aos-foundation-day-2026-audience",
+    "src": "/assets/optimized/gallery/aos-foundation-day-november-2026/aos-foundation-day-2026-audience.webp",
+    "alt": "AOS members attending the Foundation Day scientific programme",
+    "caption": "1 November AOS Foundation Day · Members attending",
+    "featured": false,
+    "order": -0.00004
+  },
+  {
+    "id": "aos-ai-workshop-2026-participants",
+    "src": "/assets/optimized/gallery/aos-ai-workshop-october-2026/aos-ai-workshop-2026-participants.webp",
+    "alt": "Orthopaedic surgeons participating with laptops during the AOS hands-on AI workshop",
+    "caption": "25 October AOS AI Workshop · Participating orthopaedic surgeons",
+    "featured": true,
+    "order": -0.00003
+  },
+  {
+    "id": "aos-ai-workshop-2026-hands-on-session",
+    "src": "/assets/optimized/gallery/aos-ai-workshop-october-2026/aos-ai-workshop-2026-hands-on-session.webp",
+    "alt": "Dr Anubha Karol leading the hands-on AI workshop for AOS members",
+    "caption": "25 October AOS AI Workshop · Hands-on faculty session",
+    "featured": false,
+    "order": -0.00002
+  },
+  {
+    "id": "aos-ai-workshop-2026-interactive-session",
+    "src": "/assets/optimized/gallery/aos-ai-workshop-october-2026/aos-ai-workshop-2026-interactive-session.webp",
+    "alt": "AOS members working through an interactive AI exercise on their laptops",
+    "caption": "25 October AOS AI Workshop · Interactive learning",
+    "featured": false,
+    "order": -0.00001
+  },
+  {
     "id": "agra-moves-better-closing-2026-group",
     "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-group.webp",
     "alt": "AOS members and partners at the Agra Moves Better 2026 closing ceremony",
@@ -30,6 +102,150 @@
     "caption": "30 August Agra Moves Better Closing · Community partners",
     "featured": false,
     "order": 4e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-professional-01",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-professional-01.webp",
+    "alt": "AOS members and partners during the Agra Moves Better 2026 closing ceremony 1",
+    "caption": "30 August Agra Moves Better Closing · Selected photograph 1",
+    "featured": false,
+    "order": 4.2e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-professional-02",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-professional-02.webp",
+    "alt": "AOS members and partners during the Agra Moves Better 2026 closing ceremony 2",
+    "caption": "30 August Agra Moves Better Closing · Selected photograph 2",
+    "featured": false,
+    "order": 4.3e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-professional-03",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-professional-03.webp",
+    "alt": "AOS members and partners during the Agra Moves Better 2026 closing ceremony 3",
+    "caption": "30 August Agra Moves Better Closing · Selected photograph 3",
+    "featured": false,
+    "order": 4.4e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-professional-04",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-professional-04.webp",
+    "alt": "AOS members and partners during the Agra Moves Better 2026 closing ceremony 4",
+    "caption": "30 August Agra Moves Better Closing · Selected photograph 4",
+    "featured": false,
+    "order": 4.5e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-professional-05",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-professional-05.webp",
+    "alt": "AOS members and partners during the Agra Moves Better 2026 closing ceremony 5",
+    "caption": "30 August Agra Moves Better Closing · Selected photograph 5",
+    "featured": false,
+    "order": 4.6e-05
+  },
+  {
+    "id": "agra-moves-better-closing-2026-professional-06",
+    "src": "/assets/optimized/gallery/agra-moves-better-closing-august-2026/agra-moves-better-closing-2026-professional-06.webp",
+    "alt": "AOS members and partners during the Agra Moves Better 2026 closing ceremony 6",
+    "caption": "30 August Agra Moves Better Closing · Selected photograph 6",
+    "featured": false,
+    "order": 4.7e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-01",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-01.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 1",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 1",
+    "featured": true,
+    "order": 7.1e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-02",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-02.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 2",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 2",
+    "featured": false,
+    "order": 7.2e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-03",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-03.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 3",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 3",
+    "featured": false,
+    "order": 7.3e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-04",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-04.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 4",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 4",
+    "featured": false,
+    "order": 7.4e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-05",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-05.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 5",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 5",
+    "featured": false,
+    "order": 7.5e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-06",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-06.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 6",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 6",
+    "featured": false,
+    "order": 7.6e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-07",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-07.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 7",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 7",
+    "featured": false,
+    "order": 7.7e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-08",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-08.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 8",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 8",
+    "featured": false,
+    "order": 7.8e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-09",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-09.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 9",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 9",
+    "featured": false,
+    "order": 7.9e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-10",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-10.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 10",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 10",
+    "featured": false,
+    "order": 8e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-11",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-11.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 11",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 11",
+    "featured": false,
+    "order": 8.1e-05
+  },
+  {
+    "id": "agra-moves-better-media-coverage-2026-12",
+    "src": "/assets/optimized/gallery/agra-moves-better-media-coverage-august-2026/agra-moves-better-media-coverage-2026-12.webp",
+    "alt": "Approved newspaper cutting or media coverage from Agra Moves Better 2026 12",
+    "caption": "Agra Moves Better Media Coverage · Selected cutting 12",
+    "featured": false,
+    "order": 8.2e-05
   },
   {
     "id": "multi-site-bone-health-2026-snmc",
@@ -64,6 +280,38 @@
     "order": 0.00014
   },
   {
+    "id": "multi-site-bone-health-2026-album-01",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-album-01.webp",
+    "alt": "AOS bone-health outreach during the 27 August four-site Agra Moves Better programme 1",
+    "caption": "27 August Four-Site Outreach · Selected photograph 1",
+    "featured": false,
+    "order": 0.000151
+  },
+  {
+    "id": "multi-site-bone-health-2026-album-02",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-album-02.webp",
+    "alt": "AOS bone-health outreach during the 27 August four-site Agra Moves Better programme 2",
+    "caption": "27 August Four-Site Outreach · Selected photograph 2",
+    "featured": false,
+    "order": 0.000152
+  },
+  {
+    "id": "multi-site-bone-health-2026-album-03",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-album-03.webp",
+    "alt": "AOS bone-health outreach during the 27 August four-site Agra Moves Better programme 3",
+    "caption": "27 August Four-Site Outreach · Selected photograph 3",
+    "featured": false,
+    "order": 0.000153
+  },
+  {
+    "id": "multi-site-bone-health-2026-album-04",
+    "src": "/assets/optimized/gallery/multi-site-bone-health-august-2026/multi-site-bone-health-2026-album-04.webp",
+    "alt": "AOS bone-health outreach during the 27 August four-site Agra Moves Better programme 4",
+    "caption": "27 August Four-Site Outreach · Selected photograph 4",
+    "featured": false,
+    "order": 0.000154
+  },
+  {
     "id": "air-force-awareness-2026-programme",
     "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-awareness-2026-programme.webp",
     "alt": "Programme poster for the Indian Air Force health awareness activity under Agra Moves Better 2026",
@@ -96,6 +344,102 @@
     "order": 0.00024
   },
   {
+    "id": "air-force-airport-awareness-2026-album-01",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-airport-awareness-2026-album-01.webp",
+    "alt": "AOS Air Force and Airport awareness activity under Agra Moves Better 2026 1",
+    "caption": "25 August Air Force & Airport Outreach · Selected photograph 1",
+    "featured": false,
+    "order": 0.000251
+  },
+  {
+    "id": "air-force-airport-awareness-2026-album-02",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-airport-awareness-2026-album-02.webp",
+    "alt": "AOS Air Force and Airport awareness activity under Agra Moves Better 2026 2",
+    "caption": "25 August Air Force & Airport Outreach · Selected photograph 2",
+    "featured": false,
+    "order": 0.000252
+  },
+  {
+    "id": "air-force-airport-awareness-2026-album-03",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-airport-awareness-2026-album-03.webp",
+    "alt": "AOS Air Force and Airport awareness activity under Agra Moves Better 2026 3",
+    "caption": "25 August Air Force & Airport Outreach · Selected photograph 3",
+    "featured": false,
+    "order": 0.000253
+  },
+  {
+    "id": "air-force-airport-awareness-2026-album-04",
+    "src": "/assets/optimized/gallery/air-force-airport-awareness-august-2026/air-force-airport-awareness-2026-album-04.webp",
+    "alt": "AOS Air Force and Airport awareness activity under Agra Moves Better 2026 4",
+    "caption": "25 August Air Force & Airport Outreach · Selected photograph 4",
+    "featured": false,
+    "order": 0.000254
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-01",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-01.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 1",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 1",
+    "featured": true,
+    "order": 0.000341
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-02",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-02.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 2",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 2",
+    "featured": false,
+    "order": 0.000342
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-03",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-03.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 3",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 3",
+    "featured": false,
+    "order": 0.000343
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-04",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-04.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 4",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 4",
+    "featured": false,
+    "order": 0.000344
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-05",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-05.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 5",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 5",
+    "featured": false,
+    "order": 0.000345
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-06",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-06.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 6",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 6",
+    "featured": false,
+    "order": 0.000346
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-07",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-07.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 7",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 7",
+    "featured": false,
+    "order": 0.000347
+  },
+  {
+    "id": "sports-jail-community-outreach-2026-08",
+    "src": "/assets/optimized/gallery/sports-jail-community-outreach-august-2026/sports-jail-community-outreach-2026-08.webp",
+    "alt": "AOS sports, District Jail and community outreach activity under Agra Moves Better 2026 8",
+    "caption": "22-23 August Sports, District Jail & Community Outreach · Selected photograph 8",
+    "featured": false,
+    "order": 0.000348
+  },
+  {
     "id": "school-bone-health-2026-session",
     "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-session.webp",
     "alt": "Students and teachers during the AOS school and women’s bone-health programme",
@@ -110,6 +454,102 @@
     "caption": "24 August School & Women’s Bone-Health · Bone-health guidance",
     "featured": false,
     "order": 0.00032
+  },
+  {
+    "id": "school-bone-health-2026-album-01",
+    "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-album-01.webp",
+    "alt": "AOS school and women’s bone-health awareness activity under Agra Moves Better 2026 1",
+    "caption": "24 August School & Women’s Bone-Health · Selected photograph 1",
+    "featured": false,
+    "order": 0.000431
+  },
+  {
+    "id": "school-bone-health-2026-album-02",
+    "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-album-02.webp",
+    "alt": "AOS school and women’s bone-health awareness activity under Agra Moves Better 2026 2",
+    "caption": "24 August School & Women’s Bone-Health · Selected photograph 2",
+    "featured": false,
+    "order": 0.000432
+  },
+  {
+    "id": "school-bone-health-2026-album-03",
+    "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-album-03.webp",
+    "alt": "AOS school and women’s bone-health awareness activity under Agra Moves Better 2026 3",
+    "caption": "24 August School & Women’s Bone-Health · Selected photograph 3",
+    "featured": false,
+    "order": 0.000433
+  },
+  {
+    "id": "school-bone-health-2026-album-04",
+    "src": "/assets/optimized/gallery/school-bone-health-august-2026/school-bone-health-2026-album-04.webp",
+    "alt": "AOS school and women’s bone-health awareness activity under Agra Moves Better 2026 4",
+    "caption": "24 August School & Women’s Bone-Health · Selected photograph 4",
+    "featured": false,
+    "order": 0.000434
+  },
+  {
+    "id": "independence-workplace-outreach-2026-01",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-01.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 1",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 1",
+    "featured": true,
+    "order": 0.000501
+  },
+  {
+    "id": "independence-workplace-outreach-2026-02",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-02.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 2",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 2",
+    "featured": false,
+    "order": 0.000502
+  },
+  {
+    "id": "independence-workplace-outreach-2026-03",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-03.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 3",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 3",
+    "featured": false,
+    "order": 0.000503
+  },
+  {
+    "id": "independence-workplace-outreach-2026-04",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-04.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 4",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 4",
+    "featured": false,
+    "order": 0.000504
+  },
+  {
+    "id": "independence-workplace-outreach-2026-05",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-05.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 5",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 5",
+    "featured": false,
+    "order": 0.000505
+  },
+  {
+    "id": "independence-workplace-outreach-2026-06",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-06.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 6",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 6",
+    "featured": false,
+    "order": 0.000506
+  },
+  {
+    "id": "independence-workplace-outreach-2026-07",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-07.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 7",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 7",
+    "featured": false,
+    "order": 0.000507
+  },
+  {
+    "id": "independence-workplace-outreach-2026-08",
+    "src": "/assets/optimized/gallery/independence-day-workplace-outreach-august-2026/independence-workplace-outreach-2026-08.webp",
+    "alt": "AOS Independence Day and workplace outreach activity under Agra Moves Better 2026 8",
+    "caption": "15-21 August Independence Day & Workplace Outreach · Selected photograph 8",
+    "featured": false,
+    "order": 0.000508
   },
   {
     "id": "community-bone-health-2026-awareness-session",
